@@ -11,8 +11,6 @@ export class PropertyImplementation<
     private readonly name: string
   ) {}
 
-  readonly refactorable = true;
-
   readonly args: ReadonlyArray<Implementation<TInputPrimitive>> = [this.a];
 
   render(

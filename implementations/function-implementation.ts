@@ -11,8 +11,6 @@ export class FunctionImplementation<
     public readonly args: ReadonlyArray<Implementation<TInputPrimitive>>
   ) {}
 
-  readonly refactorable = true;
-
   render(
     renderedArgs: ReadonlyArray<ReadonlyArray<string>>
   ): ReadonlyArray<string> {

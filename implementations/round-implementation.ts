@@ -7,8 +7,6 @@ export class RoundImplementation<TPrimitive extends AnyNumericPrimitive>
 
   readonly primitive = this.a.primitive;
 
-  readonly refactorable = true;
-
   readonly args: ReadonlyArray<Implementation<AnyPrimitive>> = [this.a];
 
   render(

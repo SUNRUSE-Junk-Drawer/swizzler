@@ -11,8 +11,6 @@ export class IndexerImplementation<
     private readonly index: number
   ) {}
 
-  readonly refactorable = true;
-
   readonly args: ReadonlyArray<Implementation<TInputPrimitive>> = [this.a];
 
   render(

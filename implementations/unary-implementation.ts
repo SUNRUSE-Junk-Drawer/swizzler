@@ -11,8 +11,6 @@ export class UnaryOperatorImplementation<
     private readonly a: Implementation<TInputPrimitive>
   ) {}
 
-  readonly refactorable = true;
-
   readonly args: ReadonlyArray<Implementation<TInputPrimitive>> = [this.a];
 
   render(

@@ -12,8 +12,6 @@ export class BinaryOperatorImplementation<
     private readonly b: Implementation<TInputPrimitive>
   ) {}
 
-  readonly refactorable = true;
-
   readonly args: ReadonlyArray<Implementation<TInputPrimitive>> = [
     this.a,
     this.b,

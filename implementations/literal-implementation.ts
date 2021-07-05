@@ -8,8 +8,6 @@ export class LiteralImplementation<TPrimitive extends AnyPrimitive>
     private readonly literal: ReadonlyArray<string>
   ) {}
 
-  readonly refactorable = false;
-
   readonly args = [];
 
   render(

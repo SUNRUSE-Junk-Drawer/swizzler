@@ -11,8 +11,6 @@ export class ConcatenateImplementation<
     public readonly args: ReadonlyArray<Implementation<TInputPrimitive>>
   ) {}
 
-  readonly refactorable = false;
-
   render(
     renderedArgs: ReadonlyArray<ReadonlyArray<string>>
   ): ReadonlyArray<string> {

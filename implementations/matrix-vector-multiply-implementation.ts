@@ -12,8 +12,6 @@ export class MatrixVectorMultiplyImplementation<
     private readonly b: Implementation<TInputB>
   ) {}
 
-  public readonly refactorable = true;
-
   public readonly args = [this.a, this.b];
 
   render(

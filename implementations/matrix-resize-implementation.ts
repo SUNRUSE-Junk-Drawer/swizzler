@@ -10,8 +10,6 @@ export class MatrixResizeImplementation<
     private readonly resize: Implementation<TInputPrimitive>
   ) {}
 
-  readonly refactorable = false;
-
   readonly args = [this.resize];
 
   render(

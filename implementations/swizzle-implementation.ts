@@ -11,8 +11,6 @@ export class SwizzleImplementation<
     private readonly indices: ReadonlyArray<number>
   ) {}
 
-  readonly refactorable = false;
-
   readonly args: ReadonlyArray<Implementation<TInputPrimitive>> = [this.a];
 
   render(

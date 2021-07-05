@@ -11,8 +11,6 @@ export class AggregateImplementation<
     private readonly ofComponentsOf: Implementation<TInputPrimitive>
   ) {}
 
-  readonly refactorable = true;
-
   readonly args: ReadonlyArray<Implementation<TInputPrimitive>> = [
     this.ofComponentsOf,
   ];

@@ -13,8 +13,6 @@ export class CastToIntImplementation<TFrom extends AnyCastablePrimitive>
 
   readonly primitive = castToInt[this.a.primitive] as CastToInt[TFrom];
 
-  readonly refactorable = true;
-
   readonly args: ReadonlyArray<Implementation<AnyPrimitive>> = [this.a];
 
   render(

@@ -16,8 +16,6 @@ export class TernaryOperatorImplementation<
     private readonly c: Implementation<TInputCPrimitive>
   ) {}
 
-  readonly refactorable = true;
-
   readonly args: readonly [
     Implementation<TInputAPrimitive>,
     Implementation<TInputBPrimitive>,

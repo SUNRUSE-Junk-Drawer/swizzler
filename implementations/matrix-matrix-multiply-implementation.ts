@@ -10,8 +10,6 @@ export class MatrixMatrixMultiplyImplementation<
     private readonly b: Implementation<TPrimitive>
   ) {}
 
-  public readonly refactorable = true;
-
   public readonly args = [this.a, this.b];
 
   render(
