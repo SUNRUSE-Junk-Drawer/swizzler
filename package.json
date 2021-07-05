@@ -20,7 +20,7 @@
     "eslint": "7.9.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-prettier": "3.1.4",
-    "gl": "4.6.1",
+    "gl": "4.9.0",
     "jasmine": "3.6.1",
     "npm-run-all": "4.1.5",
     "nyc": "15.1.0",
