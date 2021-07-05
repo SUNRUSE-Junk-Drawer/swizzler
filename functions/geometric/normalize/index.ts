@@ -1,5 +1,5 @@
 import {
-  AnyFloatPrimitive,
+  AnyNonMatFloatPrimitive,
   FloatPrimitive,
   Vec2Primitive,
   Vec3Primitive,
@@ -27,8 +27,8 @@ export function normalize(
 ): Expression<Vec4Primitive>;
 
 export function normalize(
-  x: Expression<AnyFloatPrimitive>
-): Expression<AnyFloatPrimitive> {
+  x: Expression<AnyNonMatFloatPrimitive>
+): Expression<AnyNonMatFloatPrimitive> {
   const primitive = x.primitive;
 
   return new Expression(

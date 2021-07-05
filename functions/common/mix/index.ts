@@ -1,5 +1,5 @@
 import {
-  AnyFloatPrimitive,
+  AnyNonMatFloatPrimitive,
   FloatPrimitive,
   Vec2Primitive,
   Vec3Primitive,
@@ -52,10 +52,10 @@ export function mix(
 ): Expression<Vec4Primitive>;
 
 export function mix(
-  x: Expression<AnyFloatPrimitive>,
-  y: Expression<AnyFloatPrimitive>,
-  a: Expression<AnyFloatPrimitive>
-): Expression<AnyFloatPrimitive> {
+  x: Expression<AnyNonMatFloatPrimitive>,
+  y: Expression<AnyNonMatFloatPrimitive>,
+  a: Expression<AnyNonMatFloatPrimitive>
+): Expression<AnyNonMatFloatPrimitive> {
   const primitive = x.primitive;
 
   return new Expression(

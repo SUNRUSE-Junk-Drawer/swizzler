@@ -1,5 +1,5 @@
 import {
-  AnyFloatPrimitive,
+  AnyNonMatFloatPrimitive,
   FloatPrimitive,
   Vec2Primitive,
   Vec3Primitive,
@@ -31,8 +31,8 @@ export function distance(
 ): Expression<FloatPrimitive>;
 
 export function distance(
-  p0: Expression<AnyFloatPrimitive>,
-  p1: Expression<AnyFloatPrimitive>
+  p0: Expression<AnyNonMatFloatPrimitive>,
+  p1: Expression<AnyNonMatFloatPrimitive>
 ): Expression<FloatPrimitive> {
   const primitive = p0.primitive;
 

@@ -2,17 +2,16 @@ export type FloatPrimitive = "float";
 export type Vec2Primitive = "vec2";
 export type Vec3Primitive = "vec3";
 export type Vec4Primitive = "vec4";
-export type Mat2Primitive = "mat2";
-export type Mat3Primitive = "mat3";
-export type Mat4Primitive = "mat4";
-export type AnyFloatPrimitive =
+export type AnyNonMatFloatPrimitive =
   | FloatPrimitive
   | Vec2Primitive
   | Vec3Primitive
-  | Vec4Primitive
-  | Mat2Primitive
-  | Mat3Primitive
-  | Mat4Primitive;
+  | Vec4Primitive;
+export type Mat2Primitive = "mat2";
+export type Mat3Primitive = "mat3";
+export type Mat4Primitive = "mat4";
+export type AnyMatPrimitive = Mat2Primitive | Mat3Primitive | Mat4Primitive;
+export type AnyFloatPrimitive = AnyNonMatFloatPrimitive | AnyMatPrimitive;
 
 export type IntPrimitive = "int";
 export type Ivec2Primitive = "ivec2";

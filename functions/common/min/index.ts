@@ -1,5 +1,5 @@
 import {
-  AnyFloatPrimitive,
+  AnyNonMatFloatPrimitive,
   FloatPrimitive,
   Vec2Primitive,
   Vec3Primitive,
@@ -44,8 +44,8 @@ export function min(
 ): Expression<Vec4Primitive>;
 
 export function min(
-  x: Expression<AnyFloatPrimitive>,
-  y: Expression<AnyFloatPrimitive>
-): Expression<AnyFloatPrimitive> {
+  x: Expression<AnyNonMatFloatPrimitive>,
+  y: Expression<AnyNonMatFloatPrimitive>
+): Expression<AnyNonMatFloatPrimitive> {
   return func("Math.min", "min", x, y);
 }

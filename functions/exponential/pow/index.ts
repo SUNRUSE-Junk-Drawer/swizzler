@@ -1,5 +1,5 @@
 import {
-  AnyFloatPrimitive,
+  AnyNonMatFloatPrimitive,
   FloatPrimitive,
   Vec2Primitive,
   Vec3Primitive,
@@ -29,8 +29,8 @@ export function pow(
 ): Expression<Vec4Primitive>;
 
 export function pow(
-  x: Expression<AnyFloatPrimitive>,
-  y: Expression<AnyFloatPrimitive>
-): Expression<AnyFloatPrimitive> {
+  x: Expression<AnyNonMatFloatPrimitive>,
+  y: Expression<AnyNonMatFloatPrimitive>
+): Expression<AnyNonMatFloatPrimitive> {
   return func("Math.pow", "pow", x, y);
 }

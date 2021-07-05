@@ -1,5 +1,5 @@
 import {
-  AnyFloatPrimitive,
+  AnyNonMatFloatPrimitive,
   FloatPrimitive,
   Vec2Primitive,
   Vec3Primitive,
@@ -19,7 +19,7 @@ export function floor(x: Expression<Vec3Primitive>): Expression<Vec3Primitive>;
 export function floor(x: Expression<Vec4Primitive>): Expression<Vec4Primitive>;
 
 export function floor(
-  x: Expression<AnyFloatPrimitive>
-): Expression<AnyFloatPrimitive> {
+  x: Expression<AnyNonMatFloatPrimitive>
+): Expression<AnyNonMatFloatPrimitive> {
   return func("Math.floor", "floor", x);
 }

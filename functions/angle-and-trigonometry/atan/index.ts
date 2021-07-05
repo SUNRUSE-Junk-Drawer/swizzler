@@ -1,5 +1,5 @@
 import {
-  AnyFloatPrimitive,
+  AnyNonMatFloatPrimitive,
   FloatPrimitive,
   Vec2Primitive,
   Vec3Primitive,
@@ -37,8 +37,8 @@ export function atan(
 ): Expression<Vec4Primitive>;
 
 export function atan(
-  ...args: ReadonlyArray<Expression<AnyFloatPrimitive>>
-): Expression<AnyFloatPrimitive> {
+  ...args: ReadonlyArray<Expression<AnyNonMatFloatPrimitive>>
+): Expression<AnyNonMatFloatPrimitive> {
   return args.length === 1
     ? func("Math.atan", "atan", ...args)
     : func("Math.atan2", "atan", ...args);

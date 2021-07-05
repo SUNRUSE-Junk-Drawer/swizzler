@@ -16,7 +16,7 @@ import {
   Bvec4Primitive,
   castToBoolean,
   primitiveArities,
-  AnyFloatPrimitive,
+  AnyNonMatFloatPrimitive,
   AnyBoolPrimitive,
   AnyCastablePrimitive,
 } from "../../primitive";
@@ -62,7 +62,7 @@ export function greaterThan(
 ): Expression<Bvec4Primitive>;
 
 export function greaterThan<
-  TPrimitive extends AnyFloatPrimitive & AnyCastablePrimitive
+  TPrimitive extends AnyNonMatFloatPrimitive & AnyCastablePrimitive
 >(
   a: Expression<TPrimitive>,
   b: Expression<TPrimitive>

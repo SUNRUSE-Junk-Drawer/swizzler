@@ -1,5 +1,5 @@
 import {
-  AnyFloatPrimitive,
+  AnyNonMatFloatPrimitive,
   FloatPrimitive,
   Vec2Primitive,
   Vec3Primitive,
@@ -45,9 +45,9 @@ export function mod(
 ): Expression<Vec4Primitive>;
 
 export function mod(
-  x: Expression<AnyFloatPrimitive>,
-  y: Expression<AnyFloatPrimitive>
-): Expression<AnyFloatPrimitive> {
+  x: Expression<AnyNonMatFloatPrimitive>,
+  y: Expression<AnyNonMatFloatPrimitive>
+): Expression<AnyNonMatFloatPrimitive> {
   return new Expression(
     new BinaryOperatorImplementation(
       x.primitive,

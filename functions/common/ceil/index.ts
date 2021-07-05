@@ -1,5 +1,5 @@
 import {
-  AnyFloatPrimitive,
+  AnyNonMatFloatPrimitive,
   FloatPrimitive,
   Vec2Primitive,
   Vec3Primitive,
@@ -17,7 +17,7 @@ export function ceil(x: Expression<Vec3Primitive>): Expression<Vec3Primitive>;
 export function ceil(x: Expression<Vec4Primitive>): Expression<Vec4Primitive>;
 
 export function ceil(
-  x: Expression<AnyFloatPrimitive>
-): Expression<AnyFloatPrimitive> {
+  x: Expression<AnyNonMatFloatPrimitive>
+): Expression<AnyNonMatFloatPrimitive> {
   return func("Math.ceil", "ceil", x);
 }

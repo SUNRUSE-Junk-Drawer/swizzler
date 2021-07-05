@@ -1,5 +1,5 @@
 import {
-  AnyFloatPrimitive,
+  AnyNonMatFloatPrimitive,
   FloatPrimitive,
   Vec2Primitive,
   Vec3Primitive,
@@ -27,8 +27,8 @@ export function degrees(
 ): Expression<Vec4Primitive>;
 
 export function degrees(
-  radians: Expression<AnyFloatPrimitive>
-): Expression<AnyFloatPrimitive> {
+  radians: Expression<AnyNonMatFloatPrimitive>
+): Expression<AnyNonMatFloatPrimitive> {
   const primitive = radians.primitive;
 
   return new Expression(

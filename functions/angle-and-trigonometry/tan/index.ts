@@ -1,5 +1,5 @@
 import {
-  AnyFloatPrimitive,
+  AnyNonMatFloatPrimitive,
   FloatPrimitive,
   Vec2Primitive,
   Vec3Primitive,
@@ -25,7 +25,7 @@ export function tan(
 ): Expression<Vec4Primitive>;
 
 export function tan(
-  angle: Expression<AnyFloatPrimitive>
-): Expression<AnyFloatPrimitive> {
+  angle: Expression<AnyNonMatFloatPrimitive>
+): Expression<AnyNonMatFloatPrimitive> {
   return func("Math.tan", "tan", angle);
 }

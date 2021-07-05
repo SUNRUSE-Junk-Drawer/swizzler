@@ -2,7 +2,7 @@ import {
   Mat2Primitive,
   Mat3Primitive,
   Mat4Primitive,
-  AnyFloatPrimitive,
+  AnyMatPrimitive,
 } from "../../../primitive";
 import { Expression } from "../../../expression";
 import { BinaryOperatorImplementation } from "../../../implementations/binary-implementation";
@@ -24,9 +24,9 @@ export function matrixCompMult(
 ): Expression<Mat4Primitive>;
 
 export function matrixCompMult(
-  x: Expression<AnyFloatPrimitive>,
-  y: Expression<AnyFloatPrimitive>
-): Expression<AnyFloatPrimitive> {
+  x: Expression<AnyMatPrimitive>,
+  y: Expression<AnyMatPrimitive>
+): Expression<AnyMatPrimitive> {
   return new Expression(
     new BinaryOperatorImplementation(
       x.primitive,

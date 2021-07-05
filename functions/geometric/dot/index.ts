@@ -1,5 +1,5 @@
 import {
-  AnyFloatPrimitive,
+  AnyNonMatFloatPrimitive,
   FloatPrimitive,
   Vec2Primitive,
   Vec3Primitive,
@@ -31,8 +31,8 @@ export function dot(
 ): Expression<FloatPrimitive>;
 
 export function dot(
-  x: Expression<AnyFloatPrimitive>,
-  y: Expression<AnyFloatPrimitive>
+  x: Expression<AnyNonMatFloatPrimitive>,
+  y: Expression<AnyNonMatFloatPrimitive>
 ): Expression<FloatPrimitive> {
   const primitive = x.primitive;
 

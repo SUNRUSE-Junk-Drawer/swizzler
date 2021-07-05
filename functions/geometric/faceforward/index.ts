@@ -1,5 +1,5 @@
 import {
-  AnyFloatPrimitive,
+  AnyNonMatFloatPrimitive,
   FloatPrimitive,
   Vec2Primitive,
   Vec3Primitive,
@@ -38,10 +38,10 @@ export function faceforward(
 ): Expression<Vec4Primitive>;
 
 export function faceforward(
-  n: Expression<AnyFloatPrimitive>,
-  i: Expression<AnyFloatPrimitive>,
-  nRef: Expression<AnyFloatPrimitive>
-): Expression<AnyFloatPrimitive> {
+  n: Expression<AnyNonMatFloatPrimitive>,
+  i: Expression<AnyNonMatFloatPrimitive>,
+  nRef: Expression<AnyNonMatFloatPrimitive>
+): Expression<AnyNonMatFloatPrimitive> {
   const primitive = n.primitive;
 
   return new Expression(

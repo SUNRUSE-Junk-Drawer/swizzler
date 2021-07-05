@@ -1,8 +1,8 @@
-import { AnyFloatPrimitive } from "../primitive";
+import { AnyMatPrimitive } from "../primitive";
 import { Implementation } from "./implementation";
 
 export class MatrixMatrixMultiplyImplementation<
-  TPrimitive extends AnyFloatPrimitive
+  TPrimitive extends AnyMatPrimitive
 > implements Implementation<TPrimitive> {
   constructor(
     public readonly primitive: TPrimitive,

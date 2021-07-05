@@ -1,5 +1,5 @@
 import {
-  AnyFloatPrimitive,
+  AnyNonMatFloatPrimitive,
   FloatPrimitive,
   Vec2Primitive,
   Vec3Primitive,
@@ -51,10 +51,10 @@ export function clamp(
 ): Expression<Vec4Primitive>;
 
 export function clamp(
-  x: Expression<AnyFloatPrimitive>,
-  minVal: Expression<AnyFloatPrimitive>,
-  maxVal: Expression<AnyFloatPrimitive>
-): Expression<AnyFloatPrimitive> {
+  x: Expression<AnyNonMatFloatPrimitive>,
+  minVal: Expression<AnyNonMatFloatPrimitive>,
+  maxVal: Expression<AnyNonMatFloatPrimitive>
+): Expression<AnyNonMatFloatPrimitive> {
   const primitive = x.primitive;
 
   return new Expression(

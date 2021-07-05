@@ -1,5 +1,5 @@
 import {
-  AnyFloatPrimitive,
+  AnyNonMatFloatPrimitive,
   FloatPrimitive,
   Vec2Primitive,
   Vec3Primitive,
@@ -37,10 +37,10 @@ export function refract(
 ): Expression<Vec4Primitive>;
 
 export function refract(
-  i: Expression<AnyFloatPrimitive>,
-  n: Expression<AnyFloatPrimitive>,
-  eta: Expression<AnyFloatPrimitive>
-): Expression<AnyFloatPrimitive> {
+  i: Expression<AnyNonMatFloatPrimitive>,
+  n: Expression<AnyNonMatFloatPrimitive>,
+  eta: Expression<AnyNonMatFloatPrimitive>
+): Expression<AnyNonMatFloatPrimitive> {
   const primitive = n.primitive;
 
   const javaScriptNDotI = new AggregateImplementation(

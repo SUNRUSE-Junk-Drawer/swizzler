@@ -1,5 +1,5 @@
 import {
-  AnyFloatPrimitive,
+  AnyNonMatFloatPrimitive,
   FloatPrimitive,
   Vec2Primitive,
   Vec3Primitive,
@@ -53,10 +53,10 @@ export function smoothstep(
 ): Expression<Vec4Primitive>;
 
 export function smoothstep(
-  edge0: Expression<AnyFloatPrimitive>,
-  edge1: Expression<AnyFloatPrimitive>,
-  x: Expression<AnyFloatPrimitive>
-): Expression<AnyFloatPrimitive> {
+  edge0: Expression<AnyNonMatFloatPrimitive>,
+  edge1: Expression<AnyNonMatFloatPrimitive>,
+  x: Expression<AnyNonMatFloatPrimitive>
+): Expression<AnyNonMatFloatPrimitive> {
   const javascriptA = new FunctionImplementation(x.primitive, "Math.max", [
     new LiteralImplementation("float", ["0"]),
     new FunctionImplementation(x.primitive, "Math.min", [

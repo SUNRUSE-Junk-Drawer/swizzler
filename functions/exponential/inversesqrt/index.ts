@@ -1,5 +1,5 @@
 import {
-  AnyFloatPrimitive,
+  AnyNonMatFloatPrimitive,
   FloatPrimitive,
   Vec2Primitive,
   Vec3Primitive,
@@ -27,8 +27,8 @@ export function inversesqrt(
 ): Expression<Vec4Primitive>;
 
 export function inversesqrt(
-  x: Expression<AnyFloatPrimitive>
-): Expression<AnyFloatPrimitive> {
+  x: Expression<AnyNonMatFloatPrimitive>
+): Expression<AnyNonMatFloatPrimitive> {
   return new Expression(
     new BinaryOperatorImplementation(
       x.primitive,

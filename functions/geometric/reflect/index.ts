@@ -1,5 +1,5 @@
 import {
-  AnyFloatPrimitive,
+  AnyNonMatFloatPrimitive,
   FloatPrimitive,
   Vec2Primitive,
   Vec3Primitive,
@@ -32,9 +32,9 @@ export function reflect(
 ): Expression<Vec4Primitive>;
 
 export function reflect(
-  i: Expression<AnyFloatPrimitive>,
-  n: Expression<AnyFloatPrimitive>
-): Expression<AnyFloatPrimitive> {
+  i: Expression<AnyNonMatFloatPrimitive>,
+  n: Expression<AnyNonMatFloatPrimitive>
+): Expression<AnyNonMatFloatPrimitive> {
   const primitive = n.primitive;
 
   return new Expression(

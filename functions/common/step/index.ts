@@ -1,5 +1,6 @@
 import {
-  AnyFloatPrimitive,
+  AnyNonMatFloatPrimitive,
+  castToBoolean,
   FloatPrimitive,
   Vec2Primitive,
   Vec3Primitive,
@@ -47,16 +48,16 @@ export function step(
 ): Expression<Vec4Primitive>;
 
 export function step(
-  edge: Expression<AnyFloatPrimitive>,
-  x: Expression<AnyFloatPrimitive>
-): Expression<AnyFloatPrimitive> {
+  edge: Expression<AnyNonMatFloatPrimitive>,
+  x: Expression<AnyNonMatFloatPrimitive>
+): Expression<AnyNonMatFloatPrimitive> {
   const primitive = x.primitive;
 
   return new Expression(
     new TernaryOperatorImplementation(
       primitive,
       new BinaryOperatorImplementation(
-        "bool", // todo: find the real primitive for this
+        castToBoolean[x.primitive],
         x.javascript,
         "<",
         edge.javascript

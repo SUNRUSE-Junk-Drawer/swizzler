@@ -6,12 +6,12 @@ import {
   Mat2Primitive,
   Mat3Primitive,
   Mat4Primitive,
-  AnyFloatPrimitive,
   IntPrimitive,
   Ivec2Primitive,
   Ivec3Primitive,
   Ivec4Primitive,
   AnyNumericPrimitive,
+  AnyMatPrimitive,
 } from "../../primitive";
 import { Expression } from "../../expression";
 import { binary } from "../../helpers";
@@ -207,8 +207,8 @@ export function multiply(
     return new Expression(
       new MatrixVectorMultiplyImplementation(
         a.primitive,
-        a.javascript as Implementation<AnyFloatPrimitive>,
-        b.javascript as Implementation<AnyFloatPrimitive>
+        a.javascript as Implementation<AnyMatPrimitive>,
+        b.javascript as Implementation<AnyMatPrimitive>
       ),
       new BinaryOperatorImplementation(a.primitive, a.glsl, "*", b.glsl)
     );
@@ -220,8 +220,8 @@ export function multiply(
     return new Expression(
       new MatrixVectorMultiplyImplementation(
         b.primitive,
-        a.javascript as Implementation<AnyFloatPrimitive>,
-        b.javascript as Implementation<AnyFloatPrimitive>
+        a.javascript as Implementation<AnyMatPrimitive>,
+        b.javascript as Implementation<AnyMatPrimitive>
       ),
       new BinaryOperatorImplementation(b.primitive, a.glsl, "*", b.glsl)
     );
@@ -233,8 +233,8 @@ export function multiply(
     return new Expression(
       new MatrixMatrixMultiplyImplementation(
         a.primitive,
-        a.javascript as Implementation<AnyFloatPrimitive>,
-        b.javascript as Implementation<AnyFloatPrimitive>
+        a.javascript as Implementation<AnyMatPrimitive>,
+        b.javascript as Implementation<AnyMatPrimitive>
       ),
       new BinaryOperatorImplementation(b.primitive, a.glsl, "*", b.glsl)
     );
