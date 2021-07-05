@@ -5,12 +5,15 @@ import {
   primitiveBases,
   primitiveArities,
   AnyPrimitive,
+  AnyCastablePrimitive,
 } from "../primitive";
 import { Expression } from "../expression";
 import { LiteralImplementation } from "../implementations/literal-implementation";
 import { BinaryOperatorImplementation } from "../implementations/binary-implementation";
 import { SwizzleImplementation } from "../implementations/swizzle-implementation";
 import { FunctionImplementation } from "../implementations/function-implementation";
+import { CastToIntImplementation } from "../implementations/cast-to-int-implementation";
+import { Implementation } from "../implementations/implementation";
 
 export function bool(
   value: boolean | Expression<AnyPrimitive>
@@ -72,26 +75,42 @@ export function float(value: number): Expression<FloatPrimitive> {
   }
 }
 
-// todo: cast
-export function int(value: number): Expression<IntPrimitive> {
-  if (Number.isNaN(value)) {
-    throw new Error(`Cannot create an int literal of NaN.`);
-  } else if (!Number.isFinite(value)) {
-    if (value > 0) {
-      throw new Error(`Cannot create an int literal of positive infinity.`);
+export function int(
+  value: number | Expression<AnyPrimitive>
+): Expression<IntPrimitive> {
+  if (typeof value === `number`) {
+    if (Number.isNaN(value)) {
+      throw new Error(`Cannot create an int literal of NaN.`);
+    } else if (!Number.isFinite(value)) {
+      if (value > 0) {
+        throw new Error(`Cannot create an int literal of positive infinity.`);
+      } else {
+        throw new Error(`Cannot create an int literal of negative infinity.`);
+      }
+    } else if (!Number.isInteger(value)) {
+      throw new Error(`Cannot create an int literal of a decimal number.`);
+    } else if (!Number.isSafeInteger(value)) {
+      throw new Error(`Cannot create an int literal of an unsafe integer.`);
     } else {
-      throw new Error(`Cannot create an int literal of negative infinity.`);
-    }
-  } else if (!Number.isInteger(value)) {
-    throw new Error(`Cannot create an int literal of a decimal number.`);
-  } else if (!Number.isSafeInteger(value)) {
-    throw new Error(`Cannot create an int literal of an unsafe integer.`);
-  } else {
-    const stringified = JSON.stringify(value);
+      const stringified = JSON.stringify(value);
 
+      return new Expression(
+        new LiteralImplementation(`int`, [stringified]),
+        new LiteralImplementation(`int`, [stringified])
+      );
+    }
+  } else {
     return new Expression(
-      new LiteralImplementation(`int`, [stringified]),
-      new LiteralImplementation(`int`, [stringified])
-    );
+      new CastToIntImplementation(
+        primitiveArities[value.primitive] === 1
+          ? (value.javascript as Implementation<AnyCastablePrimitive>)
+          : new SwizzleImplementation(
+              primitiveBases[value.primitive],
+              value.javascript,
+              [0]
+            )
+      ),
+      new FunctionImplementation(`int`, `int`, [value.glsl])
+    ) as Expression<IntPrimitive>;
   }
 }

@@ -659,3 +659,1584 @@ boolScenario(
   ({ a, b, c, d }) => bool(bvec4(a, b, c, d)),
   true
 );
+
+intScenario(
+  `int float less than -1.5`,
+  {
+    a: float(-1.6),
+  },
+  ({ a }) => add(int(16), int(a)),
+  15
+);
+
+intScenario(
+  `int float -1.5`,
+  {
+    a: float(-1.5),
+  },
+  ({ a }) => add(int(16), int(a)),
+  15
+);
+
+intScenario(
+  `int float greater than -1.5`,
+  {
+    a: float(-1.4),
+  },
+  ({ a }) => add(int(16), int(a)),
+  15
+);
+
+intScenario(
+  `int float -1`,
+  {
+    a: float(-1),
+  },
+  ({ a }) => add(int(16), int(a)),
+  15
+);
+
+intScenario(
+  `int float greater than -1`,
+  {
+    a: float(-1),
+  },
+  ({ a }) => add(int(16), int(a)),
+  15
+);
+
+intScenario(
+  `int float -0.5`,
+  {
+    a: float(-0.5),
+  },
+  ({ a }) => add(int(16), int(a)),
+  16
+);
+
+intScenario(
+  `int float greater than -0.5`,
+  {
+    a: float(-0.4),
+  },
+  ({ a }) => add(int(16), int(a)),
+  16
+);
+
+intScenario(
+  `int float zero`,
+  {
+    a: float(0),
+  },
+  ({ a }) => add(int(16), int(a)),
+  16
+);
+
+intScenario(
+  `int float less than 0.5`,
+  {
+    a: float(0.4),
+  },
+  ({ a }) => add(int(16), int(a)),
+  16
+);
+
+intScenario(
+  `int float 0.5`,
+  {
+    a: float(0.5),
+  },
+  ({ a }) => add(int(16), int(a)),
+  16
+);
+
+intScenario(
+  `int float less than 1`,
+  {
+    a: float(0.7),
+  },
+  ({ a }) => add(int(16), int(a)),
+  16
+);
+
+intScenario(
+  `int float 1`,
+  {
+    a: float(1),
+  },
+  ({ a }) => add(int(16), int(a)),
+  17
+);
+
+intScenario(
+  `int float less than 1.5`,
+  {
+    a: float(1.4),
+  },
+  ({ a }) => add(int(16), int(a)),
+  17
+);
+
+intScenario(
+  `int float 1.5`,
+  {
+    a: float(1.5),
+  },
+  ({ a }) => add(int(16), int(a)),
+  17
+);
+
+intScenario(
+  `int float greater than 1.5`,
+  {
+    a: float(1.6),
+  },
+  ({ a }) => add(int(16), int(a)),
+  17
+);
+
+intScenario(
+  `int vec2 less than -1.5`,
+  {
+    a: float(-1.6),
+    b: float(0.21),
+  },
+  ({ a, b }) => add(int(16), int(vec2(a, b))),
+  15
+);
+
+intScenario(
+  `int vec2 -1.5`,
+  {
+    a: float(-1.5),
+    b: float(0.21),
+  },
+  ({ a, b }) => add(int(16), int(vec2(a, b))),
+  15
+);
+
+intScenario(
+  `int vec2 greater than -1.5`,
+  {
+    a: float(-1.4),
+    b: float(0.21),
+  },
+  ({ a, b }) => add(int(16), int(vec2(a, b))),
+  15
+);
+
+intScenario(
+  `int vec2 -1`,
+  {
+    a: float(-1),
+    b: float(0.21),
+  },
+  ({ a, b }) => add(int(16), int(vec2(a, b))),
+  15
+);
+
+intScenario(
+  `int vec2 greater than -1`,
+  {
+    a: float(-1),
+    b: float(0.21),
+  },
+  ({ a, b }) => add(int(16), int(vec2(a, b))),
+  15
+);
+
+intScenario(
+  `int vec2 -0.5`,
+  {
+    a: float(-0.5),
+    b: float(0.21),
+  },
+  ({ a, b }) => add(int(16), int(vec2(a, b))),
+  16
+);
+
+intScenario(
+  `int vec2 greater than -0.5`,
+  {
+    a: float(-0.4),
+    b: float(0.21),
+  },
+  ({ a, b }) => add(int(16), int(vec2(a, b))),
+  16
+);
+
+intScenario(
+  `int vec2 zero`,
+  {
+    a: float(0),
+    b: float(0.21),
+  },
+  ({ a, b }) => add(int(16), int(vec2(a, b))),
+  16
+);
+
+intScenario(
+  `int vec2 less than 0.5`,
+  {
+    a: float(0.4),
+    b: float(0.21),
+  },
+  ({ a, b }) => add(int(16), int(vec2(a, b))),
+  16
+);
+
+intScenario(
+  `int vec2 0.5`,
+  {
+    a: float(0.5),
+    b: float(0.21),
+  },
+  ({ a, b }) => add(int(16), int(vec2(a, b))),
+  16
+);
+
+intScenario(
+  `int vec2 less than 1`,
+  {
+    a: float(0.7),
+    b: float(0.21),
+  },
+  ({ a, b }) => add(int(16), int(vec2(a, b))),
+  16
+);
+
+intScenario(
+  `int vec2 1`,
+  {
+    a: float(1),
+    b: float(0.21),
+  },
+  ({ a, b }) => add(int(16), int(vec2(a, b))),
+  17
+);
+
+intScenario(
+  `int vec2 less than 1.5`,
+  {
+    a: float(1.4),
+    b: float(0.21),
+  },
+  ({ a, b }) => add(int(16), int(vec2(a, b))),
+  17
+);
+
+intScenario(
+  `int vec2 1.5`,
+  {
+    a: float(1.5),
+    b: float(0.21),
+  },
+  ({ a, b }) => add(int(16), int(vec2(a, b))),
+  17
+);
+
+intScenario(
+  `int vec2 greater than 1.5`,
+  {
+    a: float(1.6),
+    b: float(0.21),
+  },
+  ({ a, b }) => add(int(16), int(vec2(a, b))),
+  17
+);
+
+intScenario(
+  `int vec3 less than -1.5`,
+  {
+    a: float(-1.6),
+    b: float(0.21),
+    c: float(0.97),
+  },
+  ({ a, b, c }) => add(int(16), int(vec3(a, b, c))),
+  15
+);
+
+intScenario(
+  `int vec3 -1.5`,
+  {
+    a: float(-1.5),
+    b: float(0.21),
+    c: float(0.97),
+  },
+  ({ a, b, c }) => add(int(16), int(vec3(a, b, c))),
+  15
+);
+
+intScenario(
+  `int vec3 greater than -1.5`,
+  {
+    a: float(-1.4),
+    b: float(0.21),
+    c: float(0.97),
+  },
+  ({ a, b, c }) => add(int(16), int(vec3(a, b, c))),
+  15
+);
+
+intScenario(
+  `int vec3 -1`,
+  {
+    a: float(-1),
+    b: float(0.21),
+    c: float(0.97),
+  },
+  ({ a, b, c }) => add(int(16), int(vec3(a, b, c))),
+  15
+);
+
+intScenario(
+  `int vec3 greater than -1`,
+  {
+    a: float(-1),
+    b: float(0.21),
+    c: float(0.97),
+  },
+  ({ a, b, c }) => add(int(16), int(vec3(a, b, c))),
+  15
+);
+
+intScenario(
+  `int vec3 -0.5`,
+  {
+    a: float(-0.5),
+    b: float(0.21),
+    c: float(0.97),
+  },
+  ({ a, b, c }) => add(int(16), int(vec3(a, b, c))),
+  16
+);
+
+intScenario(
+  `int vec3 greater than -0.5`,
+  {
+    a: float(-0.4),
+    b: float(0.21),
+    c: float(0.97),
+  },
+  ({ a, b, c }) => add(int(16), int(vec3(a, b, c))),
+  16
+);
+
+intScenario(
+  `int vec3 zero`,
+  {
+    a: float(0),
+    b: float(0.21),
+    c: float(0.97),
+  },
+  ({ a, b, c }) => add(int(16), int(vec3(a, b, c))),
+  16
+);
+
+intScenario(
+  `int vec3 less than 0.5`,
+  {
+    a: float(0.4),
+    b: float(0.21),
+    c: float(0.97),
+  },
+  ({ a, b, c }) => add(int(16), int(vec3(a, b, c))),
+  16
+);
+
+intScenario(
+  `int vec3 0.5`,
+  {
+    a: float(0.5),
+    b: float(0.21),
+    c: float(0.97),
+  },
+  ({ a, b, c }) => add(int(16), int(vec3(a, b, c))),
+  16
+);
+
+intScenario(
+  `int vec3 less than 1`,
+  {
+    a: float(0.7),
+    b: float(0.21),
+    c: float(0.97),
+  },
+  ({ a, b, c }) => add(int(16), int(vec3(a, b, c))),
+  16
+);
+
+intScenario(
+  `int vec3 1`,
+  {
+    a: float(1),
+    b: float(0.21),
+    c: float(0.97),
+  },
+  ({ a, b, c }) => add(int(16), int(vec3(a, b, c))),
+  17
+);
+
+intScenario(
+  `int vec3 less than 1.5`,
+  {
+    a: float(1.4),
+    b: float(0.21),
+    c: float(0.97),
+  },
+  ({ a, b, c }) => add(int(16), int(vec3(a, b, c))),
+  17
+);
+
+intScenario(
+  `int vec3 1.5`,
+  {
+    a: float(1.5),
+    b: float(0.21),
+    c: float(0.97),
+  },
+  ({ a, b, c }) => add(int(16), int(vec3(a, b, c))),
+  17
+);
+
+intScenario(
+  `int vec3 greater than 1.5`,
+  {
+    a: float(1.6),
+    b: float(0.21),
+    c: float(0.97),
+  },
+  ({ a, b, c }) => add(int(16), int(vec3(a, b, c))),
+  17
+);
+
+intScenario(
+  `int vec4 less than -1.5`,
+  {
+    a: float(-1.6),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(vec4(a, b, c, d))),
+  15
+);
+
+intScenario(
+  `int vec4 -1.5`,
+  {
+    a: float(-1.5),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(vec4(a, b, c, d))),
+  15
+);
+
+intScenario(
+  `int vec4 greater than -1.5`,
+  {
+    a: float(-1.4),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(vec4(a, b, c, d))),
+  15
+);
+
+intScenario(
+  `int vec4 -1`,
+  {
+    a: float(-1),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(vec4(a, b, c, d))),
+  15
+);
+
+intScenario(
+  `int vec4 greater than -1`,
+  {
+    a: float(-1),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(vec4(a, b, c, d))),
+  15
+);
+
+intScenario(
+  `int vec4 -0.5`,
+  {
+    a: float(-0.5),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(vec4(a, b, c, d))),
+  16
+);
+
+intScenario(
+  `int vec4 greater than -0.5`,
+  {
+    a: float(-0.4),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(vec4(a, b, c, d))),
+  16
+);
+
+intScenario(
+  `int vec4 zero`,
+  {
+    a: float(0),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(vec4(a, b, c, d))),
+  16
+);
+
+intScenario(
+  `int vec4 less than 0.5`,
+  {
+    a: float(0.4),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(vec4(a, b, c, d))),
+  16
+);
+
+intScenario(
+  `int vec4 0.5`,
+  {
+    a: float(0.5),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(vec4(a, b, c, d))),
+  16
+);
+
+intScenario(
+  `int vec4 less than 1`,
+  {
+    a: float(0.7),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(vec4(a, b, c, d))),
+  16
+);
+
+intScenario(
+  `int vec4 1`,
+  {
+    a: float(1),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(vec4(a, b, c, d))),
+  17
+);
+
+intScenario(
+  `int vec4 less than 1.5`,
+  {
+    a: float(1.4),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(vec4(a, b, c, d))),
+  17
+);
+
+intScenario(
+  `int vec4 1.5`,
+  {
+    a: float(1.5),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(vec4(a, b, c, d))),
+  17
+);
+
+intScenario(
+  `int vec4 greater than 1.5`,
+  {
+    a: float(1.6),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(vec4(a, b, c, d))),
+  17
+);
+
+intScenario(
+  `int mat2 less than -1.5`,
+  {
+    a: float(-1.6),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(mat2(a, b, c, d))),
+  15
+);
+
+intScenario(
+  `int mat2 -1.5`,
+  {
+    a: float(-1.5),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(mat2(a, b, c, d))),
+  15
+);
+
+intScenario(
+  `int mat2 greater than -1.5`,
+  {
+    a: float(-1.4),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(mat2(a, b, c, d))),
+  15
+);
+
+intScenario(
+  `int mat2 -1`,
+  {
+    a: float(-1),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(mat2(a, b, c, d))),
+  15
+);
+
+intScenario(
+  `int mat2 greater than -1`,
+  {
+    a: float(-1),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(mat2(a, b, c, d))),
+  15
+);
+
+intScenario(
+  `int mat2 -0.5`,
+  {
+    a: float(-0.5),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(mat2(a, b, c, d))),
+  16
+);
+
+intScenario(
+  `int mat2 greater than -0.5`,
+  {
+    a: float(-0.4),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(mat2(a, b, c, d))),
+  16
+);
+
+intScenario(
+  `int mat2 zero`,
+  {
+    a: float(0),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(mat2(a, b, c, d))),
+  16
+);
+
+intScenario(
+  `int mat2 less than 0.5`,
+  {
+    a: float(0.4),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(mat2(a, b, c, d))),
+  16
+);
+
+intScenario(
+  `int mat2 0.5`,
+  {
+    a: float(0.5),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(mat2(a, b, c, d))),
+  16
+);
+
+intScenario(
+  `int mat2 less than 1`,
+  {
+    a: float(0.7),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(mat2(a, b, c, d))),
+  16
+);
+
+intScenario(
+  `int mat2 1`,
+  {
+    a: float(1),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(mat2(a, b, c, d))),
+  17
+);
+
+intScenario(
+  `int mat2 less than 1.5`,
+  {
+    a: float(1.4),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(mat2(a, b, c, d))),
+  17
+);
+
+intScenario(
+  `int mat2 1.5`,
+  {
+    a: float(1.5),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(mat2(a, b, c, d))),
+  17
+);
+
+intScenario(
+  `int mat2 greater than 1.5`,
+  {
+    a: float(1.6),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(mat2(a, b, c, d))),
+  17
+);
+
+intScenario(
+  `int mat3 less than -1.5`,
+  {
+    a: float(-1.6),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+  },
+  ({ a, b, c, d, e, f, g, h, i }) =>
+    add(int(16), int(mat3(a, b, c, d, e, f, g, h, i))),
+  15
+);
+
+intScenario(
+  `int mat3 -1.5`,
+  {
+    a: float(-1.5),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+  },
+  ({ a, b, c, d, e, f, g, h, i }) =>
+    add(int(16), int(mat3(a, b, c, d, e, f, g, h, i))),
+  15
+);
+
+intScenario(
+  `int mat3 greater than -1.5`,
+  {
+    a: float(-1.4),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+  },
+  ({ a, b, c, d, e, f, g, h, i }) =>
+    add(int(16), int(mat3(a, b, c, d, e, f, g, h, i))),
+  15
+);
+
+intScenario(
+  `int mat3 -1`,
+  {
+    a: float(-1),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+  },
+  ({ a, b, c, d, e, f, g, h, i }) =>
+    add(int(16), int(mat3(a, b, c, d, e, f, g, h, i))),
+  15
+);
+
+intScenario(
+  `int mat3 greater than -1`,
+  {
+    a: float(-1),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+  },
+  ({ a, b, c, d, e, f, g, h, i }) =>
+    add(int(16), int(mat3(a, b, c, d, e, f, g, h, i))),
+  15
+);
+
+intScenario(
+  `int mat3 -0.5`,
+  {
+    a: float(-0.5),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+  },
+  ({ a, b, c, d, e, f, g, h, i }) =>
+    add(int(16), int(mat3(a, b, c, d, e, f, g, h, i))),
+  16
+);
+
+intScenario(
+  `int mat3 greater than -0.5`,
+  {
+    a: float(-0.4),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+  },
+  ({ a, b, c, d, e, f, g, h, i }) =>
+    add(int(16), int(mat3(a, b, c, d, e, f, g, h, i))),
+  16
+);
+
+intScenario(
+  `int mat3 zero`,
+  {
+    a: float(0),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+  },
+  ({ a, b, c, d, e, f, g, h, i }) =>
+    add(int(16), int(mat3(a, b, c, d, e, f, g, h, i))),
+  16
+);
+
+intScenario(
+  `int mat3 less than 0.5`,
+  {
+    a: float(0.4),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+  },
+  ({ a, b, c, d, e, f, g, h, i }) =>
+    add(int(16), int(mat3(a, b, c, d, e, f, g, h, i))),
+  16
+);
+
+intScenario(
+  `int mat3 0.5`,
+  {
+    a: float(0.5),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+  },
+  ({ a, b, c, d, e, f, g, h, i }) =>
+    add(int(16), int(mat3(a, b, c, d, e, f, g, h, i))),
+  16
+);
+
+intScenario(
+  `int mat3 less than 1`,
+  {
+    a: float(0.7),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+  },
+  ({ a, b, c, d, e, f, g, h, i }) =>
+    add(int(16), int(mat3(a, b, c, d, e, f, g, h, i))),
+  16
+);
+
+intScenario(
+  `int mat3 1`,
+  {
+    a: float(1),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+  },
+  ({ a, b, c, d, e, f, g, h, i }) =>
+    add(int(16), int(mat3(a, b, c, d, e, f, g, h, i))),
+  17
+);
+
+intScenario(
+  `int mat3 less than 1.5`,
+  {
+    a: float(1.4),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+  },
+  ({ a, b, c, d, e, f, g, h, i }) =>
+    add(int(16), int(mat3(a, b, c, d, e, f, g, h, i))),
+  17
+);
+
+intScenario(
+  `int mat3 1.5`,
+  {
+    a: float(1.5),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+  },
+  ({ a, b, c, d, e, f, g, h, i }) =>
+    add(int(16), int(mat3(a, b, c, d, e, f, g, h, i))),
+  17
+);
+
+intScenario(
+  `int mat3 greater than 1.5`,
+  {
+    a: float(1.6),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+  },
+  ({ a, b, c, d, e, f, g, h, i }) =>
+    add(int(16), int(mat3(a, b, c, d, e, f, g, h, i))),
+  17
+);
+
+intScenario(
+  `int mat4 less than -1.5`,
+  {
+    a: float(-1.6),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+    j: float(0.72),
+    k: float(0.41),
+    l: float(0.56),
+    m: float(0.91),
+    n: float(0.18),
+    o: float(0.37),
+    p: float(0.52),
+  },
+  ({ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p }) =>
+    add(int(16), int(mat4(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p))),
+  15
+);
+
+intScenario(
+  `int mat4 -1.5`,
+  {
+    a: float(-1.5),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+    j: float(0.72),
+    k: float(0.41),
+    l: float(0.56),
+    m: float(0.91),
+    n: float(0.18),
+    o: float(0.37),
+    p: float(0.52),
+  },
+  ({ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p }) =>
+    add(int(16), int(mat4(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p))),
+  15
+);
+
+intScenario(
+  `int mat4 greater than -1.5`,
+  {
+    a: float(-1.4),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+    j: float(0.72),
+    k: float(0.41),
+    l: float(0.56),
+    m: float(0.91),
+    n: float(0.18),
+    o: float(0.37),
+    p: float(0.52),
+  },
+  ({ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p }) =>
+    add(int(16), int(mat4(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p))),
+  15
+);
+
+intScenario(
+  `int mat4 -1`,
+  {
+    a: float(-1),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+    j: float(0.72),
+    k: float(0.41),
+    l: float(0.56),
+    m: float(0.91),
+    n: float(0.18),
+    o: float(0.37),
+    p: float(0.52),
+  },
+  ({ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p }) =>
+    add(int(16), int(mat4(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p))),
+  15
+);
+
+intScenario(
+  `int mat4 greater than -1`,
+  {
+    a: float(-1),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+    j: float(0.72),
+    k: float(0.41),
+    l: float(0.56),
+    m: float(0.91),
+    n: float(0.18),
+    o: float(0.37),
+    p: float(0.52),
+  },
+  ({ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p }) =>
+    add(int(16), int(mat4(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p))),
+  15
+);
+
+intScenario(
+  `int mat4 -0.5`,
+  {
+    a: float(-0.5),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+    j: float(0.72),
+    k: float(0.41),
+    l: float(0.56),
+    m: float(0.91),
+    n: float(0.18),
+    o: float(0.37),
+    p: float(0.52),
+  },
+  ({ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p }) =>
+    add(int(16), int(mat4(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p))),
+  16
+);
+
+intScenario(
+  `int mat4 greater than -0.5`,
+  {
+    a: float(-0.4),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+    j: float(0.72),
+    k: float(0.41),
+    l: float(0.56),
+    m: float(0.91),
+    n: float(0.18),
+    o: float(0.37),
+    p: float(0.52),
+  },
+  ({ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p }) =>
+    add(int(16), int(mat4(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p))),
+  16
+);
+
+intScenario(
+  `int mat4 zero`,
+  {
+    a: float(0),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+    j: float(0.72),
+    k: float(0.41),
+    l: float(0.56),
+    m: float(0.91),
+    n: float(0.18),
+    o: float(0.37),
+    p: float(0.52),
+  },
+  ({ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p }) =>
+    add(int(16), int(mat4(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p))),
+  16
+);
+
+intScenario(
+  `int mat4 less than 0.5`,
+  {
+    a: float(0.4),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+    j: float(0.72),
+    k: float(0.41),
+    l: float(0.56),
+    m: float(0.91),
+    n: float(0.18),
+    o: float(0.37),
+    p: float(0.52),
+  },
+  ({ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p }) =>
+    add(int(16), int(mat4(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p))),
+  16
+);
+
+intScenario(
+  `int mat4 0.5`,
+  {
+    a: float(0.5),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+    j: float(0.72),
+    k: float(0.41),
+    l: float(0.56),
+    m: float(0.91),
+    n: float(0.18),
+    o: float(0.37),
+    p: float(0.52),
+  },
+  ({ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p }) =>
+    add(int(16), int(mat4(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p))),
+  16
+);
+
+intScenario(
+  `int mat4 less than 1`,
+  {
+    a: float(0.7),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+    j: float(0.72),
+    k: float(0.41),
+    l: float(0.56),
+    m: float(0.91),
+    n: float(0.18),
+    o: float(0.37),
+    p: float(0.52),
+  },
+  ({ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p }) =>
+    add(int(16), int(mat4(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p))),
+  16
+);
+
+intScenario(
+  `int mat4 1`,
+  {
+    a: float(1),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+    j: float(0.72),
+    k: float(0.41),
+    l: float(0.56),
+    m: float(0.91),
+    n: float(0.18),
+    o: float(0.37),
+    p: float(0.52),
+  },
+  ({ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p }) =>
+    add(int(16), int(mat4(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p))),
+  17
+);
+
+intScenario(
+  `int mat4 less than 1.5`,
+  {
+    a: float(1.4),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+    j: float(0.72),
+    k: float(0.41),
+    l: float(0.56),
+    m: float(0.91),
+    n: float(0.18),
+    o: float(0.37),
+    p: float(0.52),
+  },
+  ({ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p }) =>
+    add(int(16), int(mat4(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p))),
+  17
+);
+
+intScenario(
+  `int mat4 1.5`,
+  {
+    a: float(1.5),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+    j: float(0.72),
+    k: float(0.41),
+    l: float(0.56),
+    m: float(0.91),
+    n: float(0.18),
+    o: float(0.37),
+    p: float(0.52),
+  },
+  ({ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p }) =>
+    add(int(16), int(mat4(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p))),
+  17
+);
+
+intScenario(
+  `int mat4 greater than 1.5`,
+  {
+    a: float(1.6),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+    j: float(0.72),
+    k: float(0.41),
+    l: float(0.56),
+    m: float(0.91),
+    n: float(0.18),
+    o: float(0.37),
+    p: float(0.52),
+  },
+  ({ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p }) =>
+    add(int(16), int(mat4(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p))),
+  17
+);
+
+intScenario(
+  `int int`,
+  {
+    a: int(4),
+  },
+  ({ a }) => add(int(16), int(a)),
+  20
+);
+
+intScenario(
+  `int ivec2`,
+  {
+    a: int(4),
+    b: int(21),
+  },
+  ({ a, b }) => add(int(16), int(ivec2(a, b))),
+  20
+);
+
+intScenario(
+  `int ivec3`,
+  {
+    a: int(4),
+    b: int(21),
+    c: int(97),
+  },
+  ({ a, b, c }) => add(int(16), int(ivec3(a, b, c))),
+  20
+);
+
+intScenario(
+  `int ivec4`,
+  {
+    a: int(4),
+    b: int(21),
+    c: int(97),
+    d: int(46),
+  },
+  ({ a, b, c, d }) => add(int(16), int(ivec4(a, b, c, d))),
+  20
+);
+
+intScenario(
+  `int false`,
+  {
+    a: bool(false),
+  },
+  ({ a }) => add(int(16), int(a)),
+  16
+);
+
+intScenario(
+  `int true`,
+  {
+    a: bool(true),
+  },
+  ({ a }) => add(int(16), int(a)),
+  17
+);
+
+intScenario(
+  `int bvec2 false`,
+  {
+    a: bool(false),
+    b: bool(true),
+  },
+  ({ a, b }) => add(int(16), int(bvec2(a, b))),
+  16
+);
+
+intScenario(
+  `int bvec2 true`,
+  {
+    a: bool(true),
+    b: bool(true),
+  },
+  ({ a, b }) => add(int(16), int(bvec2(a, b))),
+  17
+);
+
+intScenario(
+  `int bvec3 false`,
+  {
+    a: bool(false),
+    b: bool(true),
+    c: bool(true),
+  },
+  ({ a, b, c }) => add(int(16), int(bvec3(a, b, c))),
+  16
+);
+
+intScenario(
+  `int bvec3 true`,
+  {
+    a: bool(true),
+    b: bool(true),
+    c: bool(true),
+  },
+  ({ a, b, c }) => add(int(16), int(bvec3(a, b, c))),
+  17
+);
+
+intScenario(
+  `int bvec4 false`,
+  {
+    a: bool(false),
+    b: bool(true),
+    c: bool(true),
+    d: bool(false),
+  },
+  ({ a, b, c, d }) => add(int(16), int(bvec4(a, b, c, d))),
+  16
+);
+
+intScenario(
+  `int bvec4 true`,
+  {
+    a: bool(true),
+    b: bool(true),
+    c: bool(true),
+    d: bool(false),
+  },
+  ({ a, b, c, d }) => add(int(16), int(bvec4(a, b, c, d))),
+  17
+);
