@@ -16,6 +16,15 @@ floatScenario(
 );
 
 floatScenario(
+  "float negative zero a",
+  {},
+  () => add(float(-0), float(0.5019607843137255)),
+  0.5019607843137255
+);
+
+floatScenario("float negative zero b", {}, () => float(-0), 0);
+
+floatScenario(
   "float negative unit interval",
   {},
   () => add(float(-0.2941176470588235), float(0.5019607843137255)),
@@ -62,6 +71,10 @@ it("float negative infinity", () => {
 });
 
 intScenario("int zero", {}, () => add(int(0), int(128)), 128);
+
+intScenario("int negative zero a", {}, () => add(int(-0), int(128)), 128);
+
+intScenario("int negative zero b", {}, () => int(-0), 128);
 
 intScenario("int positive integer", {}, () => int(37), 37);
 

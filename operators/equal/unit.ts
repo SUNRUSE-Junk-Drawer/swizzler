@@ -1492,3 +1492,23 @@ boolScenario(
   ({ a, b }) => equal(a, b),
   false
 );
+
+boolScenario(
+  "equal vec negative zero",
+  {
+    a: vec4(float(0), float(-0), float(0), float(-0)),
+    b: vec4(float(0), float(0), float(-0), float(-0)),
+  },
+  ({ a, b }) => equal(a, b),
+  true
+);
+
+boolScenario(
+  "equal ivec negative zero",
+  {
+    a: ivec4(int(0), int(-0), int(0), int(-0)),
+    b: ivec4(int(0), int(0), int(-0), int(-0)),
+  },
+  ({ a, b }) => equal(a, b),
+  true
+);
