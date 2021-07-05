@@ -9,10 +9,16 @@ import { AggregateImplementation } from "../../../implementations/aggregate-impl
 import { FunctionImplementation } from "../../../implementations/function-implementation";
 
 export function all(
-  a: Expression<Bvec2Primitive | Bvec3Primitive | Bvec4Primitive>
+  a: Expression<
+    BoolPrimitive | Bvec2Primitive | Bvec3Primitive | Bvec4Primitive
+  >
 ): Expression<BoolPrimitive> {
-  return new Expression(
-    new AggregateImplementation("bool", "&&", a.javascript),
-    new FunctionImplementation("bool", "all", [a.glsl])
-  );
+  if (a.primitive === `bool`) {
+    return a as Expression<BoolPrimitive>;
+  } else {
+    return new Expression(
+      new AggregateImplementation(`bool`, `&&`, a.javascript),
+      new FunctionImplementation(`bool`, `all`, [a.glsl])
+    );
+  }
 }
