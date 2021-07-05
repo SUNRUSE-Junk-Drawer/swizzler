@@ -34,10 +34,7 @@ export type AnyBoolPrimitive =
   | Bvec4Primitive;
 
 export type AnyCastablePrimitive =
-  | FloatPrimitive
-  | Vec2Primitive
-  | Vec3Primitive
-  | Vec4Primitive
+  | AnyNonMatFloatPrimitive
   | Mat2Primitive
   | AnyIntPrimitive
   | AnyBoolPrimitive;
