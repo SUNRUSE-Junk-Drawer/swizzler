@@ -14,33 +14,38 @@ import { Four } from "../total-components";
 import { CastToFloatImplementation } from "../../implementations/cast-to-float-implementation";
 import { Implementation } from "../../implementations/implementation";
 
+/**
+ * Constructs a two-by-two float matrix.
+ * @param a The contents of the float matrix.  False = 0, true = 1.  If one component is given, it is used to create a uniform scaling matrix (X/0, 0/X).  Larger matrices will have their extra rows and columns truncated.
+ * @returns A two-by-two float matrix constructed using the given contents.
+ */
 export function mat2(
   a: Expression<BasePrimitive | Mat2Primitive | Mat3Primitive | Mat4Primitive>
 ): Expression<Mat2Primitive>;
 export function mat2(...args: Four): Expression<Mat2Primitive>;
 
 export function mat2(
-  ...args: ReadonlyArray<Expression<AnyPrimitive>>
+  ...a: ReadonlyArray<Expression<AnyPrimitive>>
 ): Expression<Mat2Primitive> {
-  if (args[0].primitive === `mat2`) {
-    return args[0] as Expression<Mat2Primitive>;
+  if (a[0].primitive === `mat2`) {
+    return a[0] as Expression<Mat2Primitive>;
   } else if (
-    args.length === 1 &&
-    args[0].primitive !== `vec4` &&
-    args[0].primitive !== `ivec4` &&
-    args[0].primitive !== `bvec4`
+    a.length === 1 &&
+    a[0].primitive !== `vec4` &&
+    a[0].primitive !== `ivec4` &&
+    a[0].primitive !== `bvec4`
   ) {
     return new Expression(
       new MatrixResizeImplementation(
         `mat2`,
         new CastToFloatImplementation(
-          args[0].javascript as Implementation<AnyCastablePrimitive>
+          a[0].javascript as Implementation<AnyCastablePrimitive>
         )
       ),
       new FunctionImplementation(
         `mat2`,
         `mat2`,
-        args.map((arg) => arg.glsl)
+        a.map((arg) => arg.glsl)
       )
     );
   } else {
@@ -48,7 +53,7 @@ export function mat2(
       new ConcatenateImplementation(
         `mat2`,
         4,
-        args.map(
+        a.map(
           (arg) =>
             new CastToFloatImplementation(
               arg.javascript as Implementation<AnyCastablePrimitive>
@@ -58,7 +63,7 @@ export function mat2(
       new FunctionImplementation(
         `mat2`,
         `mat2`,
-        args.map((arg) => arg.glsl)
+        a.map((arg) => arg.glsl)
       )
     );
   }

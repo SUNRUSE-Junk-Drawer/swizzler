@@ -10,6 +10,11 @@ import { Expression } from "../../expression";
 import { Four } from "../total-components";
 import { CastToIntImplementation } from "../../implementations/cast-to-int-implementation";
 
+/**
+ * Constructs a four-dimensional integer vector.
+ * @param a The contents of the vector.  False = 0, true = 1.  Floats will be rounded towards zero.  If one component is given, it is repeated to fill the vector.
+ * @returns A four-dimensional integer vector constructed using the given contents.
+ */
 export function ivec4(
   a: Expression<BasePrimitive | Mat2Primitive>
 ): Expression<Ivec4Primitive>;
@@ -17,18 +22,18 @@ export function ivec4(
 export function ivec4(...a: Four): Expression<Ivec4Primitive>;
 
 export function ivec4(
-  ...args: ReadonlyArray<Expression<AnyCastablePrimitive>>
+  ...a: ReadonlyArray<Expression<AnyCastablePrimitive>>
 ): Expression<Ivec4Primitive> {
   return new Expression(
     new ConcatenateImplementation(
       `ivec4`,
       4,
-      args.map((arg) => new CastToIntImplementation(arg.javascript))
+      a.map((arg) => new CastToIntImplementation(arg.javascript))
     ),
     new FunctionImplementation(
       `ivec4`,
       `ivec4`,
-      args.map((arg) => arg.glsl)
+      a.map((arg) => arg.glsl)
     )
   );
 }
