@@ -16,6 +16,9 @@
           }
         }
       },
+      "linux": {
+        "command": "npm install && xvfb-run npm test"
+      },
       "group": {
         "kind": "build",
         "isDefault": true
