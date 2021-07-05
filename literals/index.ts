@@ -3,16 +3,13 @@ import {
   IntPrimitive,
   BoolPrimitive,
   primitiveBases,
-  primitiveArities,
   AnyPrimitive,
-  AnyCastablePrimitive,
 } from "../primitive";
 import { Expression } from "../expression";
 import { LiteralImplementation } from "../implementations/literal-implementation";
 import { SwizzleImplementation } from "../implementations/swizzle-implementation";
 import { FunctionImplementation } from "../implementations/function-implementation";
 import { CastToIntImplementation } from "../implementations/cast-to-int-implementation";
-import { Implementation } from "../implementations/implementation";
 import { CastToBooleanImplementation } from "../implementations/cast-to-boolean-implementation";
 import { CastToFloatImplementation } from "../implementations/cast-to-float-implementation";
 
@@ -30,13 +27,11 @@ export function bool(
   } else {
     return new Expression(
       new CastToBooleanImplementation(
-        primitiveArities[value.primitive] === 1
-          ? (value.javascript as Implementation<AnyCastablePrimitive>)
-          : new SwizzleImplementation(
-              primitiveBases[value.primitive],
-              value.javascript,
-              [0]
-            )
+        new SwizzleImplementation(
+          primitiveBases[value.primitive],
+          value.javascript,
+          [0]
+        )
       ),
       new FunctionImplementation(`bool`, `bool`, [value.glsl])
     ) as Expression<BoolPrimitive>;
@@ -68,13 +63,11 @@ export function float(
   } else {
     return new Expression(
       new CastToFloatImplementation(
-        primitiveArities[value.primitive] === 1
-          ? (value.javascript as Implementation<AnyCastablePrimitive>)
-          : new SwizzleImplementation(
-              primitiveBases[value.primitive],
-              value.javascript,
-              [0]
-            )
+        new SwizzleImplementation(
+          primitiveBases[value.primitive],
+          value.javascript,
+          [0]
+        )
       ),
       new FunctionImplementation(`float`, `float`, [value.glsl])
     ) as Expression<FloatPrimitive>;
@@ -108,13 +101,11 @@ export function int(
   } else {
     return new Expression(
       new CastToIntImplementation(
-        primitiveArities[value.primitive] === 1
-          ? (value.javascript as Implementation<AnyCastablePrimitive>)
-          : new SwizzleImplementation(
-              primitiveBases[value.primitive],
-              value.javascript,
-              [0]
-            )
+        new SwizzleImplementation(
+          primitiveBases[value.primitive],
+          value.javascript,
+          [0]
+        )
       ),
       new FunctionImplementation(`int`, `int`, [value.glsl])
     ) as Expression<IntPrimitive>;
