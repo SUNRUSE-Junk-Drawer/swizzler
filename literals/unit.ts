@@ -74,7 +74,7 @@ intScenario("int zero", {}, () => add(int(0), int(128)), 128);
 
 intScenario("int negative zero a", {}, () => add(int(-0), int(128)), 128);
 
-intScenario("int negative zero b", {}, () => int(-0), 128);
+intScenario("int negative zero b", {}, () => int(-0), 0);
 
 intScenario("int positive integer", {}, () => int(37), 37);
 
