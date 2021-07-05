@@ -9,11 +9,11 @@ import {
 } from "../primitive";
 import { Expression } from "../expression";
 import { LiteralImplementation } from "../implementations/literal-implementation";
-import { BinaryOperatorImplementation } from "../implementations/binary-implementation";
 import { SwizzleImplementation } from "../implementations/swizzle-implementation";
 import { FunctionImplementation } from "../implementations/function-implementation";
 import { CastToIntImplementation } from "../implementations/cast-to-int-implementation";
 import { Implementation } from "../implementations/implementation";
+import { CastToBooleanImplementation } from "../implementations/cast-to-boolean-implementation";
 
 export function bool(
   value: boolean | Expression<AnyPrimitive>
@@ -27,27 +27,16 @@ export function bool(
   } else if (value.primitive === `bool`) {
     return value as Expression<BoolPrimitive>;
   } else {
-    const firstComponentJavascript =
-      primitiveArities[value.primitive] === 1
-        ? value.javascript
-        : new SwizzleImplementation(
-            primitiveBases[value.primitive],
-            value.javascript,
-            [0]
-          );
-
-    const typedJavascript =
-      firstComponentJavascript.primitive === `bool`
-        ? firstComponentJavascript
-        : new BinaryOperatorImplementation(
-            `bool`,
-            firstComponentJavascript,
-            `!=`,
-            new LiteralImplementation(firstComponentJavascript.primitive, [`0`])
-          );
-
     return new Expression(
-      typedJavascript,
+      new CastToBooleanImplementation(
+        primitiveArities[value.primitive] === 1
+          ? (value.javascript as Implementation<AnyCastablePrimitive>)
+          : new SwizzleImplementation(
+              primitiveBases[value.primitive],
+              value.javascript,
+              [0]
+            )
+      ),
       new FunctionImplementation(`bool`, `bool`, [value.glsl])
     ) as Expression<BoolPrimitive>;
   }
