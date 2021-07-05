@@ -2,6 +2,18 @@
 
 TypeScript DSL for building expressions which can be compiled to TypeScript, JavaScript and GLSL.
 
+## Design
+
+As much as possible, this library mimics the feature set of GLSL (targeting WebGL, first generation).  The full set of functionality can be found by inspecting the exported types.
+
+Inputs are declared using `reference` (for dynamic values) and `float`, `int`, etc. (for static values).  Most other exports mimic the operators (`add`, `subtract`, etc.) and functions (`sin`, `abs`, etc.) built into GLSL - though note that they manipulate logic, not values.  You must compile the expression tree to source code (`compileTypeScript`, `compileGlsl`, etc.) to execute it.
+
+The generated code will often include multiple statements.  A prefix is given for the final statement, allowing it to either be assigned to a variable, returned or given as an argument to a function, for example.
+
+The more logic can be included in a single compilation, the better a job can be done in the constant folding and optimization processes.
+
+Although TypeScript requires that the values returned by `reference`, `subtract`, etc. are visible to you, they are not intended for use other than to pass to other functions from this library and are likely to significantly change.
+
 ## Example
 
 ### Input
