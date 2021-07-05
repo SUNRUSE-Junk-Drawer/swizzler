@@ -1,4 +1,5 @@
 import {
+  divide,
   bool,
   float,
   int,
@@ -17,7 +18,6 @@ import {
   bvec4,
 } from "..";
 import { floatScenario, intScenario, boolScenario } from "../unit";
-
 floatScenario(
   `float positive unit interval`,
   {},
@@ -2239,4 +2239,226 @@ intScenario(
   },
   ({ a, b, c, d }) => add(int(16), int(bvec4(a, b, c, d))),
   17
+);
+
+floatScenario(
+  `float false`,
+  {
+    a: bool(false),
+  },
+  ({ a }) => add(float(0.5), float(a)),
+  0.5
+);
+
+floatScenario(
+  `float true`,
+  {
+    a: bool(true),
+  },
+  ({ a }) => add(float(-0.5), float(a)),
+  0.5
+);
+
+floatScenario(
+  `float bvec2 false`,
+  {
+    a: bool(false),
+    b: bool(true),
+  },
+  ({ a, b }) => add(float(0.5), float(bvec2(a, b))),
+  0.5
+);
+
+floatScenario(
+  `float bvec2 true`,
+  {
+    a: bool(true),
+    b: bool(true),
+  },
+  ({ a, b }) => add(float(-0.5), float(bvec2(a, b))),
+  0.5
+);
+
+floatScenario(
+  `float bvec3 false`,
+  {
+    a: bool(false),
+    b: bool(true),
+    c: bool(true),
+  },
+  ({ a, b, c }) => add(float(0.5), float(bvec3(a, b, c))),
+  0.5
+);
+
+floatScenario(
+  `float bvec3 true`,
+  {
+    a: bool(true),
+    b: bool(true),
+    c: bool(true),
+  },
+  ({ a, b, c }) => add(float(-0.5), float(bvec3(a, b, c))),
+  0.5
+);
+
+floatScenario(
+  `float bvec4 false`,
+  {
+    a: bool(false),
+    b: bool(true),
+    c: bool(true),
+    d: bool(false),
+  },
+  ({ a, b, c, d }) => add(float(0.5), float(bvec4(a, b, c, d))),
+  0.5
+);
+
+floatScenario(
+  `float bvec4 true`,
+  {
+    a: bool(true),
+    b: bool(true),
+    c: bool(true),
+    d: bool(false),
+  },
+  ({ a, b, c, d }) => add(float(-0.5), float(bvec4(a, b, c, d))),
+  0.5
+);
+
+floatScenario(
+  `float float`,
+  {
+    a: float(0.65),
+  },
+  ({ a }) => float(vec2(a)),
+  0.65
+);
+
+floatScenario(
+  `float vec2`,
+  {
+    a: float(0.65),
+    b: float(0.21),
+  },
+  ({ a, b }) => float(vec2(a, b)),
+  0.65
+);
+
+floatScenario(
+  `float vec3`,
+  {
+    a: float(0.65),
+    b: float(0.21),
+    c: float(0.97),
+  },
+  ({ a, b, c }) => float(vec3(a, b, c)),
+  0.65
+);
+
+floatScenario(
+  `float vec4`,
+  {
+    a: float(0.65),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => float(vec4(a, b, c, d)),
+  0.65
+);
+
+floatScenario(
+  `float mat2`,
+  {
+    a: float(0.65),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+  },
+  ({ a, b, c, d }) => float(mat2(a, b, c, d)),
+  0.65
+);
+
+floatScenario(
+  `float mat3`,
+  {
+    a: float(0.65),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+  },
+  ({ a, b, c, d, e, f, g, h, i }) => float(mat3(a, b, c, d, e, f, g, h, i)),
+  0.65
+);
+
+floatScenario(
+  `float mat4`,
+  {
+    a: float(0.65),
+    b: float(0.21),
+    c: float(0.97),
+    d: float(0.46),
+    e: float(0.31),
+    f: float(0.61),
+    g: float(0.14),
+    h: float(0.33),
+    i: float(0.89),
+    j: float(0.72),
+    k: float(0.41),
+    l: float(0.56),
+    m: float(0.91),
+    n: float(0.18),
+    o: float(0.37),
+    p: float(0.52),
+  },
+  ({ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p }) =>
+    float(mat4(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p)),
+  0.65
+);
+
+floatScenario(
+  `float int`,
+  {
+    a: int(23),
+  },
+  ({ a }) => divide(float(ivec3(a)), float(255)),
+  0.0901960784313725
+);
+
+floatScenario(
+  `float ivec2`,
+  {
+    a: int(23),
+    b: int(-4),
+  },
+  ({ a, b }) => divide(float(ivec2(a, b)), float(255)),
+  0.0901960784313725
+);
+
+floatScenario(
+  `float ivec3`,
+  {
+    a: int(23),
+    b: int(-4),
+    c: int(64),
+  },
+  ({ a, b, c }) => divide(float(ivec3(a, b, c)), float(255)),
+  0.0901960784313725
+);
+
+floatScenario(
+  `float ivec4`,
+  {
+    a: int(23),
+    b: int(-4),
+    c: int(64),
+    d: int(100),
+  },
+  ({ a, b, c, d }) => divide(float(ivec4(a, b, c, d)), float(255)),
+  0.0901960784313725
 );

@@ -14,6 +14,7 @@ import { FunctionImplementation } from "../implementations/function-implementati
 import { CastToIntImplementation } from "../implementations/cast-to-int-implementation";
 import { Implementation } from "../implementations/implementation";
 import { CastToBooleanImplementation } from "../implementations/cast-to-boolean-implementation";
+import { CastToFloatImplementation } from "../implementations/cast-to-float-implementation";
 
 export function bool(
   value: boolean | Expression<AnyPrimitive>
@@ -42,25 +43,41 @@ export function bool(
   }
 }
 
-// todo: cast
-export function float(value: number): Expression<FloatPrimitive> {
-  if (Number.isNaN(value)) {
-    throw new Error(`Cannot create a float literal of NaN.`);
-  } else if (!Number.isFinite(value)) {
-    if (value > 0) {
-      throw new Error(`Cannot create a float literal of positive infinity.`);
+export function float(
+  value: number | Expression<AnyPrimitive>
+): Expression<FloatPrimitive> {
+  if (typeof value === `number`) {
+    if (Number.isNaN(value)) {
+      throw new Error(`Cannot create a float literal of NaN.`);
+    } else if (!Number.isFinite(value)) {
+      if (value > 0) {
+        throw new Error(`Cannot create a float literal of positive infinity.`);
+      } else {
+        throw new Error(`Cannot create a float literal of negative infinity.`);
+      }
     } else {
-      throw new Error(`Cannot create a float literal of negative infinity.`);
+      const stringified = JSON.stringify(value);
+
+      return new Expression(
+        new LiteralImplementation(`float`, [stringified]),
+        new LiteralImplementation(`float`, [
+          stringified.includes(`.`) ? stringified : `${stringified}.`,
+        ])
+      );
     }
   } else {
-    const stringified = JSON.stringify(value);
-
     return new Expression(
-      new LiteralImplementation(`float`, [stringified]),
-      new LiteralImplementation(`float`, [
-        stringified.includes(`.`) ? stringified : `${stringified}.`,
-      ])
-    );
+      new CastToFloatImplementation(
+        primitiveArities[value.primitive] === 1
+          ? (value.javascript as Implementation<AnyCastablePrimitive>)
+          : new SwizzleImplementation(
+              primitiveBases[value.primitive],
+              value.javascript,
+              [0]
+            )
+      ),
+      new FunctionImplementation(`float`, `float`, [value.glsl])
+    ) as Expression<FloatPrimitive>;
   }
 }
 
