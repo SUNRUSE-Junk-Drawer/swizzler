@@ -1,6 +1,6 @@
 # `swizzler` [![Continuous Integration](https://github.com/jameswilddev/swizzler/workflows/Continuous%20Integration/badge.svg)](https://github.com/jameswilddev/swizzler/actions) [![License](https://img.shields.io/github/license/jameswilddev/swizzler.svg)](https://github.com/jameswilddev/swizzler/blob/master/license) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjameswilddev%2Fswizzler.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fjameswilddev%2Fswizzler?ref=badge_shield) [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 
-TypeScript DSL for building expressions which can be compiled to TypeScript, Javascript and GLSL.
+A TypeScript DSL for building expressions which can be compiled to TypeScript, Javascript and GLSL.
 
 ## Design
 
