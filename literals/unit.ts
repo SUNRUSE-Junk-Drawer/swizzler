@@ -18,6 +18,7 @@ import {
   bvec4,
 } from "..";
 import { floatScenario, intScenario, boolScenario } from "../unit";
+
 floatScenario(
   `float positive unit interval`,
   {},
@@ -699,10 +700,10 @@ intScenario(
 intScenario(
   `int float greater than -1`,
   {
-    a: float(-1),
+    a: float(-0.8),
   },
   ({ a }) => add(int(16), int(a)),
-  15
+  16
 );
 
 intScenario(
@@ -838,11 +839,11 @@ intScenario(
 intScenario(
   `int vec2 greater than -1`,
   {
-    a: float(-1),
+    a: float(-0.8),
     b: float(0.21),
   },
   ({ a, b }) => add(int(16), int(vec2(a, b))),
-  15
+  16
 );
 
 intScenario(
@@ -992,12 +993,12 @@ intScenario(
 intScenario(
   `int vec3 greater than -1`,
   {
-    a: float(-1),
+    a: float(-0.8),
     b: float(0.21),
     c: float(0.97),
   },
   ({ a, b, c }) => add(int(16), int(vec3(a, b, c))),
-  15
+  16
 );
 
 intScenario(
@@ -1161,13 +1162,13 @@ intScenario(
 intScenario(
   `int vec4 greater than -1`,
   {
-    a: float(-1),
+    a: float(-0.8),
     b: float(0.21),
     c: float(0.97),
     d: float(0.46),
   },
   ({ a, b, c, d }) => add(int(16), int(vec4(a, b, c, d))),
-  15
+  16
 );
 
 intScenario(
@@ -1341,13 +1342,13 @@ intScenario(
 intScenario(
   `int mat2 greater than -1`,
   {
-    a: float(-1),
+    a: float(-0.8),
     b: float(0.21),
     c: float(0.97),
     d: float(0.46),
   },
   ({ a, b, c, d }) => add(int(16), int(mat2(a, b, c, d))),
-  15
+  16
 );
 
 intScenario(
@@ -1545,7 +1546,7 @@ intScenario(
 intScenario(
   `int mat3 greater than -1`,
   {
-    a: float(-1),
+    a: float(-0.8),
     b: float(0.21),
     c: float(0.97),
     d: float(0.46),
@@ -1557,7 +1558,7 @@ intScenario(
   },
   ({ a, b, c, d, e, f, g, h, i }) =>
     add(int(16), int(mat3(a, b, c, d, e, f, g, h, i))),
-  15
+  16
 );
 
 intScenario(
@@ -1843,7 +1844,7 @@ intScenario(
 intScenario(
   `int mat4 greater than -1`,
   {
-    a: float(-1),
+    a: float(-0.8),
     b: float(0.21),
     c: float(0.97),
     d: float(0.46),
@@ -1862,7 +1863,7 @@ intScenario(
   },
   ({ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p }) =>
     add(int(16), int(mat4(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p))),
-  15
+  16
 );
 
 intScenario(
