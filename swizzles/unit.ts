@@ -1547,7 +1547,86 @@ function forVec32(
   indexB: number,
   indexC: number
 ): void {
-  // todo: is this missing something?
+  function overload(factory: Callback32, name: string): void {
+    vec3Scenario(
+      `${name} vec2`,
+      {
+        a: vec2(float(0.1843137254901961), float(0.5803921568627451)),
+      },
+      ({ a }) => factory(a),
+      [
+        [47, 148][indexA] / 255,
+        [47, 148][indexB] / 255,
+        [47, 148][indexC] / 255,
+      ]
+    );
+
+    ivec3Scenario(
+      `${name} ivec2`,
+      { a: ivec2(int(47), int(148)) },
+      ({ a }) => factory(a),
+      [[47, 148][indexA], [47, 148][indexB], [47, 148][indexC]]
+    );
+
+    bvec3Scenario(
+      `${name} bvec2 true ? ?`,
+      {
+        a: bvec2(bool(indexA === 0), bool(indexA === 1)),
+      },
+      ({ a }) => factory(a),
+      [true, null, null]
+    );
+
+    bvec3Scenario(
+      `${name} bvec2 false ? ?`,
+      {
+        a: bvec2(bool(indexA !== 0), bool(indexA !== 1)),
+      },
+      ({ a }) => factory(a),
+      [false, null, null]
+    );
+
+    bvec3Scenario(
+      `${name} bvec2 ? true ?`,
+      {
+        a: bvec2(bool(indexB === 0), bool(indexB === 1)),
+      },
+      ({ a }) => factory(a),
+      [null, true, null]
+    );
+
+    bvec3Scenario(
+      `${name} bvec2 ? false ?`,
+      {
+        a: bvec2(bool(indexB !== 0), bool(indexB !== 1)),
+      },
+      ({ a }) => factory(a),
+      [null, false, null]
+    );
+
+    bvec3Scenario(
+      `${name} bvec2 ? ? true`,
+      {
+        a: bvec2(bool(indexC === 0), bool(indexC === 1)),
+      },
+      ({ a }) => factory(a),
+      [null, null, true]
+    );
+
+    bvec3Scenario(
+      `${name} bvec2 ? ? false`,
+      {
+        a: bvec2(bool(indexC !== 0), bool(indexC !== 1)),
+      },
+      ({ a }) => factory(a),
+      [null, null, false]
+    );
+  }
+
+  overload(xyzwFactory, xyzwName);
+  overload(rgbaFactory, rgbaName);
+  overload(stpqFactory, stpqName);
+
   forVec33(
     xyzwFactory,
     xyzwName,
@@ -1578,7 +1657,90 @@ function forVec33(
   indexB: number,
   indexC: number
 ): void {
-  // todo: is this missing something?
+  function overload(factory: Callback33, name: string): void {
+    vec3Scenario(
+      `${name} vec3`,
+      {
+        a: vec3(
+          float(0.1843137254901961),
+          float(0.5803921568627451),
+          float(0.407843137254902)
+        ),
+      },
+      ({ a }) => factory(a),
+      [
+        [47, 148, 104][indexA] / 255,
+        [47, 148, 104][indexB] / 255,
+        [47, 148, 104][indexC] / 255,
+      ]
+    );
+
+    ivec3Scenario(
+      `${name} ivec3`,
+      { a: ivec3(int(47), int(148), int(104)) },
+      ({ a }) => factory(a),
+      [[47, 148, 104][indexA], [47, 148, 104][indexB], [47, 148, 104][indexC]]
+    );
+
+    bvec3Scenario(
+      `${name} bvec3 true ? ?`,
+      {
+        a: bvec3(bool(indexA === 0), bool(indexA === 1), bool(indexA === 2)),
+      },
+      ({ a }) => factory(a),
+      [true, null, null]
+    );
+
+    bvec3Scenario(
+      `${name} bvec3 false ? ?`,
+      {
+        a: bvec3(bool(indexA !== 0), bool(indexA !== 1), bool(indexA !== 2)),
+      },
+      ({ a }) => factory(a),
+      [false, null, null]
+    );
+
+    bvec3Scenario(
+      `${name} bvec3 ? true ?`,
+      {
+        a: bvec3(bool(indexB === 0), bool(indexB === 1), bool(indexB === 2)),
+      },
+      ({ a }) => factory(a),
+      [null, true, null]
+    );
+
+    bvec3Scenario(
+      `${name} bvec3 ? false ?`,
+      {
+        a: bvec3(bool(indexB !== 0), bool(indexB !== 1), bool(indexB !== 2)),
+      },
+      ({ a }) => factory(a),
+      [null, false, null]
+    );
+
+    bvec3Scenario(
+      `${name} bvec3 ? ? true`,
+      {
+        a: bvec3(bool(indexC === 0), bool(indexC === 1), bool(indexC === 2)),
+      },
+      ({ a }) => factory(a),
+      [null, null, true]
+    );
+
+    bvec3Scenario(
+      `${name} bvec3 ? ? false`,
+      {
+        a: bvec3(bool(indexC !== 0), bool(indexC !== 1), bool(indexC !== 2)),
+      },
+      ({ a }) => factory(a),
+      [null, null, false]
+    );
+  }
+
+  overload(xyzwFactory, xyzwName);
+  overload(rgbaFactory, rgbaName);
+  overload(stpqFactory, stpqName);
+
   forVec34(
     xyzwFactory,
     xyzwName,
