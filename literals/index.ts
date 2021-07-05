@@ -1,14 +1,53 @@
-import { FloatPrimitive, IntPrimitive, BoolPrimitive } from "../primitive";
+import {
+  FloatPrimitive,
+  IntPrimitive,
+  BoolPrimitive,
+  primitiveBases,
+  primitiveArities,
+  AnyPrimitive,
+} from "../primitive";
 import { Expression } from "../expression";
 import { LiteralImplementation } from "../implementations/literal-implementation";
+import { BinaryOperatorImplementation } from "../implementations/binary-implementation";
+import { SwizzleImplementation } from "../implementations/swizzle-implementation";
+import { FunctionImplementation } from "../implementations/function-implementation";
 
-// todo: cast
-export function bool(value: boolean): Expression<BoolPrimitive> {
-  const implementation = new LiteralImplementation(`bool`, [
-    JSON.stringify(value),
-  ]);
+export function bool(
+  value: boolean | Expression<AnyPrimitive>
+): Expression<BoolPrimitive> {
+  if (typeof value === `boolean`) {
+    const implementation = new LiteralImplementation(`bool`, [
+      JSON.stringify(value),
+    ]);
 
-  return new Expression(implementation, implementation);
+    return new Expression(implementation, implementation);
+  } else if (value.primitive === `bool`) {
+    return value as Expression<BoolPrimitive>;
+  } else {
+    const firstComponentJavascript =
+      primitiveArities[value.primitive] === 1
+        ? value.javascript
+        : new SwizzleImplementation(
+            primitiveBases[value.primitive],
+            value.javascript,
+            [0]
+          );
+
+    const typedJavascript =
+      firstComponentJavascript.primitive === `bool`
+        ? firstComponentJavascript
+        : new BinaryOperatorImplementation(
+            `bool`,
+            firstComponentJavascript,
+            `!=`,
+            new LiteralImplementation(firstComponentJavascript.primitive, [`0`])
+          );
+
+    return new Expression(
+      typedJavascript,
+      new FunctionImplementation(`bool`, `bool`, [value.glsl])
+    ) as Expression<BoolPrimitive>;
+  }
 }
 
 // todo: cast
