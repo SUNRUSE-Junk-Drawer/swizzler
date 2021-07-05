@@ -10,6 +10,7 @@ import {
   z,
   w,
 } from "../..";
+import { getColumn } from "../../matrix-swizzles";
 import { conditional } from "../../operators/conditional";
 import { glslScenario } from "../../unit";
 
@@ -92,8 +93,119 @@ describe("compileGlsl", () => {
     );
   });
 
-  // todo mat3 reference
-  // todo mat4 reference
+  it("mat3 reference a", () => {
+    glslScenario(
+      `precision mediump float;
+
+      void main(void) {
+        mat3 a = mat3(0.2, 0.1, 0.4, 0.31, 0.61, 0.14, 0.33, 0.89, 0.72);
+        ${compileGlsl(
+          "gl_FragColor = ",
+          add(
+            vec4(getColumn(reference("mat3", "a"), 0), float(0.5)),
+            float(0.3)
+          )
+        )}
+      }`,
+      [127.5, 102, 178.5, 204]
+    );
+  });
+
+  it("mat3 reference b", () => {
+    glslScenario(
+      `precision mediump float;
+
+      void main(void) {
+        mat3 a = mat3(0.31, 0.61, 0.14, 0.2, 0.1, 0.4, 0.33, 0.89, 0.72);
+        ${compileGlsl(
+          "gl_FragColor = ",
+          add(
+            vec4(getColumn(reference("mat3", "a"), 1), float(0.5)),
+            float(0.3)
+          )
+        )}
+      }`,
+      [127.5, 102, 178.5, 204]
+    );
+  });
+
+  it("mat3 reference c", () => {
+    glslScenario(
+      `precision mediump float;
+
+      void main(void) {
+        mat3 a = mat3(0.31, 0.61, 0.14, 0.33, 0.89, 0.72, 0.2, 0.1, 0.4);
+        ${compileGlsl(
+          "gl_FragColor = ",
+          add(
+            vec4(getColumn(reference("mat3", "a"), 2), float(0.5)),
+            float(0.3)
+          )
+        )}
+      }`,
+      [127.5, 102, 178.5, 204]
+    );
+  });
+
+  it("mat4 reference a", () => {
+    glslScenario(
+      `precision mediump float;
+
+      void main(void) {
+        mat4 a = mat4(0.2, 0.1, 0.4, 0.5, 0.31, 0.61, 0.14, 0.33, 0.89, 0.72, 0.41, 0.56, 0.91, 0.18, 0.37, 0.52);
+        ${compileGlsl(
+          "gl_FragColor = ",
+          add(getColumn(reference("mat4", "a"), 0), float(0.3))
+        )}
+      }`,
+      [127.5, 102, 178.5, 204]
+    );
+  });
+
+  it("mat4 reference b", () => {
+    glslScenario(
+      `precision mediump float;
+
+      void main(void) {
+        mat4 a = mat4(0.31, 0.61, 0.14, 0.33, 0.2, 0.1, 0.4, 0.5, 0.89, 0.72, 0.41, 0.56, 0.91, 0.18, 0.37, 0.52);
+        ${compileGlsl(
+          "gl_FragColor = ",
+          add(getColumn(reference("mat4", "a"), 1), float(0.3))
+        )}
+      }`,
+      [127.5, 102, 178.5, 204]
+    );
+  });
+
+  it("mat4 reference c", () => {
+    glslScenario(
+      `precision mediump float;
+
+      void main(void) {
+        mat4 a = mat4(0.31, 0.61, 0.14, 0.33, 0.89, 0.72, 0.41, 0.56, 0.2, 0.1, 0.4, 0.5, 0.91, 0.18, 0.37, 0.52);
+        ${compileGlsl(
+          "gl_FragColor = ",
+          add(getColumn(reference("mat4", "a"), 2), float(0.3))
+        )}
+      }`,
+      [127.5, 102, 178.5, 204]
+    );
+  });
+
+  it("mat4 reference d", () => {
+    glslScenario(
+      `precision mediump float;
+
+      void main(void) {
+        mat4 a = mat4(0.31, 0.61, 0.14, 0.33, 0.89, 0.72, 0.41, 0.56, 0.91, 0.18, 0.37, 0.52, 0.2, 0.1, 0.4, 0.5);
+        ${compileGlsl(
+          "gl_FragColor = ",
+          add(getColumn(reference("mat4", "a"), 3), float(0.3))
+        )}
+      }`,
+      [127.5, 102, 178.5, 204]
+    );
+  });
 
   it("bool reference false", () => {
     glslScenario(
