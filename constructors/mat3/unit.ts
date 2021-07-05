@@ -250,7 +250,77 @@ mat3Scenario(
   [0.75, 0.25, 0.25, 0.25, 0.75, 0.25, 0.25, 0.25, 0.75]
 );
 
-// todo bools
+mat3Scenario(
+  "mat3 bools a",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(float(0.25), multiply(float(0.5), mat3(b, a, a, a, a, a, a, a, a))),
+  [0.75, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25]
+);
+
+mat3Scenario(
+  "mat3 bools b",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(float(0.25), multiply(float(0.5), mat3(a, b, a, a, a, a, a, a, a))),
+  [0.25, 0.75, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25]
+);
+
+mat3Scenario(
+  "mat3 bools c",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(float(0.25), multiply(float(0.5), mat3(a, a, b, a, a, a, a, a, a))),
+  [0.25, 0.25, 0.75, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25]
+);
+
+mat3Scenario(
+  "mat3 bools d",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(float(0.25), multiply(float(0.5), mat3(a, a, a, b, a, a, a, a, a))),
+  [0.25, 0.25, 0.25, 0.75, 0.25, 0.25, 0.25, 0.25, 0.25]
+);
+
+mat3Scenario(
+  "mat3 bools e",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(float(0.25), multiply(float(0.5), mat3(a, a, a, a, b, a, a, a, a))),
+  [0.25, 0.25, 0.25, 0.25, 0.75, 0.25, 0.25, 0.25, 0.25]
+);
+
+mat3Scenario(
+  "mat3 bools f",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(float(0.25), multiply(float(0.5), mat3(a, a, a, a, a, b, a, a, a))),
+  [0.25, 0.25, 0.25, 0.25, 0.25, 0.75, 0.25, 0.25, 0.25]
+);
+
+mat3Scenario(
+  "mat3 bools f",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(float(0.25), multiply(float(0.5), mat3(a, a, a, a, a, a, b, a, a))),
+  [0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.75, 0.25, 0.25]
+);
+
+mat3Scenario(
+  "mat3 bools g",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(float(0.25), multiply(float(0.5), mat3(a, a, a, a, a, a, a, b, a))),
+  [0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.75, 0.25]
+);
+
+mat3Scenario(
+  "mat3 bools h",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(float(0.25), multiply(float(0.5), mat3(a, a, a, a, a, a, a, a, b))),
+  [0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.75]
+);
 
 mat3Scenario(
   "mat3 bvec2s",

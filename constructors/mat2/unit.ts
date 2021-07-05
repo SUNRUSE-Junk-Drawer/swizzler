@@ -189,7 +189,33 @@ mat2Scenario(
   [0.75, 0.25, 0.25, 0.75]
 );
 
-// todo bools
+mat2Scenario(
+  "mat2 bools a",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) => add(float(0.25), multiply(float(0.5), mat2(b, a, a, a))),
+  [0.75, 0.25, 0.25, 0.25]
+);
+
+mat2Scenario(
+  "mat2 bools b",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) => add(float(0.25), multiply(float(0.5), mat2(a, b, a, a))),
+  [0.25, 0.75, 0.25, 0.25]
+);
+
+mat2Scenario(
+  "mat2 bools c",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) => add(float(0.25), multiply(float(0.5), mat2(a, a, b, a))),
+  [0.25, 0.25, 0.75, 0.25]
+);
+
+mat2Scenario(
+  "mat2 bools d",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) => add(float(0.25), multiply(float(0.5), mat2(a, a, a, b))),
+  [0.25, 0.25, 0.25, 0.75]
+);
 
 mat2Scenario(
   "mat2 bvec2s",

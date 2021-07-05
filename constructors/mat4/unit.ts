@@ -451,7 +451,453 @@ mat4Scenario(
   ]
 );
 
-//todo bools
+mat4Scenario(
+  "mat4 bools a",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(
+      float(0.25),
+      multiply(float(0.5), mat4(b, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a))
+    ),
+  [
+    0.75,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+  ]
+);
+
+mat4Scenario(
+  "mat4 bools b",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(
+      float(0.25),
+      multiply(float(0.5), mat4(a, b, a, a, a, a, a, a, a, a, a, a, a, a, a, a))
+    ),
+  [
+    0.25,
+    0.55,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+  ]
+);
+
+mat4Scenario(
+  "mat4 bools c",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(
+      float(0.25),
+      multiply(float(0.5), mat4(a, a, b, a, a, a, a, a, a, a, a, a, a, a, a, a))
+    ),
+  [
+    0.25,
+    0.25,
+    0.75,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+  ]
+);
+
+mat4Scenario(
+  "mat4 bools d",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(
+      float(0.25),
+      multiply(float(0.5), mat4(a, a, a, b, a, a, a, a, a, a, a, a, a, a, a, a))
+    ),
+  [
+    0.25,
+    0.25,
+    0.25,
+    0.75,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+  ]
+);
+
+mat4Scenario(
+  "mat4 bools e",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(
+      float(0.25),
+      multiply(float(0.5), mat4(a, a, a, a, b, a, a, a, a, a, a, a, a, a, a, a))
+    ),
+  [
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.75,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+  ]
+);
+
+mat4Scenario(
+  "mat4 bools f",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(
+      float(0.25),
+      multiply(float(0.5), mat4(a, a, a, a, a, b, a, a, a, a, a, a, a, a, a, a))
+    ),
+  [
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.75,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+  ]
+);
+
+mat4Scenario(
+  "mat4 bools g",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(
+      float(0.25),
+      multiply(float(0.5), mat4(a, a, a, a, a, a, b, a, a, a, a, a, a, a, a, a))
+    ),
+  [
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.75,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+  ]
+);
+
+mat4Scenario(
+  "mat4 bools h",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(
+      float(0.25),
+      multiply(float(0.5), mat4(a, a, a, a, a, a, a, b, a, a, a, a, a, a, a, a))
+    ),
+  [
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.75,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+  ]
+);
+
+mat4Scenario(
+  "mat4 bools h",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(
+      float(0.25),
+      multiply(float(0.5), mat4(a, a, a, a, a, a, a, a, b, a, a, a, a, a, a, a))
+    ),
+  [
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.75,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+  ]
+);
+
+mat4Scenario(
+  "mat4 bools i",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(
+      float(0.25),
+      multiply(float(0.5), mat4(a, a, a, a, a, a, a, a, a, b, a, a, a, a, a, a))
+    ),
+  [
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.75,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+  ]
+);
+
+mat4Scenario(
+  "mat4 bools j",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(
+      float(0.25),
+      multiply(float(0.5), mat4(a, a, a, a, a, a, a, a, a, a, b, a, a, a, a, a))
+    ),
+  [
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.75,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+  ]
+);
+
+mat4Scenario(
+  "mat4 bools k",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(
+      float(0.25),
+      multiply(float(0.5), mat4(a, a, a, a, a, a, a, a, a, a, a, b, a, a, a, a))
+    ),
+  [
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.75,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+  ]
+);
+
+mat4Scenario(
+  "mat4 bools l",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(
+      float(0.25),
+      multiply(float(0.5), mat4(a, a, a, a, a, a, a, a, a, a, a, a, b, a, a, a))
+    ),
+  [
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.75,
+    0.25,
+    0.25,
+    0.25,
+  ]
+);
+
+mat4Scenario(
+  "mat4 bools m",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(
+      float(0.25),
+      multiply(float(0.5), mat4(a, a, a, a, a, a, a, a, a, a, a, a, a, b, a, a))
+    ),
+  [
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.75,
+    0.25,
+    0.25,
+  ]
+);
+
+mat4Scenario(
+  "mat4 bools n",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(
+      float(0.25),
+      multiply(float(0.5), mat4(a, a, a, a, a, a, a, a, a, a, a, a, a, a, b, a))
+    ),
+  [
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.75,
+    0.25,
+  ]
+);
+
+mat4Scenario(
+  "mat4 bools o",
+  { a: bool(false), b: bool(true) },
+  ({ a, b }) =>
+    add(
+      float(0.25),
+      multiply(float(0.5), mat4(a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, b))
+    ),
+  [
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.75,
+  ]
+);
 
 mat4Scenario(
   "mat4 bvec2s",
