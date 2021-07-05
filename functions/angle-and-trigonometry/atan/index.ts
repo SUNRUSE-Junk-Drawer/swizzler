@@ -40,6 +40,6 @@ export function atan(
   ...args: ReadonlyArray<Expression<AnyNonMatFloatPrimitive>>
 ): Expression<AnyNonMatFloatPrimitive> {
   return args.length === 1
-    ? func("Math.atan", "atan", ...args)
-    : func("Math.atan2", "atan", ...args);
+    ? func(`Math.atan`, `atan`, ...args)
+    : func(`Math.atan2`, `atan`, ...args);
 }

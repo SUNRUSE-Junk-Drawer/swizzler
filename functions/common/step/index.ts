@@ -59,14 +59,14 @@ export function step(
       new BinaryOperatorImplementation(
         castToBoolean[x.primitive],
         x.javascript,
-        "<",
+        `<`,
         edge.javascript
       ),
-      "?",
-      new LiteralImplementation("float", ["0"]),
-      ":",
-      new LiteralImplementation("float", ["1"])
+      `?`,
+      new LiteralImplementation(`float`, [`0`]),
+      `:`,
+      new LiteralImplementation(`float`, [`1`])
     ),
-    new FunctionImplementation(primitive, "step", [edge.glsl, x.glsl])
+    new FunctionImplementation(primitive, `step`, [edge.glsl, x.glsl])
   );
 }

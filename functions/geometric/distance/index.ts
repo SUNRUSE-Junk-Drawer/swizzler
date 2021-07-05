@@ -39,23 +39,23 @@ export function distance(
   const javascriptDifference = new BinaryOperatorImplementation(
     primitive,
     p0.javascript,
-    "-",
+    `-`,
     p1.javascript
   );
 
   return new Expression(
-    new FunctionImplementation("float", "Math.sqrt", [
+    new FunctionImplementation(`float`, `Math.sqrt`, [
       new AggregateImplementation(
-        "float",
-        "+",
+        `float`,
+        `+`,
         new BinaryOperatorImplementation(
           primitive,
           javascriptDifference,
-          "*",
+          `*`,
           javascriptDifference
         )
       ),
     ]),
-    new FunctionImplementation("float", "distance", [p0.glsl, p1.glsl])
+    new FunctionImplementation(`float`, `distance`, [p0.glsl, p1.glsl])
   );
 }

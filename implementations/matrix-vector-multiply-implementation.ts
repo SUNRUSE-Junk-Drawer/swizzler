@@ -31,7 +31,7 @@ export class MatrixVectorMultiplyImplementation<
           );
         }
 
-        output.push(fragments.join("+"));
+        output.push(fragments.join(`+`));
       }
     } else {
       for (let i = 0; i < renderedArgs[0].length; i++) {
@@ -45,7 +45,7 @@ export class MatrixVectorMultiplyImplementation<
           );
         }
 
-        output.push(fragments.join("+"));
+        output.push(fragments.join(`+`));
       }
     }
 

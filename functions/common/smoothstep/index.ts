@@ -57,23 +57,23 @@ export function smoothstep(
   edge1: Expression<AnyNonMatFloatPrimitive>,
   x: Expression<AnyNonMatFloatPrimitive>
 ): Expression<AnyNonMatFloatPrimitive> {
-  const javascriptA = new FunctionImplementation(x.primitive, "Math.max", [
-    new LiteralImplementation("float", ["0"]),
-    new FunctionImplementation(x.primitive, "Math.min", [
-      new LiteralImplementation("float", ["1"]),
+  const javascriptA = new FunctionImplementation(x.primitive, `Math.max`, [
+    new LiteralImplementation(`float`, [`0`]),
+    new FunctionImplementation(x.primitive, `Math.min`, [
+      new LiteralImplementation(`float`, [`1`]),
       new BinaryOperatorImplementation(
         x.primitive,
         new BinaryOperatorImplementation(
           x.primitive,
           x.javascript,
-          "-",
+          `-`,
           edge0.javascript
         ),
-        "/",
+        `/`,
         new BinaryOperatorImplementation(
           edge0.primitive,
           edge1.javascript,
-          "-",
+          `-`,
           edge0.javascript
         )
       ),
@@ -84,25 +84,25 @@ export function smoothstep(
     new BinaryOperatorImplementation(
       x.primitive,
       javascriptA,
-      "*",
+      `*`,
       new BinaryOperatorImplementation(
         x.primitive,
         javascriptA,
-        "*",
+        `*`,
         new BinaryOperatorImplementation(
           x.primitive,
-          new LiteralImplementation("float", ["3"]),
-          "-",
+          new LiteralImplementation(`float`, [`3`]),
+          `-`,
           new BinaryOperatorImplementation(
             x.primitive,
-            new LiteralImplementation("float", ["2"]),
-            "*",
+            new LiteralImplementation(`float`, [`2`]),
+            `*`,
             javascriptA
           )
         )
       )
     ),
-    new FunctionImplementation(x.primitive, "smoothstep", [
+    new FunctionImplementation(x.primitive, `smoothstep`, [
       edge0.glsl,
       edge1.glsl,
       x.glsl,

@@ -7,14 +7,14 @@ import {
 } from "../../../unit";
 
 floatScenario(
-  "mix float float float",
+  `mix float float float`,
   { x: float(0.4), y: float(0.9), a: float(0.7) },
   ({ x, y, a }) => mix(x, y, a),
   0.75
 );
 
 vec2Scenario(
-  "mix vec2 vec2 vec2",
+  `mix vec2 vec2 vec2`,
   {
     x: vec2(float(0.4), float(0.1)),
     y: vec2(float(0.9), float(0.4)),
@@ -25,7 +25,7 @@ vec2Scenario(
 );
 
 vec2Scenario(
-  "mix vec2 vec2 float",
+  `mix vec2 vec2 float`,
   {
     x: vec2(float(0.4), float(0.1)),
     y: vec2(float(0.9), float(0.4)),
@@ -36,7 +36,7 @@ vec2Scenario(
 );
 
 vec3Scenario(
-  "mix vec3 vec3 vec3",
+  `mix vec3 vec3 vec3`,
   {
     x: vec3(float(0.4), float(0.1), float(0.4)),
     y: vec3(float(0.9), float(0.4), float(0.6)),
@@ -47,7 +47,7 @@ vec3Scenario(
 );
 
 vec3Scenario(
-  "mix vec3 vec3 float",
+  `mix vec3 vec3 float`,
   {
     x: vec3(float(0.4), float(0.1), float(0.4)),
     y: vec3(float(0.9), float(0.4), float(0.6)),
@@ -58,7 +58,7 @@ vec3Scenario(
 );
 
 vec4Scenario(
-  "mix vec4 vec4 vec4",
+  `mix vec4 vec4 vec4`,
   {
     x: vec4(float(0.4), float(0.1), float(0.4), float(0.8)),
     y: vec4(float(0.9), float(0.4), float(0.6), float(0.9)),
@@ -69,7 +69,7 @@ vec4Scenario(
 );
 
 vec4Scenario(
-  "mix vec4 vec4 float",
+  `mix vec4 vec4 float`,
   {
     x: vec4(float(0.4), float(0.1), float(0.4), float(0.8)),
     y: vec4(float(0.9), float(0.4), float(0.6), float(0.9)),

@@ -38,15 +38,15 @@ export function dot(
 
   return new Expression(
     new AggregateImplementation(
-      "float",
-      "+",
+      `float`,
+      `+`,
       new BinaryOperatorImplementation(
         primitive,
         x.javascript,
-        "*",
+        `*`,
         y.javascript
       )
     ),
-    new FunctionImplementation("float", "dot", [x.glsl, y.glsl])
+    new FunctionImplementation(`float`, `dot`, [x.glsl, y.glsl])
   );
 }

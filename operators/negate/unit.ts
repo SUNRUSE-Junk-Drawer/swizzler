@@ -28,42 +28,42 @@ import {
 } from "../../unit";
 
 floatScenario(
-  "negate positive float",
+  `negate positive float`,
   { a: float(0.3) },
   ({ a }) => add(negate(a), float(0.5)),
   0.2
 );
 
 floatScenario(
-  "negate negative float",
+  `negate negative float`,
   { a: float(-0.3) },
   ({ a }) => add(negate(a), float(0.5)),
   0.8
 );
 
 vec2Scenario(
-  "negate vec2",
+  `negate vec2`,
   { a: vec2(float(0.3), float(-0.1)) },
   ({ a }) => add(negate(a), float(0.5)),
   [0.2, 0.6]
 );
 
 vec3Scenario(
-  "negate vec3",
+  `negate vec3`,
   { a: vec3(float(0.3), float(-0.1), float(0.2)) },
   ({ a }) => add(negate(a), float(0.5)),
   [0.2, 0.6, 0.3]
 );
 
 vec4Scenario(
-  "negate vec4",
+  `negate vec4`,
   { a: vec4(float(0.3), float(-0.1), float(-0.2), float(0.4)) },
   ({ a }) => add(negate(a), float(0.5)),
   [0.2, 0.6, 0.7, 0.1]
 );
 
 mat2Scenario(
-  "negate mat2",
+  `negate mat2`,
   {
     a: mat2(
       float(0.122742),
@@ -77,7 +77,7 @@ mat2Scenario(
 );
 
 mat3Scenario(
-  "negate mat3",
+  `negate mat3`,
   {
     a: mat3(
       float(0.122742),
@@ -106,7 +106,7 @@ mat3Scenario(
 );
 
 mat4Scenario(
-  "negate mat4",
+  `negate mat4`,
   {
     a: mat4(
       float(0.122742),
@@ -149,35 +149,35 @@ mat4Scenario(
 );
 
 intScenario(
-  "negate int negative",
+  `negate int negative`,
   { a: int(-27) },
   ({ a }) => add(int(128), negate(a)),
   155
 );
 
 intScenario(
-  "negate int positive",
+  `negate int positive`,
   { a: int(27) },
   ({ a }) => add(int(128), negate(a)),
   101
 );
 
 ivec2Scenario(
-  "negate ivec2",
+  `negate ivec2`,
   { a: ivec2(int(-27), int(104)) },
   ({ a }) => add(int(128), negate(a)),
   [155, 24]
 );
 
 ivec3Scenario(
-  "negate ivec3",
+  `negate ivec3`,
   { a: ivec3(int(-27), int(104), int(-66)) },
   ({ a }) => add(int(128), negate(a)),
   [155, 24, 194]
 );
 
 ivec4Scenario(
-  "negate ivec4",
+  `negate ivec4`,
   { a: ivec4(int(-27), int(104), int(-66), int(70)) },
   ({ a }) => add(int(128), negate(a)),
   [155, 24, 194, 58]

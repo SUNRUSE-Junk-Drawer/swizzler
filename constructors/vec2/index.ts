@@ -18,13 +18,13 @@ export function vec2(
 ): Expression<Vec2Primitive> {
   return new Expression(
     new ConcatenateImplementation(
-      "vec2",
+      `vec2`,
       2,
       args.map((arg) => new CastToFloatImplementation(arg.javascript))
     ),
     new FunctionImplementation(
-      "vec2",
-      "vec2",
+      `vec2`,
+      `vec2`,
       args.map((arg) => arg.glsl)
     )
   );

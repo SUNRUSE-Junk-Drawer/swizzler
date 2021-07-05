@@ -10,21 +10,21 @@ export function cross(
 ): Expression<Vec3Primitive> {
   return new Expression(
     new BinaryOperatorImplementation(
-      "vec3",
+      `vec3`,
       new BinaryOperatorImplementation(
-        "vec3",
-        new SwizzleImplementation("vec3", x.javascript, [1, 2, 0]),
-        "*",
-        new SwizzleImplementation("vec3", y.javascript, [2, 0, 1])
+        `vec3`,
+        new SwizzleImplementation(`vec3`, x.javascript, [1, 2, 0]),
+        `*`,
+        new SwizzleImplementation(`vec3`, y.javascript, [2, 0, 1])
       ),
-      "-",
+      `-`,
       new BinaryOperatorImplementation(
-        "vec3",
-        new SwizzleImplementation("vec3", x.javascript, [2, 0, 1]),
-        "*",
-        new SwizzleImplementation("vec3", y.javascript, [1, 2, 0])
+        `vec3`,
+        new SwizzleImplementation(`vec3`, x.javascript, [2, 0, 1]),
+        `*`,
+        new SwizzleImplementation(`vec3`, y.javascript, [1, 2, 0])
       )
     ),
-    new FunctionImplementation("vec3", "cross", [x.glsl, y.glsl])
+    new FunctionImplementation(`vec3`, `cross`, [x.glsl, y.glsl])
   );
 }

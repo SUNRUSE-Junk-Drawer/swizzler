@@ -18,13 +18,13 @@ export function ivec2(
 ): Expression<Ivec2Primitive> {
   return new Expression(
     new ConcatenateImplementation(
-      "ivec2",
+      `ivec2`,
       2,
       args.map((arg) => new CastToIntImplementation(arg.javascript))
     ),
     new FunctionImplementation(
-      "ivec2",
-      "ivec2",
+      `ivec2`,
+      `ivec2`,
       args.map((arg) => arg.glsl)
     )
   );

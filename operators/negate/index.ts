@@ -48,5 +48,5 @@ export function negate(
 export function negate(
   a: Expression<AnyNumericPrimitive>
 ): Expression<AnyNumericPrimitive> {
-  return unary(a.primitive, "-", a);
+  return unary(a.primitive, `-`, a);
 }

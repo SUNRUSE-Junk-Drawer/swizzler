@@ -164,5 +164,5 @@ export function subtract(
   a: Expression<AnyNumericPrimitive>,
   b: Expression<AnyNumericPrimitive>
 ): Expression<AnyNumericPrimitive> {
-  return binary(a, "-", b);
+  return binary(a, `-`, b);
 }

@@ -47,5 +47,5 @@ export function max(
   x: Expression<AnyNonMatFloatPrimitive>,
   y: Expression<AnyNonMatFloatPrimitive>
 ): Expression<AnyNonMatFloatPrimitive> {
-  return func("Math.max", "max", x, y);
+  return func(`Math.max`, `max`, x, y);
 }

@@ -20,7 +20,7 @@ import {
 } from "../..";
 import { mat4Scenario } from "../../unit";
 
-mat4Scenario("mat4 float", { a: float(0.65) }, ({ a }) => mat4(a), [
+mat4Scenario(`mat4 float`, { a: float(0.65) }, ({ a }) => mat4(a), [
   0.65,
   0,
   0,
@@ -40,7 +40,7 @@ mat4Scenario("mat4 float", { a: float(0.65) }, ({ a }) => mat4(a), [
 ]);
 
 mat4Scenario(
-  "mat4 floats",
+  `mat4 floats`,
   {
     a: float(0.65),
     b: float(0.21),
@@ -82,7 +82,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 vec2s",
+  `mat4 vec2s`,
   {
     a: vec2(float(0.65), float(0.21)),
     b: vec2(float(0.97), float(0.46)),
@@ -115,7 +115,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 vec3s",
+  `mat4 vec3s`,
   {
     a: vec3(float(0.65), float(0.21), float(0.97)),
     b: vec3(float(0.46), float(0.31), float(0.61)),
@@ -146,7 +146,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 vec4s",
+  `mat4 vec4s`,
   {
     a: vec4(float(0.65), float(0.21), float(0.97), float(0.46)),
     b: vec4(float(0.31), float(0.61), float(0.14), float(0.33)),
@@ -175,14 +175,14 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 mat2",
+  `mat4 mat2`,
   { a: mat2(float(0.65), float(0.21), float(0.97), float(0.46)) },
   ({ a }) => mat4(a),
   [0.65, 0.21, 0, 0, 0.97, 0.46, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
 );
 
 mat4Scenario(
-  "mat4 mat3",
+  `mat4 mat3`,
   {
     a: mat3(
       float(0.65),
@@ -201,7 +201,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 mat4",
+  `mat4 mat4`,
   {
     a: mat4(
       float(0.65),
@@ -244,7 +244,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 int",
+  `mat4 int`,
   { a: int(37) },
   ({ a }) => divide(mat4(a), float(255)),
   [
@@ -268,7 +268,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 ints",
+  `mat4 ints`,
   {
     a: int(37),
     b: int(18),
@@ -310,7 +310,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 ivec2s",
+  `mat4 ivec2s`,
   {
     a: ivec2(int(37), int(18)),
     b: ivec2(int(201), int(144)),
@@ -344,7 +344,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 ivec3s",
+  `mat4 ivec3s`,
   {
     a: ivec3(int(37), int(18), int(201)),
     b: ivec3(int(144), int(86), int(241)),
@@ -375,7 +375,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 ivec4s",
+  `mat4 ivec4s`,
   {
     a: ivec4(int(37), int(18), int(201), int(144)),
     b: ivec4(int(86), int(241), int(17), int(101)),
@@ -404,7 +404,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 false",
+  `mat4 false`,
   { a: float(0.5) },
   ({ a }) => add(float(0.25), multiply(a, mat4(bool(false)))),
   [
@@ -428,7 +428,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 true",
+  `mat4 true`,
   { a: bool(true) },
   ({ a }) => add(float(0.25), multiply(float(0.5), mat4(a))),
   [
@@ -452,7 +452,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 bools a",
+  `mat4 bools a`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(
@@ -480,7 +480,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 bools b",
+  `mat4 bools b`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(
@@ -508,7 +508,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 bools c",
+  `mat4 bools c`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(
@@ -536,7 +536,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 bools d",
+  `mat4 bools d`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(
@@ -564,7 +564,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 bools e",
+  `mat4 bools e`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(
@@ -592,7 +592,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 bools f",
+  `mat4 bools f`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(
@@ -620,7 +620,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 bools g",
+  `mat4 bools g`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(
@@ -648,7 +648,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 bools h",
+  `mat4 bools h`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(
@@ -676,7 +676,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 bools h",
+  `mat4 bools h`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(
@@ -704,7 +704,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 bools i",
+  `mat4 bools i`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(
@@ -732,7 +732,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 bools j",
+  `mat4 bools j`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(
@@ -760,7 +760,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 bools k",
+  `mat4 bools k`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(
@@ -788,7 +788,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 bools l",
+  `mat4 bools l`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(
@@ -816,7 +816,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 bools m",
+  `mat4 bools m`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(
@@ -844,7 +844,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 bools n",
+  `mat4 bools n`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(
@@ -872,7 +872,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 bools o",
+  `mat4 bools o`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(
@@ -900,7 +900,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 bvec2s",
+  `mat4 bvec2s`,
   {
     a: bvec2(bool(true), bool(false)),
     b: bvec2(bool(false), bool(true)),
@@ -934,7 +934,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 bvec3s",
+  `mat4 bvec3s`,
   {
     a: bvec3(bool(true), bool(false), bool(false)),
     b: bvec3(bool(true), bool(true), bool(true)),
@@ -966,7 +966,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 bvec4s",
+  `mat4 bvec4s`,
   {
     a: bvec4(bool(true), bool(false), bool(false), bool(true)),
     b: bvec4(bool(true), bool(true), bool(false), bool(false)),
@@ -995,7 +995,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "mat4 complex",
+  `mat4 complex`,
   {
     a: float(3.2),
     b: bvec2(bool(true), bool(false)),

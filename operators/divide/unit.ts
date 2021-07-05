@@ -27,14 +27,14 @@ import {
 } from "../../unit";
 
 floatScenario(
-  "divide float float",
+  `divide float float`,
   { a: float(0.2941176470588235), b: float(0.4) },
   ({ a, b }) => divide(a, b),
   0.73529411764705882352941176470588
 );
 
 vec2Scenario(
-  "divide vec2 float",
+  `divide vec2 float`,
   {
     a: vec2(float(0.2941176470588235), float(0.3490196078431373)),
     b: float(0.4),
@@ -44,7 +44,7 @@ vec2Scenario(
 );
 
 vec3Scenario(
-  "divide vec3 float",
+  `divide vec3 float`,
   {
     a: vec3(
       float(0.2941176470588235),
@@ -62,7 +62,7 @@ vec3Scenario(
 );
 
 vec4Scenario(
-  "divide vec4 float",
+  `divide vec4 float`,
   {
     a: vec4(
       float(0.2941176470588235),
@@ -82,7 +82,7 @@ vec4Scenario(
 );
 
 vec2Scenario(
-  "divide float vec2",
+  `divide float vec2`,
   {
     a: float(0.1294117647058824),
     b: vec2(float(0.2941176470588235), float(0.3490196078431373)),
@@ -92,7 +92,7 @@ vec2Scenario(
 );
 
 vec3Scenario(
-  "divide float vec3",
+  `divide float vec3`,
   {
     a: float(0.1294117647058824),
     b: vec3(
@@ -106,7 +106,7 @@ vec3Scenario(
 );
 
 vec4Scenario(
-  "divide float vec4",
+  `divide float vec4`,
   {
     a: float(0.1294117647058824),
     b: vec4(
@@ -126,7 +126,7 @@ vec4Scenario(
 );
 
 vec2Scenario(
-  "divide vec2 vec2",
+  `divide vec2 vec2`,
   {
     a: vec2(float(0.2941176470588235), float(0.1215686274509804)),
     b: vec2(float(0.4), float(0.3450980392156863)),
@@ -136,7 +136,7 @@ vec2Scenario(
 );
 
 vec3Scenario(
-  "divide vec3 vec3",
+  `divide vec3 vec3`,
   {
     a: vec3(
       float(0.2941176470588235),
@@ -154,7 +154,7 @@ vec3Scenario(
 );
 
 vec4Scenario(
-  "divide vec4 vec4",
+  `divide vec4 vec4`,
   {
     a: vec4(
       float(0.2941176470588235),
@@ -179,7 +179,7 @@ vec4Scenario(
 );
 
 mat2Scenario(
-  "divide float mat2",
+  `divide float mat2`,
   {
     a: float(0.4),
     b: mat2(
@@ -194,7 +194,7 @@ mat2Scenario(
 );
 
 mat3Scenario(
-  "divide float mat3",
+  `divide float mat3`,
   {
     a: float(0.4),
     b: mat3(
@@ -214,7 +214,7 @@ mat3Scenario(
 );
 
 mat4Scenario(
-  "divide float mat4",
+  `divide float mat4`,
   {
     a: float(0.4),
     b: mat4(
@@ -258,14 +258,14 @@ mat4Scenario(
 );
 
 mat2Scenario(
-  "divide mat2 float",
+  `divide mat2 float`,
   { a: mat2(float(0.6), float(0.8), float(0.2), float(0.9)), b: float(2.5) },
   ({ a, b }) => divide(a, b),
   [0.24, 0.32, 0.08, 0.36]
 );
 
 mat3Scenario(
-  "divide mat3 float",
+  `divide mat3 float`,
   {
     a: mat3(
       float(0.6),
@@ -285,7 +285,7 @@ mat3Scenario(
 );
 
 mat4Scenario(
-  "divide mat4 float",
+  `divide mat4 float`,
   {
     a: mat4(
       float(0.6),
@@ -329,7 +329,7 @@ mat4Scenario(
 );
 
 mat2Scenario(
-  "divide mat2 mat2",
+  `divide mat2 mat2`,
   {
     a: mat2(float(0.6), float(0.8), float(0.2), float(0.9)),
     b: mat2(float(2.4), float(4.2), float(2.7), float(1.9)),
@@ -339,7 +339,7 @@ mat2Scenario(
 );
 
 mat3Scenario(
-  "divide mat3 mat3",
+  `divide mat3 mat3`,
   {
     a: mat3(
       float(0.6),
@@ -379,7 +379,7 @@ mat3Scenario(
 );
 
 mat4Scenario(
-  "divide mat4 mat4",
+  `divide mat4 mat4`,
   {
     a: mat4(
       float(0.6),
@@ -442,70 +442,70 @@ mat4Scenario(
 );
 
 intScenario(
-  "divide int int",
+  `divide int int`,
   { a: int(27), b: int(4) },
   ({ a, b }) => divide(a, b),
   6
 );
 
 ivec2Scenario(
-  "divide ivec2 int",
+  `divide ivec2 int`,
   { a: int(29), b: int(100) },
   ({ a, b }) => divide(ivec2(a, b), int(3)),
   [9, 33]
 );
 
 ivec3Scenario(
-  "divide ivec3 int",
+  `divide ivec3 int`,
   { a: ivec3(int(29), int(100), int(41)), b: int(3) },
   ({ a, b }) => divide(a, b),
   [9, 33, 13]
 );
 
 ivec4Scenario(
-  "divide ivec4 int",
+  `divide ivec4 int`,
   { a: ivec4(int(29), int(100), int(41), int(8)), b: int(3) },
   ({ a, b }) => divide(a, b),
   [9, 33, 13, 2]
 );
 
 ivec2Scenario(
-  "divide int ivec2",
+  `divide int ivec2`,
   { a: int(201), b: ivec2(int(4), int(7)) },
   ({ a, b }) => divide(a, b),
   [50, 28]
 );
 
 ivec3Scenario(
-  "divide int ivec3",
+  `divide int ivec3`,
   { a: int(201), b: ivec3(int(4), int(7), int(2)) },
   ({ a, b }) => divide(a, b),
   [50, 28, 100]
 );
 
 ivec4Scenario(
-  "divide int ivec4",
+  `divide int ivec4`,
   { a: int(201), b: ivec4(int(4), int(7), int(2), int(12)) },
   ({ a, b }) => divide(a, b),
   [50, 28, 100, 16]
 );
 
 ivec2Scenario(
-  "divide ivec2 ivec2",
+  `divide ivec2 ivec2`,
   { a: ivec2(int(27), int(100)), b: ivec2(int(4), int(2)) },
   ({ a, b }) => divide(a, b),
   [6, 50]
 );
 
 ivec3Scenario(
-  "divide ivec3 ivec3",
+  `divide ivec3 ivec3`,
   { a: ivec3(int(27), int(100), int(41)), b: ivec3(int(4), int(2), int(5)) },
   ({ a, b }) => divide(a, b),
   [6, 50, 8]
 );
 
 ivec4Scenario(
-  "divide ivec4 ivec4",
+  `divide ivec4 ivec4`,
   {
     a: ivec4(int(27), int(100), int(41), int(8)),
     b: ivec4(int(4), int(2), int(5), int(3)),

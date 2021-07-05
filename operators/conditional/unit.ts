@@ -35,7 +35,7 @@ import {
 } from "../../unit";
 
 floatScenario(
-  "conditional false float float",
+  `conditional false float float`,
   {
     a: bool(false),
     b: float(0.1882352941176471),
@@ -46,7 +46,7 @@ floatScenario(
 );
 
 floatScenario(
-  "conditional true float float",
+  `conditional true float float`,
   {
     a: bool(true),
     b: float(0.1882352941176471),
@@ -57,7 +57,7 @@ floatScenario(
 );
 
 vec2Scenario(
-  "conditional false vec2 vec2",
+  `conditional false vec2 vec2`,
   {
     a: bool(false),
     b: vec2(float(0.1882352941176471), float(0.4117647058823529)),
@@ -68,7 +68,7 @@ vec2Scenario(
 );
 
 vec2Scenario(
-  "conditional true vec2 vec2",
+  `conditional true vec2 vec2`,
   {
     a: bool(true),
     b: vec2(float(0.1882352941176471), float(0.4117647058823529)),
@@ -79,7 +79,7 @@ vec2Scenario(
 );
 
 vec3Scenario(
-  "conditional false vec3 vec3",
+  `conditional false vec3 vec3`,
   {
     a: bool(false),
     b: vec3(
@@ -98,7 +98,7 @@ vec3Scenario(
 );
 
 vec3Scenario(
-  "conditional true vec3 vec3",
+  `conditional true vec3 vec3`,
   {
     a: bool(true),
     b: vec3(
@@ -117,7 +117,7 @@ vec3Scenario(
 );
 
 vec4Scenario(
-  "conditional false vec4 vec4",
+  `conditional false vec4 vec4`,
   {
     a: bool(false),
     b: vec4(
@@ -143,7 +143,7 @@ vec4Scenario(
 );
 
 vec4Scenario(
-  "conditional true vec4 vec4",
+  `conditional true vec4 vec4`,
   {
     a: bool(true),
     b: vec4(
@@ -169,7 +169,7 @@ vec4Scenario(
 );
 
 mat2Scenario(
-  "conditional false mat2 mat2",
+  `conditional false mat2 mat2`,
   {
     a: bool(false),
     b: mat2(
@@ -195,7 +195,7 @@ mat2Scenario(
 );
 
 mat2Scenario(
-  "conditional true mat2 mat2",
+  `conditional true mat2 mat2`,
   {
     a: bool(true),
     b: mat2(
@@ -221,7 +221,7 @@ mat2Scenario(
 );
 
 mat3Scenario(
-  "conditional false mat3 mat3",
+  `conditional false mat3 mat3`,
   {
     a: bool(false),
     b: mat3(
@@ -252,7 +252,7 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "conditional true mat3 mat3",
+  `conditional true mat3 mat3`,
   {
     a: bool(true),
     b: mat3(
@@ -283,7 +283,7 @@ mat3Scenario(
 );
 
 mat4Scenario(
-  "conditional false mat4 mat4",
+  `conditional false mat4 mat4`,
   {
     a: bool(false),
     b: mat4(
@@ -345,7 +345,7 @@ mat4Scenario(
 );
 
 mat4Scenario(
-  "conditional true mat4 mat4",
+  `conditional true mat4 mat4`,
   {
     a: bool(true),
     b: mat4(
@@ -407,7 +407,7 @@ mat4Scenario(
 );
 
 intScenario(
-  "conditional false int int",
+  `conditional false int int`,
   {
     a: bool(false),
     b: int(72),
@@ -418,7 +418,7 @@ intScenario(
 );
 
 intScenario(
-  "conditional true int int",
+  `conditional true int int`,
   {
     a: bool(true),
     b: int(72),
@@ -429,7 +429,7 @@ intScenario(
 );
 
 ivec2Scenario(
-  "conditional false ivec2 ivec2",
+  `conditional false ivec2 ivec2`,
   {
     a: bool(false),
     b: ivec2(int(72), int(201)),
@@ -440,7 +440,7 @@ ivec2Scenario(
 );
 
 ivec2Scenario(
-  "conditional true ivec2 ivec2",
+  `conditional true ivec2 ivec2`,
   {
     a: bool(true),
     b: ivec2(int(72), int(201)),
@@ -451,7 +451,7 @@ ivec2Scenario(
 );
 
 ivec3Scenario(
-  "conditional false ivec3 ivec3",
+  `conditional false ivec3 ivec3`,
   {
     a: bool(false),
     b: ivec3(int(72), int(201), int(154)),
@@ -462,7 +462,7 @@ ivec3Scenario(
 );
 
 ivec3Scenario(
-  "conditional true ivec3 ivec3",
+  `conditional true ivec3 ivec3`,
   {
     a: bool(true),
     b: ivec3(int(72), int(201), int(154)),
@@ -473,7 +473,7 @@ ivec3Scenario(
 );
 
 ivec4Scenario(
-  "conditional false ivec4 ivec4",
+  `conditional false ivec4 ivec4`,
   {
     a: bool(false),
     b: ivec4(int(72), int(201), int(154), int(68)),
@@ -484,7 +484,7 @@ ivec4Scenario(
 );
 
 ivec4Scenario(
-  "conditional true ivec4 ivec4",
+  `conditional true ivec4 ivec4`,
   {
     a: bool(true),
     b: ivec4(int(72), int(201), int(154), int(68)),
@@ -495,7 +495,7 @@ ivec4Scenario(
 );
 
 boolScenario(
-  "conditional false false false",
+  `conditional false false false`,
   {
     a: bool(false),
     b: bool(false),
@@ -506,7 +506,7 @@ boolScenario(
 );
 
 boolScenario(
-  "conditional false false true",
+  `conditional false false true`,
   {
     a: bool(false),
     b: bool(false),
@@ -517,7 +517,7 @@ boolScenario(
 );
 
 boolScenario(
-  "conditional false true false",
+  `conditional false true false`,
   {
     a: bool(false),
     b: bool(true),
@@ -528,7 +528,7 @@ boolScenario(
 );
 
 boolScenario(
-  "conditional false true true",
+  `conditional false true true`,
   {
     a: bool(false),
     b: bool(true),
@@ -539,7 +539,7 @@ boolScenario(
 );
 
 boolScenario(
-  "conditional true false false",
+  `conditional true false false`,
   {
     a: bool(true),
     b: bool(false),
@@ -550,7 +550,7 @@ boolScenario(
 );
 
 boolScenario(
-  "conditional true false true",
+  `conditional true false true`,
   {
     a: bool(true),
     b: bool(false),
@@ -561,7 +561,7 @@ boolScenario(
 );
 
 boolScenario(
-  "conditional true true false",
+  `conditional true true false`,
   {
     a: bool(true),
     b: bool(true),
@@ -572,7 +572,7 @@ boolScenario(
 );
 
 boolScenario(
-  "conditional true true true",
+  `conditional true true true`,
   {
     a: bool(true),
     b: bool(true),
@@ -583,7 +583,7 @@ boolScenario(
 );
 
 bvec2Scenario(
-  "conditional false bvec2 bvec2",
+  `conditional false bvec2 bvec2`,
   {
     a: bool(false),
     b: bvec2(bool(true), bool(false)),
@@ -594,7 +594,7 @@ bvec2Scenario(
 );
 
 bvec2Scenario(
-  "conditional true bvec2 bvec2",
+  `conditional true bvec2 bvec2`,
   {
     a: bool(true),
     b: bvec2(bool(true), bool(false)),
@@ -605,7 +605,7 @@ bvec2Scenario(
 );
 
 bvec3Scenario(
-  "conditional false bvec3 bvec3",
+  `conditional false bvec3 bvec3`,
   {
     a: bool(false),
     b: bvec3(bool(true), bool(true), bool(false)),
@@ -616,7 +616,7 @@ bvec3Scenario(
 );
 
 bvec3Scenario(
-  "conditional true bvec3 bvec3",
+  `conditional true bvec3 bvec3`,
   {
     a: bool(true),
     b: bvec3(bool(true), bool(true), bool(false)),
@@ -627,7 +627,7 @@ bvec3Scenario(
 );
 
 bvec4Scenario(
-  "conditional false bvec4 bvec4",
+  `conditional false bvec4 bvec4`,
   {
     a: bool(false),
     b: bvec4(bool(true), bool(true), bool(false), bool(true)),
@@ -638,7 +638,7 @@ bvec4Scenario(
 );
 
 bvec4Scenario(
-  "conditional true bvec4 bvec4",
+  `conditional true bvec4 bvec4`,
   {
     a: bool(true),
     b: bvec4(bool(true), bool(true), bool(false), bool(true)),

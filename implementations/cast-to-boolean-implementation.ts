@@ -18,7 +18,7 @@ export class CastToBooleanImplementation<TFrom extends AnyCastablePrimitive>
   render(
     renderedArgs: ReadonlyArray<ReadonlyArray<string>>
   ): ReadonlyArray<string> {
-    if (primitiveBases[this.a.primitive] === "bool") {
+    if (primitiveBases[this.a.primitive] === `bool`) {
       return renderedArgs[0];
     } else {
       return renderedArgs[0].map((dimension) => `!!(${dimension})`);

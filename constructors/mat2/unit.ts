@@ -20,7 +20,7 @@ import {
 } from "../..";
 import { mat2Scenario } from "../../unit";
 
-mat2Scenario("mat2 float", { a: float(0.65) }, ({ a }) => mat2(a), [
+mat2Scenario(`mat2 float`, { a: float(0.65) }, ({ a }) => mat2(a), [
   0.65,
   0,
   0,
@@ -28,7 +28,7 @@ mat2Scenario("mat2 float", { a: float(0.65) }, ({ a }) => mat2(a), [
 ]);
 
 mat2Scenario(
-  "mat2 floats",
+  `mat2 floats`,
   {
     a: float(0.65),
     b: float(0.21),
@@ -40,14 +40,14 @@ mat2Scenario(
 );
 
 mat2Scenario(
-  "mat2 vec2s",
+  `mat2 vec2s`,
   { a: vec2(float(0.65), float(0.21)), b: vec2(float(0.97), float(0.46)) },
   ({ a, b }) => mat2(a, b),
   [0.65, 0.21, 0.97, 0.46]
 );
 
 mat2Scenario(
-  "mat2 vec3s",
+  `mat2 vec3s`,
   {
     a: vec3(float(0.65), float(0.21), float(0.97)),
     b: float(0.46),
@@ -57,21 +57,21 @@ mat2Scenario(
 );
 
 mat2Scenario(
-  "mat2 vec4",
+  `mat2 vec4`,
   { a: vec4(float(0.65), float(0.21), float(0.97), float(0.46)) },
   ({ a }) => mat2(a),
   [0.65, 0.21, 0.97, 0.46]
 );
 
 mat2Scenario(
-  "mat2 mat2",
+  `mat2 mat2`,
   { a: mat2(float(0.65), float(0.21), float(0.97), float(0.46)) },
   ({ a }) => mat2(a),
   [0.65, 0.21, 0.97, 0.46]
 );
 
 mat2Scenario(
-  "mat2 mat3",
+  `mat2 mat3`,
   {
     a: mat3(
       float(0.65),
@@ -90,7 +90,7 @@ mat2Scenario(
 );
 
 mat2Scenario(
-  "mat2 mat4",
+  `mat2 mat4`,
   {
     a: mat4(
       float(0.65),
@@ -116,14 +116,14 @@ mat2Scenario(
 );
 
 mat2Scenario(
-  "mat2 int",
+  `mat2 int`,
   { a: int(37) },
   ({ a }) => divide(mat2(a), float(255)),
   [0.1450980392156863, 0, 0, 0.1450980392156863]
 );
 
 mat2Scenario(
-  "mat2 ints",
+  `mat2 ints`,
   {
     a: int(37),
     b: int(18),
@@ -140,7 +140,7 @@ mat2Scenario(
 );
 
 mat2Scenario(
-  "mat2 ivec2s",
+  `mat2 ivec2s`,
   { a: ivec2(int(37), int(18)), b: ivec2(int(201), int(144)) },
   ({ a, b }) => divide(mat2(a, b), float(255)),
   [
@@ -152,7 +152,7 @@ mat2Scenario(
 );
 
 mat2Scenario(
-  "mat2 ivec3s",
+  `mat2 ivec3s`,
   { a: ivec3(int(37), int(18), int(201)), b: int(144) },
   ({ a, b }) => divide(mat2(a, b), float(255)),
   [
@@ -164,7 +164,7 @@ mat2Scenario(
 );
 
 mat2Scenario(
-  "mat2 ivec4",
+  `mat2 ivec4`,
   { a: ivec4(int(37), int(18), int(201), int(144)) },
   ({ a }) => divide(mat2(a), float(255)),
   [
@@ -176,70 +176,70 @@ mat2Scenario(
 );
 
 mat2Scenario(
-  "mat2 false",
+  `mat2 false`,
   { a: bool(false) },
   ({ a }) => add(float(0.25), multiply(float(0.5), mat2(a))),
   [0.25, 0.25, 0.25, 0.25]
 );
 
 mat2Scenario(
-  "mat2 true",
+  `mat2 true`,
   { a: bool(true) },
   ({ a }) => add(float(0.25), multiply(float(0.5), mat2(a))),
   [0.75, 0.25, 0.25, 0.75]
 );
 
 mat2Scenario(
-  "mat2 bools a",
+  `mat2 bools a`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) => add(float(0.25), multiply(float(0.5), mat2(b, a, a, a))),
   [0.75, 0.25, 0.25, 0.25]
 );
 
 mat2Scenario(
-  "mat2 bools b",
+  `mat2 bools b`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) => add(float(0.25), multiply(float(0.5), mat2(a, b, a, a))),
   [0.25, 0.75, 0.25, 0.25]
 );
 
 mat2Scenario(
-  "mat2 bools c",
+  `mat2 bools c`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) => add(float(0.25), multiply(float(0.5), mat2(a, a, b, a))),
   [0.25, 0.25, 0.75, 0.25]
 );
 
 mat2Scenario(
-  "mat2 bools d",
+  `mat2 bools d`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) => add(float(0.25), multiply(float(0.5), mat2(a, a, a, b))),
   [0.25, 0.25, 0.25, 0.75]
 );
 
 mat2Scenario(
-  "mat2 bvec2s",
+  `mat2 bvec2s`,
   { a: bvec2(bool(true), bool(false)), b: bvec2(bool(false), bool(true)) },
   ({ a, b }) => add(float(0.25), multiply(float(0.5), mat2(a, b))),
   [0.75, 0.25, 0.25, 0.75]
 );
 
 mat2Scenario(
-  "mat2 bvec3s",
+  `mat2 bvec3s`,
   { a: bvec3(bool(true), bool(false), bool(false)), b: bool(true) },
   ({ a, b }) => add(float(0.25), multiply(float(0.5), mat2(a, b))),
   [0.75, 0.25, 0.25, 0.75]
 );
 
 mat2Scenario(
-  "mat2 bvec4",
+  `mat2 bvec4`,
   { a: bvec4(bool(true), bool(false), bool(false), bool(true)) },
   ({ a }) => add(float(0.25), multiply(float(0.5), mat2(a))),
   [0.75, 0.25, 0.25, 0.75]
 );
 
 mat2Scenario(
-  "mat2 complex",
+  `mat2 complex`,
   {
     a: float(3.2),
     b: bvec2(bool(true), bool(false)),

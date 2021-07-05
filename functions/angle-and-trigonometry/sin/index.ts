@@ -27,5 +27,5 @@ export function sin(
 export function sin(
   angle: Expression<AnyNonMatFloatPrimitive>
 ): Expression<AnyNonMatFloatPrimitive> {
-  return func("Math.sin", "sin", angle);
+  return func(`Math.sin`, `sin`, angle);
 }

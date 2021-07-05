@@ -7,7 +7,7 @@ import {
 } from "../../../unit";
 
 floatScenario(
-  "refract float positive negative",
+  `refract float positive negative`,
   {
     n: float(1),
     i: float(-1),
@@ -18,7 +18,7 @@ floatScenario(
 );
 
 floatScenario(
-  "refract float positive positive",
+  `refract float positive positive`,
   {
     n: float(1),
     i: float(1),
@@ -29,7 +29,7 @@ floatScenario(
 );
 
 floatScenario(
-  "refract float negative positive",
+  `refract float negative positive`,
   {
     n: float(-1),
     i: float(1),
@@ -40,7 +40,7 @@ floatScenario(
 );
 
 floatScenario(
-  "refract float negative negative",
+  `refract float negative negative`,
   {
     n: float(-1),
     i: float(-1),
@@ -50,7 +50,7 @@ floatScenario(
   0.75
 );
 vec2Scenario(
-  "refract vec2",
+  `refract vec2`,
   {
     n: vec2(float(0.39391932), float(-0.91914505)),
     i: vec2(float(-0.8574929), float(0.51449573)),
@@ -61,7 +61,7 @@ vec2Scenario(
 );
 
 vec3Scenario(
-  "refract vec3",
+  `refract vec3`,
   {
     n: vec3(float(0.27160725), float(-0.63375026), float(0.724286)),
     i: vec3(float(-0.43919685), float(0.26351812), float(-0.85887384)),
@@ -72,7 +72,7 @@ vec3Scenario(
 );
 
 vec4Scenario(
-  "refract vec4",
+  `refract vec4`,
   {
     n: vec4(
       float(0.26726127),

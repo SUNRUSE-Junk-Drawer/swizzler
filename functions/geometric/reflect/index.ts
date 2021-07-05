@@ -41,28 +41,28 @@ export function reflect(
     new BinaryOperatorImplementation(
       primitive,
       i.javascript,
-      "-",
+      `-`,
       new BinaryOperatorImplementation(
         primitive,
-        new LiteralImplementation("float", ["2"]),
-        "*",
+        new LiteralImplementation(`float`, [`2`]),
+        `*`,
         new BinaryOperatorImplementation(
           primitive,
           new AggregateImplementation(
-            "float",
-            "+",
+            `float`,
+            `+`,
             new BinaryOperatorImplementation(
               primitive,
               n.javascript,
-              "*",
+              `*`,
               i.javascript
             )
           ),
-          "*",
+          `*`,
           n.javascript
         )
       )
     ),
-    new FunctionImplementation(primitive, "reflect", [i.glsl, n.glsl])
+    new FunctionImplementation(primitive, `reflect`, [i.glsl, n.glsl])
   );
 }

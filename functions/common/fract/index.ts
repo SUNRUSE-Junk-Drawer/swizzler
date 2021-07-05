@@ -26,9 +26,9 @@ export function fract(
     new BinaryOperatorImplementation(
       x.primitive,
       x.javascript,
-      "-",
-      new FunctionImplementation(x.primitive, "Math.floor", [x.javascript])
+      `-`,
+      new FunctionImplementation(x.primitive, `Math.floor`, [x.javascript])
     ),
-    new FunctionImplementation(x.primitive, "fract", [x.glsl])
+    new FunctionImplementation(x.primitive, `fract`, [x.glsl])
   );
 }

@@ -48,26 +48,26 @@ export function faceforward(
     new TernaryOperatorImplementation(
       primitive,
       new BinaryOperatorImplementation(
-        "bool",
+        `bool`,
         new AggregateImplementation(
-          "float",
-          "+",
+          `float`,
+          `+`,
           new BinaryOperatorImplementation(
             primitive,
             nRef.javascript,
-            "*",
+            `*`,
             i.javascript
           )
         ),
-        "<",
-        new LiteralImplementation("float", ["0"])
+        `<`,
+        new LiteralImplementation(`float`, [`0`])
       ),
-      "?",
+      `?`,
       n.javascript,
-      ":",
-      new UnaryOperatorImplementation(primitive, "-", n.javascript)
+      `:`,
+      new UnaryOperatorImplementation(primitive, `-`, n.javascript)
     ),
-    new FunctionImplementation(primitive, "faceforward", [
+    new FunctionImplementation(primitive, `faceforward`, [
       n.glsl,
       i.glsl,
       nRef.glsl,

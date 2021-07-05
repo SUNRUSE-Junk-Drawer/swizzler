@@ -19,5 +19,5 @@ export function sqrt(x: Expression<Vec4Primitive>): Expression<Vec4Primitive>;
 export function sqrt(
   x: Expression<AnyNonMatFloatPrimitive>
 ): Expression<AnyNonMatFloatPrimitive> {
-  return func("Math.sqrt", "sqrt", x);
+  return func(`Math.sqrt`, `sqrt`, x);
 }

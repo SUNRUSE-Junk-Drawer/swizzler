@@ -19,5 +19,5 @@ export function acos(x: Expression<Vec4Primitive>): Expression<Vec4Primitive>;
 export function acos(
   x: Expression<AnyNonMatFloatPrimitive>
 ): Expression<AnyNonMatFloatPrimitive> {
-  return func("Math.acos", "acos", x);
+  return func(`Math.acos`, `acos`, x);
 }

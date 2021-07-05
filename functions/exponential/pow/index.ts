@@ -32,5 +32,5 @@ export function pow(
   x: Expression<AnyNonMatFloatPrimitive>,
   y: Expression<AnyNonMatFloatPrimitive>
 ): Expression<AnyNonMatFloatPrimitive> {
-  return func("Math.pow", "pow", x, y);
+  return func(`Math.pow`, `pow`, x, y);
 }

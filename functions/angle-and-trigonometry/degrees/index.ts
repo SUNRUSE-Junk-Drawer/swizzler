@@ -35,9 +35,9 @@ export function degrees(
     new BinaryOperatorImplementation(
       primitive,
       radians.javascript,
-      "*",
-      new LiteralImplementation("float", [JSON.stringify(180 / Math.PI)])
+      `*`,
+      new LiteralImplementation(`float`, [JSON.stringify(180 / Math.PI)])
     ),
-    new FunctionImplementation(primitive, "degrees", [radians.glsl])
+    new FunctionImplementation(primitive, `degrees`, [radians.glsl])
   );
 }

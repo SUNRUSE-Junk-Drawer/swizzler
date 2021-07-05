@@ -6,5 +6,5 @@ export function or(
   a: Expression<BoolPrimitive>,
   b: Expression<BoolPrimitive>
 ): Expression<BoolPrimitive> {
-  return binary(a, "||", b);
+  return binary(a, `||`, b);
 }

@@ -27,5 +27,5 @@ export function tan(
 export function tan(
   angle: Expression<AnyNonMatFloatPrimitive>
 ): Expression<AnyNonMatFloatPrimitive> {
-  return func("Math.tan", "tan", angle);
+  return func(`Math.tan`, `tan`, angle);
 }

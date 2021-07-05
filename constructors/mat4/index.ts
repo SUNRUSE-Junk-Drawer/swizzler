@@ -22,26 +22,26 @@ export function mat4(...args: Sixteen): Expression<Mat4Primitive>;
 export function mat4(
   ...args: ReadonlyArray<Expression<AnyPrimitive>>
 ): Expression<Mat4Primitive> {
-  if (args[0].primitive === "mat4") {
+  if (args[0].primitive === `mat4`) {
     return args[0] as Expression<Mat4Primitive>;
   } else if (args.length === 1) {
     return new Expression(
       new MatrixResizeImplementation(
-        "mat4",
+        `mat4`,
         new CastToFloatImplementation(
           args[0].javascript as Implementation<AnyCastablePrimitive>
         )
       ),
       new FunctionImplementation(
-        "mat4",
-        "mat4",
+        `mat4`,
+        `mat4`,
         args.map((arg) => arg.glsl)
       )
     );
   } else {
     return new Expression(
       new ConcatenateImplementation(
-        "mat4",
+        `mat4`,
         4,
         args.map(
           (arg) =>
@@ -51,8 +51,8 @@ export function mat4(
         )
       ),
       new FunctionImplementation(
-        "mat4",
-        "mat4",
+        `mat4`,
+        `mat4`,
         args.map((arg) => arg.glsl)
       )
     );

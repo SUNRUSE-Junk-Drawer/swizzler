@@ -31,9 +31,9 @@ export function matrixCompMult(
     new BinaryOperatorImplementation(
       x.primitive,
       x.javascript,
-      "*",
+      `*`,
       y.javascript
     ),
-    new FunctionImplementation(x.primitive, "matrixCompMult", [x.glsl, y.glsl])
+    new FunctionImplementation(x.primitive, `matrixCompMult`, [x.glsl, y.glsl])
   );
 }

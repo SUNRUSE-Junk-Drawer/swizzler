@@ -166,9 +166,9 @@ export function divide(
   a: Expression<AnyNumericPrimitive>,
   b: Expression<AnyNumericPrimitive>
 ): Expression<AnyNumericPrimitive> {
-  const unrounded = binary(a, "/", b);
+  const unrounded = binary(a, `/`, b);
 
-  if (primitiveBases[unrounded.primitive] === "int") {
+  if (primitiveBases[unrounded.primitive] === `int`) {
     return new Expression(
       new RoundImplementation(unrounded.javascript),
       unrounded.glsl

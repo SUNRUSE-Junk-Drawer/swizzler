@@ -21,10 +21,10 @@ export function exp2(
   x: Expression<AnyNonMatFloatPrimitive>
 ): Expression<AnyNonMatFloatPrimitive> {
   return new Expression(
-    new FunctionImplementation(x.primitive, "Math.pow", [
-      new LiteralImplementation("float", ["2"]),
+    new FunctionImplementation(x.primitive, `Math.pow`, [
+      new LiteralImplementation(`float`, [`2`]),
       x.javascript,
     ]),
-    new FunctionImplementation(x.primitive, "exp2", [x.glsl])
+    new FunctionImplementation(x.primitive, `exp2`, [x.glsl])
   );
 }

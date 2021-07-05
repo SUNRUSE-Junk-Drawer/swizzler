@@ -71,17 +71,17 @@ export function greaterThan<
     new BinaryOperatorImplementation(
       castToBoolean[a.primitive],
       a.javascript,
-      ">",
+      `>`,
       b.javascript
     ),
     primitiveArities[a.primitive] === 1
       ? new BinaryOperatorImplementation(
           castToBoolean[a.primitive],
           a.glsl,
-          ">",
+          `>`,
           b.glsl
         )
-      : new FunctionImplementation(castToBoolean[a.primitive], "greaterThan", [
+      : new FunctionImplementation(castToBoolean[a.primitive], `greaterThan`, [
           a.glsl,
           b.glsl,
         ])

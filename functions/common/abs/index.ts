@@ -19,5 +19,5 @@ export function abs(x: Expression<Vec4Primitive>): Expression<Vec4Primitive>;
 export function abs(
   x: Expression<AnyNonMatFloatPrimitive>
 ): Expression<AnyNonMatFloatPrimitive> {
-  return func("Math.abs", "abs", x);
+  return func(`Math.abs`, `abs`, x);
 }

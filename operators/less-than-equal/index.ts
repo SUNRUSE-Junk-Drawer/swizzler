@@ -71,19 +71,19 @@ export function lessThanEqual<
     new BinaryOperatorImplementation(
       castToBoolean[a.primitive],
       a.javascript,
-      "<=",
+      `<=`,
       b.javascript
     ),
     primitiveArities[a.primitive] === 1
       ? new BinaryOperatorImplementation(
           castToBoolean[a.primitive],
           a.glsl,
-          "<=",
+          `<=`,
           b.glsl
         )
       : new FunctionImplementation(
           castToBoolean[a.primitive],
-          "lessThanEqual",
+          `lessThanEqual`,
           [a.glsl, b.glsl]
         )
   );

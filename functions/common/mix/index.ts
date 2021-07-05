@@ -62,19 +62,19 @@ export function mix(
     new BinaryOperatorImplementation(
       primitive,
       x.javascript,
-      "+",
+      `+`,
       new BinaryOperatorImplementation(
         primitive,
         new BinaryOperatorImplementation(
           primitive,
           y.javascript,
-          "-",
+          `-`,
           x.javascript
         ),
-        "*",
+        `*`,
         a.javascript
       )
     ),
-    new FunctionImplementation(primitive, "mix", [x.glsl, y.glsl, a.glsl])
+    new FunctionImplementation(primitive, `mix`, [x.glsl, y.glsl, a.glsl])
   );
 }

@@ -31,7 +31,7 @@ export class MatrixMatrixMultiplyImplementation<
           );
         }
 
-        output.push(fragments.join("+"));
+        output.push(fragments.join(`+`));
       }
     }
 

@@ -16,10 +16,10 @@ export class MatrixResizeImplementation<
     renderedArgs: ReadonlyArray<ReadonlyArray<string>>
   ): ReadonlyArray<string> {
     switch (this.primitive) {
-      case "mat2":
+      case `mat2`:
         switch (renderedArgs[0].length) {
           case 1:
-            return [renderedArgs[0][0], "0", "0", renderedArgs[0][0]];
+            return [renderedArgs[0][0], `0`, `0`, renderedArgs[0][0]];
 
           case 9:
             return [
@@ -41,18 +41,18 @@ export class MatrixResizeImplementation<
         /* istanbul ignore next */
         break;
 
-      case "mat3":
+      case `mat3`:
         switch (renderedArgs[0].length) {
           case 1:
             return [
               renderedArgs[0][0],
-              "0",
-              "0",
-              "0",
+              `0`,
+              `0`,
+              `0`,
               renderedArgs[0][0],
-              "0",
-              "0",
-              "0",
+              `0`,
+              `0`,
+              `0`,
               renderedArgs[0][0],
             ];
 
@@ -60,13 +60,13 @@ export class MatrixResizeImplementation<
             return [
               renderedArgs[0][0],
               renderedArgs[0][1],
-              "0",
+              `0`,
               renderedArgs[0][2],
               renderedArgs[0][3],
-              "0",
-              "0",
-              "0",
-              "1",
+              `0`,
+              `0`,
+              `0`,
+              `1`,
             ];
 
           case 16:
@@ -86,25 +86,25 @@ export class MatrixResizeImplementation<
         /* istanbul ignore next */
         break;
 
-      case "mat4":
+      case `mat4`:
         switch (renderedArgs[0].length) {
           case 1:
             return [
               renderedArgs[0][0],
-              "0",
-              "0",
-              "0",
-              "0",
+              `0`,
+              `0`,
+              `0`,
+              `0`,
               renderedArgs[0][0],
-              "0",
-              "0",
-              "0",
-              "0",
+              `0`,
+              `0`,
+              `0`,
+              `0`,
               renderedArgs[0][0],
-              "0",
-              "0",
-              "0",
-              "0",
+              `0`,
+              `0`,
+              `0`,
+              `0`,
               renderedArgs[0][0],
             ];
 
@@ -112,20 +112,20 @@ export class MatrixResizeImplementation<
             return [
               renderedArgs[0][0],
               renderedArgs[0][1],
-              "0",
-              "0",
+              `0`,
+              `0`,
               renderedArgs[0][2],
               renderedArgs[0][3],
-              "0",
-              "0",
-              "0",
-              "0",
-              "1",
-              "0",
-              "0",
-              "0",
-              "0",
-              "1",
+              `0`,
+              `0`,
+              `0`,
+              `0`,
+              `1`,
+              `0`,
+              `0`,
+              `0`,
+              `0`,
+              `1`,
             ];
 
           case 9:
@@ -133,19 +133,19 @@ export class MatrixResizeImplementation<
               renderedArgs[0][0],
               renderedArgs[0][1],
               renderedArgs[0][2],
-              "0",
+              `0`,
               renderedArgs[0][3],
               renderedArgs[0][4],
               renderedArgs[0][5],
-              "0",
+              `0`,
               renderedArgs[0][6],
               renderedArgs[0][7],
               renderedArgs[0][8],
-              "0",
-              "0",
-              "0",
-              "0",
-              "1",
+              `0`,
+              `0`,
+              `0`,
+              `0`,
+              `1`,
             ];
         }
 

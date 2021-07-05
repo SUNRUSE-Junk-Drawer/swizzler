@@ -20,7 +20,7 @@ import {
 } from "../..";
 import { mat3Scenario } from "../../unit";
 
-mat3Scenario("mat3 float", { a: float(0.65) }, ({ a }) => mat3(a), [
+mat3Scenario(`mat3 float`, { a: float(0.65) }, ({ a }) => mat3(a), [
   0.65,
   0,
   0,
@@ -33,7 +33,7 @@ mat3Scenario("mat3 float", { a: float(0.65) }, ({ a }) => mat3(a), [
 ]);
 
 mat3Scenario(
-  "mat3 floats",
+  `mat3 floats`,
   {
     a: float(0.65),
     b: float(0.21),
@@ -50,7 +50,7 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 vec2s",
+  `mat3 vec2s`,
   {
     a: vec2(float(0.65), float(0.21)),
     b: vec2(float(0.97), float(0.46)),
@@ -63,7 +63,7 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 vec3s",
+  `mat3 vec3s`,
   {
     a: vec3(float(0.65), float(0.21), float(0.97)),
     b: vec3(float(0.46), float(0.31), float(0.61)),
@@ -74,7 +74,7 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 vec4s",
+  `mat3 vec4s`,
   {
     a: vec4(float(0.65), float(0.21), float(0.97), float(0.46)),
     b: vec4(float(0.31), float(0.61), float(0.14), float(0.33)),
@@ -85,14 +85,14 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 mat2",
+  `mat3 mat2`,
   { a: mat2(float(0.65), float(0.21), float(0.97), float(0.46)) },
   ({ a }) => mat3(a),
   [0.65, 0.21, 0, 0.97, 0.46, 0, 0, 0, 1]
 );
 
 mat3Scenario(
-  "mat3 mat3",
+  `mat3 mat3`,
   {
     a: mat3(
       float(0.65),
@@ -111,7 +111,7 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 mat4",
+  `mat3 mat4`,
   {
     a: mat4(
       float(0.65),
@@ -137,14 +137,14 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 int",
+  `mat3 int`,
   { a: int(37) },
   ({ a }) => divide(mat3(a), float(255)),
   [0.1450980392156863, 0, 0, 0, 0.1450980392156863, 0, 0, 0, 0.1450980392156863]
 );
 
 mat3Scenario(
-  "mat3 ints",
+  `mat3 ints`,
   {
     a: int(37),
     b: int(18),
@@ -172,7 +172,7 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 ivec2s",
+  `mat3 ivec2s`,
   {
     a: ivec2(int(37), int(18)),
     b: ivec2(int(201), int(144)),
@@ -195,7 +195,7 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 ivec3s",
+  `mat3 ivec3s`,
   {
     a: ivec3(int(37), int(18), int(201)),
     b: ivec3(int(144), int(86), int(241)),
@@ -216,7 +216,7 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 ivec4s",
+  `mat3 ivec4s`,
   {
     a: ivec4(int(37), int(18), int(201), int(144)),
     b: ivec4(int(86), int(241), int(17), int(101)),
@@ -237,21 +237,21 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 false",
+  `mat3 false`,
   { a: bool(false) },
   ({ a }) => add(float(0.25), multiply(float(0.5), mat3(a))),
   [0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25]
 );
 
 mat3Scenario(
-  "mat3 true",
+  `mat3 true`,
   { a: bool(true) },
   ({ a }) => add(float(0.25), multiply(float(0.5), mat3(a))),
   [0.75, 0.25, 0.25, 0.25, 0.75, 0.25, 0.25, 0.25, 0.75]
 );
 
 mat3Scenario(
-  "mat3 bools a",
+  `mat3 bools a`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(float(0.25), multiply(float(0.5), mat3(b, a, a, a, a, a, a, a, a))),
@@ -259,7 +259,7 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 bools b",
+  `mat3 bools b`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(float(0.25), multiply(float(0.5), mat3(a, b, a, a, a, a, a, a, a))),
@@ -267,7 +267,7 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 bools c",
+  `mat3 bools c`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(float(0.25), multiply(float(0.5), mat3(a, a, b, a, a, a, a, a, a))),
@@ -275,7 +275,7 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 bools d",
+  `mat3 bools d`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(float(0.25), multiply(float(0.5), mat3(a, a, a, b, a, a, a, a, a))),
@@ -283,7 +283,7 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 bools e",
+  `mat3 bools e`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(float(0.25), multiply(float(0.5), mat3(a, a, a, a, b, a, a, a, a))),
@@ -291,7 +291,7 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 bools f",
+  `mat3 bools f`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(float(0.25), multiply(float(0.5), mat3(a, a, a, a, a, b, a, a, a))),
@@ -299,7 +299,7 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 bools f",
+  `mat3 bools f`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(float(0.25), multiply(float(0.5), mat3(a, a, a, a, a, a, b, a, a))),
@@ -307,7 +307,7 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 bools g",
+  `mat3 bools g`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(float(0.25), multiply(float(0.5), mat3(a, a, a, a, a, a, a, b, a))),
@@ -315,7 +315,7 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 bools h",
+  `mat3 bools h`,
   { a: bool(false), b: bool(true) },
   ({ a, b }) =>
     add(float(0.25), multiply(float(0.5), mat3(a, a, a, a, a, a, a, a, b))),
@@ -323,7 +323,7 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 bvec2s",
+  `mat3 bvec2s`,
   {
     a: bvec2(bool(true), bool(false)),
     b: bvec2(bool(false), bool(true)),
@@ -337,7 +337,7 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 bvec3s",
+  `mat3 bvec3s`,
   {
     a: bvec3(bool(true), bool(false), bool(false)),
     b: bvec3(bool(true), bool(true), bool(true)),
@@ -348,7 +348,7 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 bvec4s",
+  `mat3 bvec4s`,
   {
     a: bvec4(bool(true), bool(false), bool(false), bool(true)),
     b: bvec4(bool(true), bool(true), bool(false), bool(false)),
@@ -359,7 +359,7 @@ mat3Scenario(
 );
 
 mat3Scenario(
-  "mat3 complex",
+  `mat3 complex`,
   {
     a: float(3.2),
     b: bvec2(bool(true), bool(false)),

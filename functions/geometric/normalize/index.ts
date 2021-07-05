@@ -35,20 +35,20 @@ export function normalize(
     new BinaryOperatorImplementation(
       primitive,
       x.javascript,
-      "/",
-      new FunctionImplementation("float", "Math.sqrt", [
+      `/`,
+      new FunctionImplementation(`float`, `Math.sqrt`, [
         new AggregateImplementation(
-          "float",
-          "+",
+          `float`,
+          `+`,
           new BinaryOperatorImplementation(
             primitive,
             x.javascript,
-            "*",
+            `*`,
             x.javascript
           )
         ),
       ])
     ),
-    new FunctionImplementation(primitive, "normalize", [x.glsl])
+    new FunctionImplementation(primitive, `normalize`, [x.glsl])
   );
 }

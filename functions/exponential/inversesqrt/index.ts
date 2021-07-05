@@ -32,10 +32,10 @@ export function inversesqrt(
   return new Expression(
     new BinaryOperatorImplementation(
       x.primitive,
-      new LiteralImplementation("float", ["1"]),
-      "/",
-      new FunctionImplementation(x.primitive, "Math.sqrt", [x.javascript])
+      new LiteralImplementation(`float`, [`1`]),
+      `/`,
+      new FunctionImplementation(x.primitive, `Math.sqrt`, [x.javascript])
     ),
-    new FunctionImplementation(x.primitive, "inversesqrt", [x.glsl])
+    new FunctionImplementation(x.primitive, `inversesqrt`, [x.glsl])
   );
 }

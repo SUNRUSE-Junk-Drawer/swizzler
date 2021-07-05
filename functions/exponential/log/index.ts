@@ -19,5 +19,5 @@ export function log(x: Expression<Vec4Primitive>): Expression<Vec4Primitive>;
 export function log(
   x: Expression<AnyNonMatFloatPrimitive>
 ): Expression<AnyNonMatFloatPrimitive> {
-  return func("Math.log", "log", x);
+  return func(`Math.log`, `log`, x);
 }

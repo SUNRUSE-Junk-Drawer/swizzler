@@ -101,16 +101,16 @@ export function equal<TPrimitive extends AnyPrimitive>(
 ): Expression<BoolPrimitive> {
   return new Expression(
     new AggregateImplementation(
-      "bool",
-      "&&",
+      `bool`,
+      `&&`,
       new BinaryOperatorImplementation(
         // This is wrong, but there's no right type for mat3/mat4; but, it doesn't matter anyway.
-        "bool",
+        `bool`,
         a.javascript,
-        "===",
+        `===`,
         b.javascript
       )
     ),
-    new BinaryOperatorImplementation("bool", a.glsl, "==", b.glsl)
+    new BinaryOperatorImplementation(`bool`, a.glsl, `==`, b.glsl)
   );
 }

@@ -52,21 +52,21 @@ export function mod(
     new BinaryOperatorImplementation(
       x.primitive,
       x.javascript,
-      "-",
+      `-`,
       new BinaryOperatorImplementation(
         x.primitive,
         y.javascript,
-        "*",
-        new FunctionImplementation(x.primitive, "Math.floor", [
+        `*`,
+        new FunctionImplementation(x.primitive, `Math.floor`, [
           new BinaryOperatorImplementation(
             x.primitive,
             x.javascript,
-            "/",
+            `/`,
             y.javascript
           ),
         ])
       )
     ),
-    new FunctionImplementation(x.primitive, "mod", [x.glsl, y.glsl])
+    new FunctionImplementation(x.primitive, `mod`, [x.glsl, y.glsl])
   );
 }

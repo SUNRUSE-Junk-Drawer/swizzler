@@ -18,13 +18,13 @@ export function bvec3(
 ): Expression<Bvec3Primitive> {
   return new Expression(
     new ConcatenateImplementation(
-      "bvec3",
+      `bvec3`,
       3,
       args.map((arg) => new CastToBooleanImplementation(arg.javascript))
     ),
     new FunctionImplementation(
-      "bvec3",
-      "bvec3",
+      `bvec3`,
+      `bvec3`,
       args.map((arg) => arg.glsl)
     )
   );

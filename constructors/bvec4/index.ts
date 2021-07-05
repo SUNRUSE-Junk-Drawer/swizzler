@@ -21,13 +21,13 @@ export function bvec4(
 ): Expression<Bvec4Primitive> {
   return new Expression(
     new ConcatenateImplementation(
-      "bvec4",
+      `bvec4`,
       4,
       args.map((arg) => new CastToBooleanImplementation(arg.javascript))
     ),
     new FunctionImplementation(
-      "bvec4",
-      "bvec4",
+      `bvec4`,
+      `bvec4`,
       args.map((arg) => arg.glsl)
     )
   );

@@ -2,7 +2,7 @@ import { float, vec2, vec3, vec4, dot } from "../../..";
 import { floatScenario } from "../../../unit";
 
 floatScenario(
-  "dot float",
+  `dot float`,
   {
     x: float(0.2941176470588235),
     y: float(0.4235294117647059),
@@ -12,7 +12,7 @@ floatScenario(
 );
 
 floatScenario(
-  "dot vec2",
+  `dot vec2`,
   {
     x: vec2(float(0.4235294117647059), float(0.9411764705882353)),
     y: vec2(float(0.2941176470588235), float(0.1294117647058824)),
@@ -22,7 +22,7 @@ floatScenario(
 );
 
 floatScenario(
-  "dot vec3",
+  `dot vec3`,
   {
     x: vec3(
       float(0.4235294117647059),
@@ -40,7 +40,7 @@ floatScenario(
 );
 
 floatScenario(
-  "dot vec4",
+  `dot vec4`,
   {
     x: vec4(
       float(0.4235294117647059),

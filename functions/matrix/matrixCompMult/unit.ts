@@ -2,7 +2,7 @@ import { float, mat2, mat3, mat4, matrixCompMult } from "../../..";
 import { mat2Scenario, mat3Scenario, mat4Scenario } from "../../../unit";
 
 mat2Scenario(
-  "matrixCompMult mat2 mat2",
+  `matrixCompMult mat2 mat2`,
   {
     x: mat2(
       float(0.7551727849),
@@ -27,7 +27,7 @@ mat2Scenario(
 );
 
 mat3Scenario(
-  "matrixCompMult mat3 mat3",
+  `matrixCompMult mat3 mat3`,
   {
     x: mat3(
       float(0.7551727849),
@@ -67,7 +67,7 @@ mat3Scenario(
 );
 
 mat4Scenario(
-  "matrixCompMult mat4 mat4",
+  `matrixCompMult mat4 mat4`,
   {
     x: mat4(
       float(0.7551727849),

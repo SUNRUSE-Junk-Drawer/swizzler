@@ -21,13 +21,13 @@ export function vec4(
 ): Expression<Vec4Primitive> {
   return new Expression(
     new ConcatenateImplementation(
-      "vec4",
+      `vec4`,
       4,
       args.map((arg) => new CastToFloatImplementation(arg.javascript))
     ),
     new FunctionImplementation(
-      "vec4",
-      "vec4",
+      `vec4`,
+      `vec4`,
       args.map((arg) => arg.glsl)
     )
   );

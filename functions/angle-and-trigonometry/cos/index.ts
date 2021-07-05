@@ -27,5 +27,5 @@ export function cos(
 export function cos(
   angle: Expression<AnyNonMatFloatPrimitive>
 ): Expression<AnyNonMatFloatPrimitive> {
-  return func("Math.cos", "cos", angle);
+  return func(`Math.cos`, `cos`, angle);
 }

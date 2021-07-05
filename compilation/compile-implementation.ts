@@ -21,8 +21,8 @@ export function compileImplementation(
   if (final.length === 1) {
     lines.push(`${prefix}${final[0]};`);
   } else {
-    lines.push(`${prefix}[${final.join(", ")}];`);
+    lines.push(`${prefix}[${final.join(`, `)}];`);
   }
 
-  return lines.join("\n");
+  return lines.join(`\n`);
 }

@@ -19,5 +19,5 @@ export function asin(x: Expression<Vec4Primitive>): Expression<Vec4Primitive>;
 export function asin(
   x: Expression<AnyNonMatFloatPrimitive>
 ): Expression<AnyNonMatFloatPrimitive> {
-  return func("Math.asin", "asin", x);
+  return func(`Math.asin`, `asin`, x);
 }

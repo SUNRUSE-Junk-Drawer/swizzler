@@ -19,13 +19,13 @@ export class CastToIntImplementation<TFrom extends AnyCastablePrimitive>
     renderedArgs: ReadonlyArray<ReadonlyArray<string>>
   ): ReadonlyArray<string> {
     switch (primitiveBases[this.a.primitive]) {
-      case "bool":
+      case `bool`:
         return renderedArgs[0].map((dimension) => `(${dimension})?1:0`);
 
-      case "float":
+      case `float`:
         return renderedArgs[0].map((dimension) => `(${dimension})^0`);
 
-      case "int":
+      case `int`:
         return renderedArgs[0];
     }
   }

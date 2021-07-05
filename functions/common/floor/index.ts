@@ -21,5 +21,5 @@ export function floor(x: Expression<Vec4Primitive>): Expression<Vec4Primitive>;
 export function floor(
   x: Expression<AnyNonMatFloatPrimitive>
 ): Expression<AnyNonMatFloatPrimitive> {
-  return func("Math.floor", "floor", x);
+  return func(`Math.floor`, `floor`, x);
 }

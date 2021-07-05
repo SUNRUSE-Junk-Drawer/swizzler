@@ -22,26 +22,26 @@ export function mat3(...args: Nine): Expression<Mat3Primitive>;
 export function mat3(
   ...args: ReadonlyArray<Expression<AnyPrimitive>>
 ): Expression<Mat3Primitive> {
-  if (args[0].primitive === "mat3") {
+  if (args[0].primitive === `mat3`) {
     return args[0] as Expression<Mat3Primitive>;
   } else if (args.length === 1) {
     return new Expression(
       new MatrixResizeImplementation(
-        "mat3",
+        `mat3`,
         new CastToFloatImplementation(
           args[0].javascript as Implementation<AnyCastablePrimitive>
         )
       ),
       new FunctionImplementation(
-        "mat3",
-        "mat3",
+        `mat3`,
+        `mat3`,
         args.map((arg) => arg.glsl)
       )
     );
   } else {
     return new Expression(
       new ConcatenateImplementation(
-        "mat3",
+        `mat3`,
         4,
         args.map(
           (arg) =>
@@ -51,8 +51,8 @@ export function mat3(
         )
       ),
       new FunctionImplementation(
-        "mat3",
-        "mat3",
+        `mat3`,
+        `mat3`,
         args.map((arg) => arg.glsl)
       )
     );

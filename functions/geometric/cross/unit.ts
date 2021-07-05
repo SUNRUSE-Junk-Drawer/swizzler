@@ -2,7 +2,7 @@ import { float, vec3, add, cross } from "../../..";
 import { vec3Scenario } from "../../../unit";
 
 vec3Scenario(
-  "cross",
+  `cross`,
   {
     x: vec3(float(0.17647), float(0.5098), float(0.94117)),
     y: vec3(float(0.058823), float(0.87058), float(0.18431)),

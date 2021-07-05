@@ -32,18 +32,18 @@ export function length(
   const primitive = x.primitive;
 
   return new Expression(
-    new FunctionImplementation("float", "Math.sqrt", [
+    new FunctionImplementation(`float`, `Math.sqrt`, [
       new AggregateImplementation(
-        "float",
-        "+",
+        `float`,
+        `+`,
         new BinaryOperatorImplementation(
           primitive,
           x.javascript,
-          "*",
+          `*`,
           x.javascript
         )
       ),
     ]),
-    new FunctionImplementation("float", "length", [x.glsl])
+    new FunctionImplementation(`float`, `length`, [x.glsl])
   );
 }

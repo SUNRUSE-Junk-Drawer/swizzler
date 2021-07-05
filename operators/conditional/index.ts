@@ -124,17 +124,17 @@ export function conditional(
     new TernaryOperatorImplementation(
       primitive,
       a.javascript,
-      "?",
+      `?`,
       b.javascript,
-      ":",
+      `:`,
       c.javascript
     ),
     new TernaryOperatorImplementation(
       primitive,
       a.glsl,
-      "?",
+      `?`,
       b.glsl,
-      ":",
+      `:`,
       c.glsl
     )
   );

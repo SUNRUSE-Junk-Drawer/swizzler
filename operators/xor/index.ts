@@ -7,7 +7,7 @@ export function xor(
   b: Expression<BoolPrimitive>
 ): Expression<BoolPrimitive> {
   return new Expression(
-    new BinaryOperatorImplementation("bool", a.javascript, "!=", b.javascript),
-    new BinaryOperatorImplementation("bool", a.glsl, "^^", b.glsl)
+    new BinaryOperatorImplementation(`bool`, a.javascript, `!=`, b.javascript),
+    new BinaryOperatorImplementation(`bool`, a.glsl, `^^`, b.glsl)
   );
 }

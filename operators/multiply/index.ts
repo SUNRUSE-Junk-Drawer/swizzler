@@ -200,9 +200,9 @@ export function multiply(
   b: Expression<AnyNumericPrimitive>
 ): Expression<AnyNumericPrimitive> {
   if (
-    (a.primitive === "mat2" && b.primitive === "vec2") ||
-    (a.primitive === "mat3" && b.primitive === "vec3") ||
-    (a.primitive === "mat4" && b.primitive === "vec4")
+    (a.primitive === `mat2` && b.primitive === `vec2`) ||
+    (a.primitive === `mat3` && b.primitive === `vec3`) ||
+    (a.primitive === `mat4` && b.primitive === `vec4`)
   ) {
     return new Expression(
       new MatrixVectorMultiplyImplementation(
@@ -210,12 +210,12 @@ export function multiply(
         a.javascript as Implementation<AnyMatPrimitive>,
         b.javascript as Implementation<AnyMatPrimitive>
       ),
-      new BinaryOperatorImplementation(a.primitive, a.glsl, "*", b.glsl)
+      new BinaryOperatorImplementation(a.primitive, a.glsl, `*`, b.glsl)
     );
   } else if (
-    (a.primitive === "vec2" && b.primitive === "mat2") ||
-    (a.primitive === "vec3" && b.primitive === "mat3") ||
-    (a.primitive === "vec4" && b.primitive === "mat4")
+    (a.primitive === `vec2` && b.primitive === `mat2`) ||
+    (a.primitive === `vec3` && b.primitive === `mat3`) ||
+    (a.primitive === `vec4` && b.primitive === `mat4`)
   ) {
     return new Expression(
       new MatrixVectorMultiplyImplementation(
@@ -223,12 +223,12 @@ export function multiply(
         a.javascript as Implementation<AnyMatPrimitive>,
         b.javascript as Implementation<AnyMatPrimitive>
       ),
-      new BinaryOperatorImplementation(b.primitive, a.glsl, "*", b.glsl)
+      new BinaryOperatorImplementation(b.primitive, a.glsl, `*`, b.glsl)
     );
   } else if (
-    (a.primitive === "mat2" && b.primitive === "mat2") ||
-    (a.primitive === "mat3" && b.primitive === "mat3") ||
-    (a.primitive === "mat4" && b.primitive === "mat4")
+    (a.primitive === `mat2` && b.primitive === `mat2`) ||
+    (a.primitive === `mat3` && b.primitive === `mat3`) ||
+    (a.primitive === `mat4` && b.primitive === `mat4`)
   ) {
     return new Expression(
       new MatrixMatrixMultiplyImplementation(
@@ -236,9 +236,9 @@ export function multiply(
         a.javascript as Implementation<AnyMatPrimitive>,
         b.javascript as Implementation<AnyMatPrimitive>
       ),
-      new BinaryOperatorImplementation(b.primitive, a.glsl, "*", b.glsl)
+      new BinaryOperatorImplementation(b.primitive, a.glsl, `*`, b.glsl)
     );
   } else {
-    return binary(a, "*", b);
+    return binary(a, `*`, b);
   }
 }

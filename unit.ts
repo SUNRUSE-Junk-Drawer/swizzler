@@ -39,8 +39,8 @@ function typeScriptAndJavascript(
   expected: ReadonlyArray<null | number | boolean>,
   exact: boolean
 ): void {
-  it("executes as TypeScript", () => {
-    const compiledTypeScript = compileTypeScript("return ", expression);
+  it(`executes as TypeScript`, () => {
+    const compiledTypeScript = compileTypeScript(`return `, expression);
     const wrappedInFunctionForTranspilation = `function unusedName() { ${prefixJavascript}${compiledTypeScript} }`;
     const transpiledToJavascript = transpile(wrappedInFunctionForTranspilation);
     const unwrappedFunctionBody = (transpiledToJavascript.match(
@@ -103,9 +103,9 @@ function typeScriptAndJavascript(
     }
   });
 
-  it("executes as Javascript", () => {
+  it(`executes as Javascript`, () => {
     const actual = new Function(
-      `${prefixJavascript}${compileJavascript("return ", expression)}`
+      `${prefixJavascript}${compileJavascript(`return `, expression)}`
     )();
 
     if (expected.length === 1) {
@@ -168,7 +168,7 @@ const glContext = gl(1, 1);
 const arrayBuffer = glContext.createBuffer();
 
 if (arrayBuffer === null) {
-  throw new Error("Failed to create an array buffer.");
+  throw new Error(`Failed to create an array buffer.`);
 }
 
 glContext.bindBuffer(glContext.ARRAY_BUFFER, arrayBuffer);
@@ -181,7 +181,7 @@ glContext.bufferData(
 const elementArrayBuffer = glContext.createBuffer();
 
 if (elementArrayBuffer === null) {
-  throw new Error("Failed to create an element array buffer.");
+  throw new Error(`Failed to create an element array buffer.`);
 }
 
 glContext.bindBuffer(glContext.ELEMENT_ARRAY_BUFFER, elementArrayBuffer);
@@ -194,14 +194,14 @@ glContext.bufferData(
 const maybeVertexShader = glContext.createShader(glContext.VERTEX_SHADER);
 
 if (maybeVertexShader === null) {
-  throw new Error("Failed to create a vertex shader.");
+  throw new Error(`Failed to create a vertex shader.`);
 }
 
 const vertexShader = maybeVertexShader;
 
 glContext.shaderSource(
   vertexShader,
-  "attribute vec4 position; void main() { gl_Position = position; }"
+  `attribute vec4 position; void main() { gl_Position = position; }`
 );
 glContext.compileShader(vertexShader);
 
@@ -227,7 +227,7 @@ export function glslScenario(
   try {
     fragmentShader = glContext.createShader(glContext.FRAGMENT_SHADER);
     if (fragmentShader === null) {
-      fail("Failed to create a fragment shader.");
+      fail(`Failed to create a fragment shader.`);
     } else {
       glContext.shaderSource(fragmentShader, glsl);
       glContext.compileShader(fragmentShader);
@@ -244,7 +244,7 @@ export function glslScenario(
         program = glContext.createProgram();
 
         if (program === null) {
-          fail("Failed to create a program.");
+          fail(`Failed to create a program.`);
         } else {
           glContext.attachShader(program, vertexShader);
           glContext.attachShader(program, fragmentShader);
@@ -260,7 +260,7 @@ export function glslScenario(
           } else {
             glContext.useProgram(program);
 
-            const position = glContext.getAttribLocation(program, "position");
+            const position = glContext.getAttribLocation(program, `position`);
 
             glContext.enableVertexAttribArray(position);
 
@@ -332,7 +332,7 @@ function glsl(
   it(`executes as GLSL${descriptionSuffix}`, () => {
     glslScenario(
       `precision mediump float;void main(void) {${prefixGlsl}${compileGlsl(
-        "gl_FragColor=",
+        `gl_FragColor=`,
         expression
       )};}`,
       expected
@@ -349,15 +349,15 @@ function dynamicAndConstant<
   const numberOfInputs = Object.keys(inputs).length;
 
   if (numberOfInputs === 0) {
-    callback(inputs, "", "");
+    callback(inputs, ``, ``);
   } else {
-    describe("constant", () => {
-      callback(inputs, "", "");
+    describe(`constant`, () => {
+      callback(inputs, ``, ``);
     });
 
-    describe("dynamic", () => {
-      let javascript = "";
-      let glsl = "";
+    describe(`dynamic`, () => {
+      let javascript = ``;
+      let glsl = ``;
       const mappedInputs: { [key: string]: Expression<AnyPrimitive> } = {};
 
       for (const key in inputs) {
@@ -375,8 +375,8 @@ function dynamicAndConstant<
     if (numberOfInputs) {
       for (const dynamicKey in inputs) {
         describe(`all constant except ${dynamicKey}`, () => {
-          let javascript = "";
-          let glsl = "";
+          let javascript = ``;
+          let glsl = ``;
           const mappedInputs: { [key: string]: Expression<AnyPrimitive> } = {};
 
           for (const key in inputs) {
@@ -412,7 +412,7 @@ export function floatScenario<
       const expression = expressionFactory(inputs);
 
       typeScriptAndJavascript(prefixJavascript, expression, [expected], false);
-      glsl("", prefixGlsl, vec4(expression, float(0), float(0), float(0)), [
+      glsl(``, prefixGlsl, vec4(expression, float(0), float(0), float(0)), [
         expected * 255,
         0,
         0,
@@ -435,7 +435,7 @@ export function vec2Scenario<
       const expression = expressionFactory(inputs);
 
       typeScriptAndJavascript(prefixJavascript, expression, expected, false);
-      glsl("", prefixGlsl, vec4(expression, float(0), float(0)), [
+      glsl(``, prefixGlsl, vec4(expression, float(0), float(0)), [
         expected[0] * 255,
         expected[1] * 255,
         0,
@@ -458,7 +458,7 @@ export function vec3Scenario<
       const expression = expressionFactory(inputs);
 
       typeScriptAndJavascript(prefixJavascript, expression, expected, false);
-      glsl("", prefixGlsl, vec4(expression, float(0)), [
+      glsl(``, prefixGlsl, vec4(expression, float(0)), [
         expected[0] * 255,
         expected[1] * 255,
         expected[2] * 255,
@@ -481,7 +481,7 @@ export function vec4Scenario<
       const expression = expressionFactory(inputs);
 
       typeScriptAndJavascript(prefixJavascript, expression, expected, false);
-      glsl("", prefixGlsl, expression, [
+      glsl(``, prefixGlsl, expression, [
         expected[0] * 255,
         expected[1] * 255,
         expected[2] * 255,
@@ -504,7 +504,7 @@ export function mat2Scenario<
       const expression = expressionFactory(inputs);
 
       typeScriptAndJavascript(prefixJavascript, expression, expected, false);
-      glsl("", prefixGlsl, vec4(expression), [
+      glsl(``, prefixGlsl, vec4(expression), [
         expected[0] * 255,
         expected[1] * 255,
         expected[2] * 255,
@@ -537,19 +537,19 @@ export function mat3Scenario<
       const expression = expressionFactory(inputs);
 
       typeScriptAndJavascript(prefixJavascript, expression, expected, false);
-      glsl(" a", prefixGlsl, vec4(getColumn(expression, 0), float(0)), [
+      glsl(` a`, prefixGlsl, vec4(getColumn(expression, 0), float(0)), [
         expected[0] * 255,
         expected[1] * 255,
         expected[2] * 255,
         0,
       ]);
-      glsl(" b", prefixGlsl, vec4(getColumn(expression, 1), float(0)), [
+      glsl(` b`, prefixGlsl, vec4(getColumn(expression, 1), float(0)), [
         expected[3] * 255,
         expected[4] * 255,
         expected[5] * 255,
         0,
       ]);
-      glsl(" c", prefixGlsl, vec4(getColumn(expression, 2), float(0)), [
+      glsl(` c`, prefixGlsl, vec4(getColumn(expression, 2), float(0)), [
         expected[6] * 255,
         expected[7] * 255,
         expected[8] * 255,
@@ -589,25 +589,25 @@ export function mat4Scenario<
       const expression = expressionFactory(inputs);
 
       typeScriptAndJavascript(prefixJavascript, expression, expected, false);
-      glsl(" a", prefixGlsl, getColumn(expression, 0), [
+      glsl(` a`, prefixGlsl, getColumn(expression, 0), [
         expected[0] * 255,
         expected[1] * 255,
         expected[2] * 255,
         expected[3] * 255,
       ]);
-      glsl(" b", prefixGlsl, getColumn(expression, 1), [
+      glsl(` b`, prefixGlsl, getColumn(expression, 1), [
         expected[4] * 255,
         expected[5] * 255,
         expected[6] * 255,
         expected[7] * 255,
       ]);
-      glsl(" c", prefixGlsl, getColumn(expression, 2), [
+      glsl(` c`, prefixGlsl, getColumn(expression, 2), [
         expected[8] * 255,
         expected[9] * 255,
         expected[10] * 255,
         expected[11] * 255,
       ]);
-      glsl(" d", prefixGlsl, getColumn(expression, 3), [
+      glsl(` d`, prefixGlsl, getColumn(expression, 3), [
         expected[12] * 255,
         expected[13] * 255,
         expected[14] * 255,
@@ -631,7 +631,7 @@ export function intScenario<
 
       typeScriptAndJavascript(prefixJavascript, expression, [expected], true);
       glsl(
-        "",
+        ``,
         prefixGlsl,
         divide(vec4(expression, float(0), float(0), float(0)), float(255)),
         [expected, 0, 0, 0]
@@ -654,7 +654,7 @@ export function ivec2Scenario<
 
       typeScriptAndJavascript(prefixJavascript, expression, expected, true);
       glsl(
-        "",
+        ``,
         prefixGlsl,
         divide(vec4(expression, float(0), float(0)), float(255)),
         [...expected, 0, 0]
@@ -676,7 +676,7 @@ export function ivec3Scenario<
       const expression = expressionFactory(inputs);
 
       typeScriptAndJavascript(prefixJavascript, expression, expected, true);
-      glsl("", prefixGlsl, divide(vec4(expression, float(0)), float(255)), [
+      glsl(``, prefixGlsl, divide(vec4(expression, float(0)), float(255)), [
         ...expected,
         0,
       ]);
@@ -697,7 +697,7 @@ export function ivec4Scenario<
       const expression = expressionFactory(inputs);
 
       typeScriptAndJavascript(prefixJavascript, expression, expected, true);
-      glsl("", prefixGlsl, divide(vec4(expression), float(255)), expected);
+      glsl(``, prefixGlsl, divide(vec4(expression), float(255)), expected);
     });
   });
 }
@@ -729,7 +729,7 @@ export function boolScenario<
 
       typeScriptAndJavascript(prefixJavascript, expression, [expected], true);
       glsl(
-        "",
+        ``,
         prefixGlsl,
         vec4(
           conditional(expression, float(1), float(0)),
@@ -757,7 +757,7 @@ export function bvec2Scenario<
 
       typeScriptAndJavascript(prefixJavascript, expression, expected, true);
       glsl(
-        "",
+        ``,
         prefixGlsl,
         vec4(
           conditional(x(expression), float(1), float(0)),
@@ -785,7 +785,7 @@ export function bvec3Scenario<
 
       typeScriptAndJavascript(prefixJavascript, expression, expected, true);
       glsl(
-        "",
+        ``,
         prefixGlsl,
         vec4(
           conditional(x(expression), float(1), float(0)),
@@ -823,7 +823,7 @@ export function bvec4Scenario<
 
       typeScriptAndJavascript(prefixJavascript, expression, expected, true);
       glsl(
-        "",
+        ``,
         prefixGlsl,
         vec4(
           conditional(x(expression), float(1), float(0)),

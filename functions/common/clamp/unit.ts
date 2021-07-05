@@ -7,7 +7,7 @@ import {
 } from "../../../unit";
 
 floatScenario(
-  "clamp float less than minimum",
+  `clamp float less than minimum`,
   {
     x: float(0.4),
     minVal: float(0.5),
@@ -18,35 +18,35 @@ floatScenario(
 );
 
 floatScenario(
-  "clamp float at minimum",
+  `clamp float at minimum`,
   { x: float(0.5), minVal: float(0.5), maxVal: float(0.7) },
   ({ x, minVal, maxVal }) => clamp(x, minVal, maxVal),
   0.5
 );
 
 floatScenario(
-  "clamp float between minimum and maximum",
+  `clamp float between minimum and maximum`,
   { x: float(0.6), minVal: float(0.5), maxVal: float(0.7) },
   ({ x, minVal, maxVal }) => clamp(x, minVal, maxVal),
   0.6
 );
 
 floatScenario(
-  "clamp float at maximum",
+  `clamp float at maximum`,
   { x: float(0.7), minVal: float(0.5), maxVal: float(0.7) },
   ({ x, minVal, maxVal }) => clamp(x, minVal, maxVal),
   0.7
 );
 
 floatScenario(
-  "clamp float greater than maximum",
+  `clamp float greater than maximum`,
   { x: float(0.8), minVal: float(0.5), maxVal: float(0.7) },
   ({ x, minVal, maxVal }) => clamp(x, minVal, maxVal),
   0.7
 );
 
 vec2Scenario(
-  "clamp vec2 vec2 vec2 a",
+  `clamp vec2 vec2 vec2 a`,
   {
     x: vec2(float(0.3), float(0.2)),
     minVal: vec2(float(0.4), float(0.2)),
@@ -57,7 +57,7 @@ vec2Scenario(
 );
 
 vec2Scenario(
-  "clamp vec2 vec2 vec2 b",
+  `clamp vec2 vec2 vec2 b`,
   {
     x: vec2(float(0.5), float(0.6)),
     minVal: vec2(float(0.4), float(0.9)),
@@ -68,7 +68,7 @@ vec2Scenario(
 );
 
 vec2Scenario(
-  "clamp vec2 vec2 vec2 c",
+  `clamp vec2 vec2 vec2 c`,
   {
     x: vec2(float(0.8), float(0.2)),
     minVal: vec2(float(0.4), float(0.2)),
@@ -79,7 +79,7 @@ vec2Scenario(
 );
 
 vec2Scenario(
-  "clamp vec2 float float a",
+  `clamp vec2 float float a`,
   {
     x: vec2(float(0.4), float(0.5)),
     minVal: float(0.5),
@@ -90,7 +90,7 @@ vec2Scenario(
 );
 
 vec2Scenario(
-  "clamp vec2 float float b",
+  `clamp vec2 float float b`,
   {
     x: vec2(float(0.6), float(0.7)),
     minVal: float(0.5),
@@ -101,7 +101,7 @@ vec2Scenario(
 );
 
 vec2Scenario(
-  "clamp vec2 float float c",
+  `clamp vec2 float float c`,
   {
     x: vec2(float(0.8), float(0.5)),
     minVal: float(0.5),
@@ -112,7 +112,7 @@ vec2Scenario(
 );
 
 vec3Scenario(
-  "clamp vec3 vec3 vec3 a",
+  `clamp vec3 vec3 vec3 a`,
   {
     x: vec3(float(0.3), float(0.2), float(0.8)),
     minVal: vec3(float(0.4), float(0.2), float(0.7)),
@@ -123,7 +123,7 @@ vec3Scenario(
 );
 
 vec3Scenario(
-  "clamp vec3 vec3 vec3 b",
+  `clamp vec3 vec3 vec3 b`,
   {
     x: vec3(float(0.7), float(0.6), float(0.8)),
     minVal: vec3(float(0.4), float(0.2), float(0.7)),
@@ -134,7 +134,7 @@ vec3Scenario(
 );
 
 vec3Scenario(
-  "clamp vec3 float float a",
+  `clamp vec3 float float a`,
   {
     x: vec3(float(0.3), float(0.4), float(0.5)),
     minVal: float(0.4),
@@ -145,7 +145,7 @@ vec3Scenario(
 );
 
 vec3Scenario(
-  "clamp vec3 float float b",
+  `clamp vec3 float float b`,
   {
     x: vec3(float(0.7), float(0.8), float(0.5)),
     minVal: float(0.4),
@@ -156,7 +156,7 @@ vec3Scenario(
 );
 
 vec4Scenario(
-  "clamp vec4 vec4 vec4 a",
+  `clamp vec4 vec4 vec4 a`,
   {
     x: vec4(float(0.3), float(0.2), float(0.8), float(0.3)),
     minVal: vec4(float(0.4), float(0.2), float(0.7), float(0.1)),
@@ -167,7 +167,7 @@ vec4Scenario(
 );
 
 vec4Scenario(
-  "clamp vec4 vec4 vec4 b",
+  `clamp vec4 vec4 vec4 b`,
   {
     x: vec4(float(0.8), float(0.2), float(0.8), float(0.3)),
     minVal: vec4(float(0.4), float(0.2), float(0.7), float(0.1)),
@@ -178,7 +178,7 @@ vec4Scenario(
 );
 
 vec4Scenario(
-  "clamp vec4 float float a",
+  `clamp vec4 float float a`,
   {
     x: vec4(float(0.3), float(0.4), float(0.5), float(0.7)),
     minVal: float(0.4),
@@ -189,7 +189,7 @@ vec4Scenario(
 );
 
 vec4Scenario(
-  "clamp vec4 float float b",
+  `clamp vec4 float float b`,
   {
     x: vec4(float(0.8), float(0.2), float(0.8), float(0.3)),
     minVal: float(0.4),

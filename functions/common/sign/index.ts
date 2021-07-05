@@ -19,5 +19,5 @@ export function sign(x: Expression<Vec4Primitive>): Expression<Vec4Primitive>;
 export function sign(
   x: Expression<AnyNonMatFloatPrimitive>
 ): Expression<AnyNonMatFloatPrimitive> {
-  return func("Math.sign", "sign", x);
+  return func(`Math.sign`, `sign`, x);
 }

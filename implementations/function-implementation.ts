@@ -22,7 +22,7 @@ export class FunctionImplementation<
       output.push(
         `${this.name}(${renderedArgs
           .map((arg) => arg[Math.min(i, arg.length - 1)])
-          .join(",")})`
+          .join(`,`)})`
       );
     }
 

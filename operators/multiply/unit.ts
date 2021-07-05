@@ -27,14 +27,14 @@ import {
 } from "../../unit";
 
 floatScenario(
-  "multiply float float",
+  `multiply float float`,
   { a: float(0.4), b: float(0.2941176470588235) },
   ({ a, b }) => multiply(a, b),
   0.1176470588235294
 );
 
 vec2Scenario(
-  "multiply vec2 float",
+  `multiply vec2 float`,
   {
     a: vec2(float(0.6862745098039216), float(0.792156862745098)),
     b: float(0.4),
@@ -44,7 +44,7 @@ vec2Scenario(
 );
 
 vec3Scenario(
-  "multiply vec3 float",
+  `multiply vec3 float`,
   {
     a: vec3(
       float(0.6862745098039216),
@@ -58,7 +58,7 @@ vec3Scenario(
 );
 
 vec4Scenario(
-  "multiply vec4 float",
+  `multiply vec4 float`,
   {
     a: vec4(
       float(0.6862745098039216),
@@ -78,7 +78,7 @@ vec4Scenario(
 );
 
 vec2Scenario(
-  "multiply float vec2",
+  `multiply float vec2`,
   {
     a: float(0.4),
     b: vec2(float(0.6862745098039216), float(0.792156862745098)),
@@ -88,7 +88,7 @@ vec2Scenario(
 );
 
 vec3Scenario(
-  "multiply float vec3",
+  `multiply float vec3`,
   {
     a: float(0.4),
     b: vec3(
@@ -102,7 +102,7 @@ vec3Scenario(
 );
 
 vec4Scenario(
-  "multiply float vec4",
+  `multiply float vec4`,
   {
     a: float(0.4),
     b: vec4(
@@ -122,7 +122,7 @@ vec4Scenario(
 );
 
 vec2Scenario(
-  "multiply vec2 vec2",
+  `multiply vec2 vec2`,
   {
     a: vec2(float(0.4), float(0.5568627450980392)),
     b: vec2(float(0.2901960784313725), float(0.3450980392156863)),
@@ -132,7 +132,7 @@ vec2Scenario(
 );
 
 vec3Scenario(
-  "multiply vec3 vec3",
+  `multiply vec3 vec3`,
   {
     a: vec3(float(0.4), float(0.5568627450980392), float(0.5215686274509804)),
     b: vec3(
@@ -146,7 +146,7 @@ vec3Scenario(
 );
 
 vec4Scenario(
-  "multiply vec4 vec4",
+  `multiply vec4 vec4`,
   {
     a: vec4(
       float(0.4),
@@ -171,14 +171,14 @@ vec4Scenario(
 );
 
 mat2Scenario(
-  "multiply float mat2",
+  `multiply float mat2`,
   { a: float(0.4), b: mat2(float(0.6), float(0.8), float(0.2), float(0.9)) },
   ({ a, b }) => multiply(a, b),
   [0.24, 0.32, 0.08, 0.36]
 );
 
 mat3Scenario(
-  "multiply float mat3",
+  `multiply float mat3`,
   {
     a: float(0.4),
     b: mat3(
@@ -198,7 +198,7 @@ mat3Scenario(
 );
 
 mat4Scenario(
-  "multiply float mat4",
+  `multiply float mat4`,
   {
     a: float(0.4),
     b: mat4(
@@ -242,14 +242,14 @@ mat4Scenario(
 );
 
 mat2Scenario(
-  "multiply mat2 float",
+  `multiply mat2 float`,
   { a: mat2(float(0.6), float(0.8), float(0.2), float(0.9)), b: float(0.4) },
   ({ a, b }) => multiply(a, b),
   [0.24, 0.32, 0.08, 0.36]
 );
 
 mat3Scenario(
-  "multiply mat3 float",
+  `multiply mat3 float`,
   {
     a: mat3(
       float(0.6),
@@ -269,7 +269,7 @@ mat3Scenario(
 );
 
 mat4Scenario(
-  "multiply mat4 float",
+  `multiply mat4 float`,
   {
     a: mat4(
       float(0.6),
@@ -313,7 +313,7 @@ mat4Scenario(
 );
 
 mat2Scenario(
-  "multiply mat2 mat2",
+  `multiply mat2 mat2`,
   {
     a: mat2(float(0.14), float(0.07), float(0.11), float(0.58)),
     b: mat2(float(0.36), float(0.37), float(0.54), float(0.06)),
@@ -323,7 +323,7 @@ mat2Scenario(
 );
 
 mat3Scenario(
-  "multiply mat3 mat3",
+  `multiply mat3 mat3`,
   {
     a: mat3(
       float(0.14),
@@ -353,7 +353,7 @@ mat3Scenario(
 );
 
 mat4Scenario(
-  "multiply mat4 mat4",
+  `multiply mat4 mat4`,
   {
     a: mat4(
       float(0.14),
@@ -414,7 +414,7 @@ mat4Scenario(
 );
 
 vec2Scenario(
-  "multiply mat2 vec2",
+  `multiply mat2 vec2`,
   {
     a: mat2(float(0.14), float(0.07), float(0.11), float(0.58)),
     b: vec2(float(0.36), float(0.11)),
@@ -424,7 +424,7 @@ vec2Scenario(
 );
 
 vec3Scenario(
-  "multiply mat3 vec3",
+  `multiply mat3 vec3`,
   {
     a: mat3(
       float(0.14),
@@ -444,7 +444,7 @@ vec3Scenario(
 );
 
 vec4Scenario(
-  "multiply mat4 vec4",
+  `multiply mat4 vec4`,
   {
     a: mat4(
       float(0.14),
@@ -471,7 +471,7 @@ vec4Scenario(
 );
 
 vec2Scenario(
-  "multiply vec2 mat2",
+  `multiply vec2 mat2`,
   {
     a: vec2(float(0.36), float(0.11)),
     b: mat2(float(0.14), float(0.07), float(0.11), float(0.58)),
@@ -481,7 +481,7 @@ vec2Scenario(
 );
 
 vec3Scenario(
-  "multiply vec3 mat3",
+  `multiply vec3 mat3`,
   {
     a: vec3(float(0.36), float(0.11), float(0.07)),
     b: mat3(
@@ -501,7 +501,7 @@ vec3Scenario(
 );
 
 vec4Scenario(
-  "multiply vec4 mat4",
+  `multiply vec4 mat4`,
   {
     a: vec4(float(0.36), float(0.11), float(0.07), float(0.64)),
     b: mat4(
@@ -528,70 +528,70 @@ vec4Scenario(
 );
 
 intScenario(
-  "multiply int int",
+  `multiply int int`,
   { a: int(27), b: int(4) },
   ({ a, b }) => multiply(a, b),
   108
 );
 
 ivec2Scenario(
-  "multiply ivec2 int",
+  `multiply ivec2 int`,
   { a: ivec2(int(27), int(73)), b: int(3) },
   ({ a, b }) => multiply(a, b),
   [81, 219]
 );
 
 ivec3Scenario(
-  "multiply ivec3 int",
+  `multiply ivec3 int`,
   { a: ivec3(int(27), int(73), int(41)), b: int(3) },
   ({ a, b }) => multiply(a, b),
   [81, 219, 123]
 );
 
 ivec4Scenario(
-  "multiply ivec4 int",
+  `multiply ivec4 int`,
   { a: ivec4(int(27), int(73), int(41), int(4)), b: int(3) },
   ({ a, b }) => multiply(a, b),
   [81, 219, 123, 12]
 );
 
 ivec2Scenario(
-  "multiply int ivec2",
+  `multiply int ivec2`,
   { a: int(3), b: ivec2(int(27), int(73)) },
   ({ a, b }) => multiply(a, b),
   [81, 219]
 );
 
 ivec3Scenario(
-  "multiply int ivec3",
+  `multiply int ivec3`,
   { a: int(3), b: ivec3(int(27), int(73), int(41)) },
   ({ a, b }) => multiply(a, b),
   [81, 219, 123]
 );
 
 ivec4Scenario(
-  "multiply int ivec4",
+  `multiply int ivec4`,
   { a: int(3), b: ivec4(int(27), int(73), int(41), int(4)) },
   ({ a, b }) => multiply(a, b),
   [81, 219, 123, 12]
 );
 
 ivec2Scenario(
-  "multiply ivec2 ivec2",
+  `multiply ivec2 ivec2`,
   { a: ivec2(int(27), int(100)), b: ivec2(int(4), int(2)) },
   ({ a, b }) => multiply(a, b),
   [108, 200]
 );
 
 ivec3Scenario(
-  "multiply ivec3 ivec3",
+  `multiply ivec3 ivec3`,
   { a: ivec3(int(27), int(100), int(41)), b: ivec3(int(4), int(2), int(5)) },
   ({ a, b }) => multiply(a, b),
   [108, 200, 205]
 );
 
 ivec4Scenario(
-  "multiply ivec4 ivec4",
+  `multiply ivec4 ivec4`,
   {
     a: ivec4(int(27), int(100), int(41), int(3)),
     b: ivec4(int(4), int(2), int(5), int(8)),

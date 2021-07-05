@@ -44,32 +44,32 @@ export function refract(
   const primitive = n.primitive;
 
   const javaScriptNDotI = new AggregateImplementation(
-    "float",
-    "+",
-    new BinaryOperatorImplementation(primitive, n.javascript, "*", i.javascript)
+    `float`,
+    `+`,
+    new BinaryOperatorImplementation(primitive, n.javascript, `*`, i.javascript)
   );
 
   const javascriptK = new BinaryOperatorImplementation(
-    "float",
-    new LiteralImplementation("float", ["1"]),
-    "-",
+    `float`,
+    new LiteralImplementation(`float`, [`1`]),
+    `-`,
     new BinaryOperatorImplementation(
       primitive,
       new BinaryOperatorImplementation(
         primitive,
         eta.javascript,
-        "*",
+        `*`,
         eta.javascript
       ),
-      "*",
+      `*`,
       new BinaryOperatorImplementation(
         primitive,
-        new LiteralImplementation("float", ["1"]),
-        "-",
+        new LiteralImplementation(`float`, [`1`]),
+        `-`,
         new BinaryOperatorImplementation(
           primitive,
           javaScriptNDotI,
-          "*",
+          `*`,
           javaScriptNDotI
         )
       )
@@ -80,23 +80,23 @@ export function refract(
     new TernaryOperatorImplementation(
       primitive,
       new BinaryOperatorImplementation(
-        "bool",
+        `bool`,
         javascriptK,
-        "<",
-        new LiteralImplementation("float", ["0"])
+        `<`,
+        new LiteralImplementation(`float`, [`0`])
       ),
-      "?",
-      new LiteralImplementation("float", ["0"]),
-      ":",
+      `?`,
+      new LiteralImplementation(`float`, [`0`]),
+      `:`,
       new BinaryOperatorImplementation(
         primitive,
         new BinaryOperatorImplementation(
           primitive,
           eta.javascript,
-          "*",
+          `*`,
           i.javascript
         ),
-        "-",
+        `-`,
         new BinaryOperatorImplementation(
           primitive,
           new BinaryOperatorImplementation(
@@ -104,17 +104,17 @@ export function refract(
             new BinaryOperatorImplementation(
               primitive,
               eta.javascript,
-              "*",
+              `*`,
               javaScriptNDotI
             ),
-            "+",
-            new FunctionImplementation("float", "Math.sqrt", [javascriptK])
+            `+`,
+            new FunctionImplementation(`float`, `Math.sqrt`, [javascriptK])
           ),
-          "*",
+          `*`,
           n.javascript
         )
       )
     ),
-    new FunctionImplementation(primitive, "refract", [i.glsl, n.glsl, eta.glsl])
+    new FunctionImplementation(primitive, `refract`, [i.glsl, n.glsl, eta.glsl])
   );
 }

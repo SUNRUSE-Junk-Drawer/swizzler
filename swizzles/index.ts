@@ -24,7 +24,7 @@ import {
   primitiveQuartets,
 } from "../primitive";
 
-const letters = ["x", "y", "z", "w"];
+const letters = [`x`, `y`, `z`, `w`];
 
 interface Callback12 {
   (a: Expression<Vec2Primitive | Vec3Primitive | Vec4Primitive>): Expression<

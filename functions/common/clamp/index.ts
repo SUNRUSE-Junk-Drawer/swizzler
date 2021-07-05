@@ -58,14 +58,14 @@ export function clamp(
   const primitive = x.primitive;
 
   return new Expression(
-    new FunctionImplementation(primitive, "Math.min", [
+    new FunctionImplementation(primitive, `Math.min`, [
       maxVal.javascript,
-      new FunctionImplementation(primitive, "Math.max", [
+      new FunctionImplementation(primitive, `Math.max`, [
         minVal.javascript,
         x.javascript,
       ]),
     ]),
-    new FunctionImplementation(primitive, "clamp", [
+    new FunctionImplementation(primitive, `clamp`, [
       x.glsl,
       minVal.glsl,
       maxVal.glsl,

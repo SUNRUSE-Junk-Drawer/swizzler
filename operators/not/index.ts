@@ -21,9 +21,9 @@ export function not(
   a: Expression<AnyBoolPrimitive>
 ): Expression<AnyBoolPrimitive> {
   return new Expression(
-    new UnaryOperatorImplementation(a.primitive, "!", a.javascript),
-    a.primitive === "bool"
-      ? new UnaryOperatorImplementation(a.primitive, "!", a.glsl)
-      : new FunctionImplementation(a.primitive, "not", [a.glsl])
+    new UnaryOperatorImplementation(a.primitive, `!`, a.javascript),
+    a.primitive === `bool`
+      ? new UnaryOperatorImplementation(a.primitive, `!`, a.glsl)
+      : new FunctionImplementation(a.primitive, `not`, [a.glsl])
   );
 }

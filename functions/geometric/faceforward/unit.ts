@@ -7,7 +7,7 @@ import {
 } from "../../../unit";
 
 floatScenario(
-  "faceforward float positive",
+  `faceforward float positive`,
   {
     n: float(0.16),
     i: float(-0.4),
@@ -18,7 +18,7 @@ floatScenario(
 );
 
 floatScenario(
-  "faceforward float negative",
+  `faceforward float negative`,
   {
     n: float(0.16),
     i: float(0.4),
@@ -29,7 +29,7 @@ floatScenario(
 );
 
 vec2Scenario(
-  "faceforward vec2 positive",
+  `faceforward vec2 positive`,
   {
     n: vec2(float(0.16), float(-0.3)),
     i: vec2(float(-0.4), float(-0.5)),
@@ -40,7 +40,7 @@ vec2Scenario(
 );
 
 vec2Scenario(
-  "faceforward vec2 negative",
+  `faceforward vec2 negative`,
   {
     n: vec2(float(0.16), float(-0.3)),
     i: vec2(float(0.4), float(0.5)),
@@ -51,7 +51,7 @@ vec2Scenario(
 );
 
 vec3Scenario(
-  "faceforward vec3 positive",
+  `faceforward vec3 positive`,
   {
     n: vec3(float(0.16), float(-0.3), float(-0.2)),
     i: vec3(float(-0.4), float(-0.5), float(0.2)),
@@ -62,7 +62,7 @@ vec3Scenario(
 );
 
 vec3Scenario(
-  "faceforward vec3 negative",
+  `faceforward vec3 negative`,
   {
     n: vec3(float(0.16), float(-0.3), float(-0.2)),
     i: vec3(float(0.4), float(0.5), float(-0.2)),
@@ -73,7 +73,7 @@ vec3Scenario(
 );
 
 vec4Scenario(
-  "faceforward vec4 positive",
+  `faceforward vec4 positive`,
   {
     n: vec4(float(0.16), float(-0.3), float(-0.2), float(0.1)),
     i: vec4(float(-0.4), float(-0.5), float(0.2), float(-0.4)),
@@ -84,7 +84,7 @@ vec4Scenario(
 );
 
 vec4Scenario(
-  "faceforward vec4 negative",
+  `faceforward vec4 negative`,
   {
     n: vec4(float(0.16), float(-0.3), float(-0.2), float(0.1)),
     i: vec4(float(0.4), float(0.5), float(-0.2), float(0.4)),

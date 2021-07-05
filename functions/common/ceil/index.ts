@@ -19,5 +19,5 @@ export function ceil(x: Expression<Vec4Primitive>): Expression<Vec4Primitive>;
 export function ceil(
   x: Expression<AnyNonMatFloatPrimitive>
 ): Expression<AnyNonMatFloatPrimitive> {
-  return func("Math.ceil", "ceil", x);
+  return func(`Math.ceil`, `ceil`, x);
 }

@@ -47,5 +47,5 @@ export function min(
   x: Expression<AnyNonMatFloatPrimitive>,
   y: Expression<AnyNonMatFloatPrimitive>
 ): Expression<AnyNonMatFloatPrimitive> {
-  return func("Math.min", "min", x, y);
+  return func(`Math.min`, `min`, x, y);
 }

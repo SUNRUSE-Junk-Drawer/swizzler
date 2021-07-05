@@ -21,13 +21,13 @@ export function ivec4(
 ): Expression<Ivec4Primitive> {
   return new Expression(
     new ConcatenateImplementation(
-      "ivec4",
+      `ivec4`,
       4,
       args.map((arg) => new CastToIntImplementation(arg.javascript))
     ),
     new FunctionImplementation(
-      "ivec4",
-      "ivec4",
+      `ivec4`,
+      `ivec4`,
       args.map((arg) => arg.glsl)
     )
   );

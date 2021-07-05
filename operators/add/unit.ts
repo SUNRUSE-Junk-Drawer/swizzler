@@ -27,14 +27,14 @@ import {
 } from "../../unit";
 
 floatScenario(
-  "add float float",
+  `add float float`,
   { a: float(0.2941176470588235), b: float(0.4) },
   ({ a, b }) => add(a, b),
   0.6941176470588235
 );
 
 vec2Scenario(
-  "add vec2 float",
+  `add vec2 float`,
   {
     a: vec2(float(0.2941176470588235), float(0.3490196078431373)),
     b: float(0.4),
@@ -44,7 +44,7 @@ vec2Scenario(
 );
 
 vec3Scenario(
-  "add vec3 float",
+  `add vec3 float`,
   {
     a: vec3(
       float(0.2941176470588235),
@@ -58,7 +58,7 @@ vec3Scenario(
 );
 
 vec4Scenario(
-  "add vec4 float",
+  `add vec4 float`,
   {
     a: vec4(
       float(0.2941176470588235),
@@ -78,7 +78,7 @@ vec4Scenario(
 );
 
 vec2Scenario(
-  "add float vec2",
+  `add float vec2`,
   {
     a: float(0.4),
     b: vec2(float(0.2941176470588235), float(0.3490196078431373)),
@@ -88,7 +88,7 @@ vec2Scenario(
 );
 
 vec3Scenario(
-  "add float vec3",
+  `add float vec3`,
   {
     a: float(0.4),
     b: vec3(
@@ -102,7 +102,7 @@ vec3Scenario(
 );
 
 vec4Scenario(
-  "add float vec4",
+  `add float vec4`,
   {
     a: float(0.4),
     b: vec4(
@@ -122,7 +122,7 @@ vec4Scenario(
 );
 
 vec2Scenario(
-  "add vec2 vec2",
+  `add vec2 vec2`,
   {
     a: vec2(float(0.2941176470588235), float(0.3490196078431373)),
     b: vec2(float(0.4), float(0.3450980392156863)),
@@ -132,7 +132,7 @@ vec2Scenario(
 );
 
 vec3Scenario(
-  "add vec3 vec3",
+  `add vec3 vec3`,
   {
     a: vec3(
       float(0.2941176470588235),
@@ -146,7 +146,7 @@ vec3Scenario(
 );
 
 vec4Scenario(
-  "add vec4 vec4",
+  `add vec4 vec4`,
   {
     a: vec4(
       float(0.2941176470588235),
@@ -171,7 +171,7 @@ vec4Scenario(
 );
 
 mat2Scenario(
-  "add mat2 mat2",
+  `add mat2 mat2`,
   {
     a: mat2(float(0.14), float(0.07), float(0.91), float(0.28)),
     b: mat2(float(0.36), float(0.37), float(0.07), float(0.64)),
@@ -181,7 +181,7 @@ mat2Scenario(
 );
 
 mat3Scenario(
-  "add mat3 mat3",
+  `add mat3 mat3`,
   {
     a: mat3(
       float(0.14),
@@ -211,7 +211,7 @@ mat3Scenario(
 );
 
 mat4Scenario(
-  "add mat4 mat4",
+  `add mat4 mat4`,
   {
     a: mat4(
       float(0.14),
@@ -272,7 +272,7 @@ mat4Scenario(
 );
 
 mat2Scenario(
-  "add float mat2",
+  `add float mat2`,
   {
     a: float(0.14),
     b: mat2(float(0.36), float(0.27), float(0.07), float(0.64)),
@@ -282,7 +282,7 @@ mat2Scenario(
 );
 
 mat3Scenario(
-  "add float mat3",
+  `add float mat3`,
   {
     a: float(0.14),
     b: mat3(
@@ -302,7 +302,7 @@ mat3Scenario(
 );
 
 mat4Scenario(
-  "add float mat4",
+  `add float mat4`,
   {
     a: float(0.14),
     b: mat4(
@@ -346,7 +346,7 @@ mat4Scenario(
 );
 
 mat2Scenario(
-  "add mat2 float",
+  `add mat2 float`,
   {
     a: mat2(float(0.36), float(0.27), float(0.07), float(0.64)),
     b: float(0.14),
@@ -356,7 +356,7 @@ mat2Scenario(
 );
 
 mat3Scenario(
-  "add mat3 float",
+  `add mat3 float`,
   {
     a: mat3(
       float(0.36),
@@ -376,7 +376,7 @@ mat3Scenario(
 );
 
 mat4Scenario(
-  "add mat4 float",
+  `add mat4 float`,
   {
     a: mat4(
       float(0.36),
@@ -420,21 +420,21 @@ mat4Scenario(
 );
 
 intScenario(
-  "add int int",
+  `add int int`,
   { a: int(37), b: int(44) },
   ({ a, b }) => add(a, b),
   81
 );
 
 ivec2Scenario(
-  "add ivec2 int",
+  `add ivec2 int`,
   { a: ivec2(int(37), int(102)), b: int(44) },
   ({ a, b }) => add(a, b),
   [81, 146]
 );
 
 ivec3Scenario(
-  "add ivec3 int",
+  `add ivec3 int`,
   {
     a: ivec3(int(37), int(102), int(74)),
     b: int(44),
@@ -444,7 +444,7 @@ ivec3Scenario(
 );
 
 ivec4Scenario(
-  "add ivec4 int",
+  `add ivec4 int`,
   {
     a: ivec4(int(37), int(102), int(74), int(50)),
     b: int(44),
@@ -454,42 +454,42 @@ ivec4Scenario(
 );
 
 ivec2Scenario(
-  "add int ivec2",
+  `add int ivec2`,
   { a: int(44), b: ivec2(int(37), int(102)) },
   ({ a, b }) => add(a, b),
   [81, 146]
 );
 
 ivec3Scenario(
-  "add int ivec3",
+  `add int ivec3`,
   { a: int(44), b: ivec3(int(37), int(102), int(74)) },
   ({ a, b }) => add(a, b),
   [81, 146, 118]
 );
 
 ivec4Scenario(
-  "add int ivec4",
+  `add int ivec4`,
   { a: int(44), b: ivec4(int(37), int(102), int(74), int(50)) },
   ({ a, b }) => add(a, b),
   [81, 146, 118, 94]
 );
 
 ivec2Scenario(
-  "add ivec2 ivec2",
+  `add ivec2 ivec2`,
   { a: ivec2(int(44), int(22)), b: ivec2(int(37), int(102)) },
   ({ a, b }) => add(a, b),
   [81, 124]
 );
 
 ivec3Scenario(
-  "add ivec3 ivec3",
+  `add ivec3 ivec3`,
   { a: ivec3(int(44), int(22), int(12)), b: ivec3(int(37), int(102), int(74)) },
   ({ a, b }) => add(a, b),
   [81, 124, 86]
 );
 
 ivec4Scenario(
-  "add ivec4 ivec4",
+  `add ivec4 ivec4`,
   {
     a: ivec4(int(44), int(22), int(12), int(200)),
     b: ivec4(int(37), int(102), int(74), int(50)),
